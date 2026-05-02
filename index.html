@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="🎂 Freebies"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="theme-color" content="#0a0014"/>
+<title>🎂 Birthday Freebies – Western Cape</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:       #0a0014;
+  --bg2:      #110022;
+  --surface:  rgba(255,255,255,0.04);
+  --border:   rgba(255,255,255,0.08);
+  --text:     #f0eaff;
+  --muted:    rgba(240,234,255,0.45);
+  --pink:     #e040fb;
+  --purple:   #9c27b0;
+  --gold:     #ffd54f;
+  --green:    #69f0ae;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bot: env(safe-area-inset-bottom, 0px);
+
+/* category colours */
+–c-attr:   #fb923c;
+–c-food:   #c084fc;
+–c-wine:   #f87171;
+–c-cin:    #38bdf8;
+–c-bty:    #f472b6;
+–c-well:   #4ade80;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–bg);
+color: var(–text);
+min-height: 100dvh;
+overflow-x: hidden;
+-webkit-tap-highlight-color: transparent;
+-webkit-font-smoothing: antialiased;
+}
+
+/* ── BG ORBS ── */
+body::before, body::after {
+content: ‘’;
+position: fixed;
+border-radius: 50%;
+pointer-events: none;
+z-index: 0;
+}
+body::before {
+width: 600px; height: 600px;
+background: radial-gradient(circle, rgba(156,39,176,.18) 0%, transparent 70%);
+top: -200px; left: -200px;
+}
+body::after {
+width: 500px; height: 500px;
+background: radial-gradient(circle, rgba(224,64,251,.12) 0%, transparent 70%);
+bottom: -150px; right: -150px;
+}
+
+/* ── HERO ── */
+.hero {
+position: relative; z-index: 1;
+padding: calc(var(–safe-top) + 24px) 18px 22px;
+background: linear-gradient(160deg, #1a0030 0%, #0d001f 60%, #08001a 100%);
+border-bottom: 1px solid rgba(156,39,176,.25);
+}
+
+.hero-top {
+display: flex; align-items: center; gap: 14px; margin-bottom: 6px;
+}
+
+.hero-icon {
+font-size: 42px; line-height: 1;
+animation: floatY 3s ease-in-out infinite;
+}
+
+@keyframes floatY {
+0%,100% { transform: translateY(0); }
+50%      { transform: translateY(-6px); }
+}
+
+h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(20px, 5vw, 30px);
+font-weight: 900;
+line-height: 1.1;
+background: linear-gradient(120deg, #f48fb1 0%, #ce93d8 40%, #80deea 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+.subtitle {
+font-size: 11px; color: var(–muted); margin-top: 3px;
+}
+
+/* NEW banner */
+.new-banner {
+background: linear-gradient(135deg, rgba(255,213,79,.12), rgba(251,146,60,.08));
+border: 1px solid rgba(255,213,79,.3);
+border-radius: 12px;
+padding: 10px 13px;
+margin-top: 14px;
+font-size: 12px;
+color: rgba(255,255,255,.65);
+}
+.new-banner strong { color: var(–gold); }
+
+/* Stats row */
+.stats {
+display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px;
+}
+.stat-card {
+background: rgba(255,255,255,.05);
+border: 1px solid rgba(255,255,255,.09);
+border-radius: 14px;
+padding: 10px 16px;
+display: flex; align-items: center; gap: 10px;
+flex: 1; min-width: 90px;
+}
+.stat-icon { font-size: 18px; }
+.stat-val {
+font-family: ‘Playfair Display’, serif;
+font-size: 22px; font-weight: 700; line-height: 1;
+}
+.stat-lbl { font-size: 10px; color: var(–muted); margin-top: 2px; }
+
+/* Progress */
+.progress-wrap { margin-top: 16px; }
+.progress-meta { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 11px; }
+.progress-meta .pct { color: #ce93d8; font-weight: 600; }
+.progress-track {
+height: 8px;
+background: rgba(255,255,255,.07);
+border-radius: 99px; overflow: hidden;
+}
+.progress-bar {
+height: 100%;
+background: linear-gradient(90deg, #7b1fa2, #e040fb, #f48fb1);
+border-radius: 99px;
+transition: width .6s cubic-bezier(.4,0,.2,1);
+box-shadow: 0 0 14px rgba(224,64,251,.5);
+}
+
+/* ── STICKY CONTROLS ── */
+.controls {
+position: sticky; top: 0; z-index: 100;
+background: rgba(10,0,20,.92);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border-bottom: 1px solid rgba(156,39,176,.2);
+padding: 11px 16px;
+}
+
+.search-wrap { position: relative; margin-bottom: 9px; }
+.search-icon {
+position: absolute; left: 12px; top: 50%;
+transform: translateY(-50%);
+font-size: 14px; pointer-events: none;
+}
+#searchInput {
+width: 100%;
+padding: 10px 14px 10px 36px;
+background: rgba(255,255,255,.07);
+border: 1px solid rgba(255,255,255,.1);
+border-radius: 10px;
+color: var(–text);
+font-size: 14px;
+font-family: ‘DM Sans’, sans-serif;
+outline: none;
+}
+#searchInput:focus { border-color: rgba(156,39,176,.6); }
+#searchInput::placeholder { color: var(–muted); }
+
+.filter-row, .cat-row {
+display: flex; gap: 7px; flex-wrap: nowrap;
+overflow-x: auto; padding-bottom: 2px;
+scrollbar-width: none;
+}
+.filter-row::-webkit-scrollbar,
+.cat-row::-webkit-scrollbar { display: none; }
+
+.pill {
+padding: 6px 13px;
+border-radius: 99px;
+font-size: 12px; font-weight: 600;
+white-space: nowrap;
+cursor: pointer;
+border: none;
+background: rgba(255,255,255,.07);
+color: rgba(255,255,255,.5);
+font-family: ‘DM Sans’, sans-serif;
+transition: all .18s;
+flex-shrink: 0;
+}
+.pill.active {
+background: linear-gradient(135deg, #7b1fa2, #c2185b);
+color: #fff;
+box-shadow: 0 4px 14px rgba(123,31,162,.45);
+}
+.cat-row { margin-top: 8px; }
+.cat-pill {
+padding: 5px 11px;
+border-radius: 99px;
+font-size: 11px; font-weight: 600;
+white-space: nowrap;
+cursor: pointer;
+border: 1px solid rgba(255,255,255,.08);
+background: rgba(255,255,255,.04);
+color: rgba(255,255,255,.4);
+font-family: ‘DM Sans’, sans-serif;
+transition: all .18s;
+flex-shrink: 0;
+}
+.cat-pill.active { color: #fff; }
+
+/* ── MAIN CONTENT ── */
+main {
+position: relative; z-index: 1;
+max-width: 900px; margin: 0 auto;
+padding: 16px 14px calc(80px + var(–safe-bot));
+}
+
+.count-line { font-size: 12px; color: rgba(255,255,255,.25); margin-bottom: 14px; }
+
+/* Section header */
+.section-head {
+display: flex; align-items: center; gap: 8px;
+margin-bottom: 12px; padding-bottom: 10px;
+border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.section-head h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: 17px; font-weight: 700;
+}
+.section-count {
+font-size: 11px; padding: 2px 9px; border-radius: 99px; margin-left: auto;
+}
+.section-wrap { margin-bottom: 28px; }
+
+/* Card grid */
+.card-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+gap: 12px;
+}
+
+/* Card */
+.card {
+border-radius: 16px;
+padding: 14px 15px;
+cursor: pointer;
+border: 1px solid rgba(255,255,255,.07);
+background: var(–surface);
+position: relative; overflow: hidden;
+transition: transform .2s, box-shadow .2s;
+animation: fadeUp .3s ease both;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,.5); }
+.card:active { transform: scale(0.98); }
+
+.card.claimed {
+background: rgba(105,240,174,.06);
+border-color: rgba(105,240,174,.22);
+}
+.card.is-new {
+border-color: rgba(255,213,79,.35);
+box-shadow: 0 0 20px rgba(255,213,79,.08);
+}
+
+.card-stripe {
+position: absolute; top: 0; left: 0; right: 0; height: 3px;
+border-radius: 16px 16px 0 0;
+}
+.card.claimed .card-stripe { background: linear-gradient(90deg, #69f0ae, #00e5ff); }
+.card.is-new:not(.claimed) .card-stripe { background: linear-gradient(90deg, #ffd54f, #fb923c); }
+
+.card-top {
+display: flex; justify-content: space-between; align-items: flex-start;
+margin-bottom: 8px; gap: 6px;
+}
+.cat-badge {
+font-size: 10px; font-weight: 700;
+padding: 3px 9px; border-radius: 99px;
+flex-shrink: 0;
+}
+.badges { display: flex; gap: 5px; align-items: center; flex-shrink: 0; }
+.new-badge {
+font-size: 9px; font-weight: 700;
+background: rgba(255,213,79,.18); color: var(–gold);
+padding: 2px 7px; border-radius: 99px;
+border: 1px solid rgba(255,213,79,.35);
+}
+.must-badge {
+font-size: 9px; font-weight: 700;
+background: rgba(255,213,79,.14); color: var(–gold);
+padding: 2px 7px; border-radius: 99px;
+border: 1px solid rgba(255,213,79,.25);
+}
+
+.card-name {
+font-family: ‘Playfair Display’, serif;
+font-size: 15px; font-weight: 700;
+margin-bottom: 4px; line-height: 1.3;
+color: var(–text);
+transition: color .2s;
+}
+.card.claimed .card-name {
+color: var(–green);
+text-decoration: line-through;
+text-decoration-color: rgba(105,240,174,.5);
+}
+.card-freebie {
+font-size: 13px; font-weight: 500; margin-bottom: 5px;
+}
+.card-validity {
+font-size: 11px; color: var(–muted); margin-bottom: 0;
+}
+
+/* Expanded details */
+.card-details {
+border-top: 1px solid rgba(255,255,255,.07);
+margin-top: 10px; padding-top: 10px; margin-bottom: 10px;
+font-size: 12px; line-height: 1.8;
+color: rgba(255,255,255,.62);
+display: none;
+}
+.card-details strong { color: rgba(255,255,255,.85); font-weight: 600; }
+.card.open .card-details { display: block; }
+.card.open .card-validity { margin-bottom: 0; }
+
+.toggle-hint {
+font-size: 10px; color: rgba(255,255,255,.2);
+text-align: center; margin: 8px 0 10px;
+}
+
+/* Action buttons */
+.card-actions {
+display: flex; gap: 8px;
+}
+.action-btn {
+flex: 1; padding: 8px 0;
+border-radius: 10px;
+font-size: 12px; font-weight: 600;
+cursor: pointer;
+border: none;
+font-family: ‘DM Sans’, sans-serif;
+transition: all .18s;
+}
+.action-btn:active { transform: scale(0.96); }
+
+.signup-btn {
+background: rgba(255,255,255,.06);
+color: rgba(255,255,255,.4);
+outline: 1px solid rgba(255,255,255,.1);
+}
+.signup-btn.active {
+background: rgba(255,213,79,.14);
+color: var(–gold);
+outline: 1px solid rgba(255,213,79,.35);
+}
+.claim-btn {
+background: rgba(255,255,255,.06);
+color: rgba(255,255,255,.4);
+outline: 1px solid rgba(255,255,255,.1);
+}
+.claim-btn.active {
+background: rgba(105,240,174,.14);
+color: var(–green);
+outline: 1px solid rgba(105,240,174,.35);
+}
+
+/* Empty state */
+.empty {
+text-align: center; padding: 70px 20px;
+}
+.empty-icon { font-size: 44px; margin-bottom: 12px; }
+.empty p { color: var(–muted); font-size: 15px; }
+
+/* Footer tip */
+.footer-tip {
+position: fixed; bottom: 0; left: 0; right: 0;
+padding: calc(10px) 16px calc(10px + var(–safe-bot));
+background: rgba(10,0,20,.95);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border-top: 1px solid rgba(156,39,176,.2);
+text-align: center;
+font-size: 11px; color: rgba(255,255,255,.38);
+z-index: 50;
+}
+.footer-tip strong { color: var(–text); }
+
+/* Install banner */
+.install-banner {
+background: linear-gradient(135deg, rgba(123,31,162,.25), rgba(194,24,91,.15));
+border: 1px solid rgba(224,64,251,.3);
+border-radius: 14px;
+padding: 13px 15px;
+margin-bottom: 18px;
+display: flex; align-items: flex-start; gap: 12px;
+}
+.install-icon { font-size: 24px; flex-shrink: 0; margin-top: 1px; }
+.install-text { flex: 1; }
+.install-text strong { font-size: 13px; color: #ce93d8; display: block; margin-bottom: 3px; }
+.install-text p { font-size: 12px; color: var(–muted); line-height: 1.6; }
+.install-close {
+background: none; border: none; color: var(–muted);
+font-size: 18px; cursor: pointer; padding: 0 4px; line-height: 1;
+flex-shrink: 0; align-self: flex-start;
+}
+
+/* Confetti */
+.confetti-piece {
+position: fixed;
+top: -20px;
+border-radius: 50%;
+pointer-events: none;
+z-index: 9999;
+animation: fall linear forwards;
+}
+@keyframes fall {
+0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+100% { transform: translateY(110dvh) rotate(600deg); opacity: 0; }
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(10px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-thumb { background: rgba(156,39,176,.3); border-radius: 99px; }
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-top">
+    <div class="hero-icon">🎂</div>
+    <div>
+      <h1>Birthday Freebies Tracker</h1>
+      <div class="subtitle">Western Cape, South Africa · <span id="totalCount">0</span> freebies · Updated May 2026</div>
+    </div>
+  </div>
+
+  <div class="new-banner">
+    🆕 <strong>Just added:</strong> Total Ninja · Sky-Hi Ride · Robben Island · UpCycles (updated)
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-icon">🎁</div>
+      <div>
+        <div class="stat-val" id="statTotal" style="color:#ce93d8">0</div>
+        <div class="stat-lbl">Total</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">✅</div>
+      <div>
+        <div class="stat-val" id="statClaimed" style="color:#69f0ae">0</div>
+        <div class="stat-lbl">Claimed</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📱</div>
+      <div>
+        <div class="stat-val" id="statSigned" style="color:#ffd54f">0</div>
+        <div class="stat-lbl">Signed Up</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">⏳</div>
+      <div>
+        <div class="stat-val" id="statLeft" style="color:#f48fb1">0</div>
+        <div class="stat-lbl">Left</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-meta">
+      <span style="color:var(--muted);font-size:11px">Season progress</span>
+      <span class="pct" id="pctLabel">0% claimed</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-bar" id="progressBar" style="width:0%"></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTROLS -->
+
+<div class="controls">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="search" id="searchInput" placeholder="Search by name or freebie…" autocomplete="off"/>
+  </div>
+
+  <div class="filter-row" id="filterRow">
+    <button class="pill active" data-filter="all">All 🎉</button>
+    <button class="pill" data-filter="unclaimed">To Claim ⏳</button>
+    <button class="pill" data-filter="claimed">Claimed ✅</button>
+    <button class="pill" data-filter="mustdo">⭐ Must-Do</button>
+    <button class="pill" data-filter="takeaway">🥡 Takeaway</button>
+    <button class="pill" data-filter="new">🆕 New</button>
+  </div>
+
+  <div class="cat-row" id="catRow">
+    <button class="cat-pill active" data-cat="all">All</button>
+    <button class="cat-pill" data-cat="🏔️ Attractions" style="--c:var(--c-attr)">🏔️ Attractions</button>
+    <button class="cat-pill" data-cat="🍽️ Food & Drink" style="--c:var(--c-food)">🍽️ Food</button>
+    <button class="cat-pill" data-cat="🍷 Wine Farms" style="--c:var(--c-wine)">🍷 Wine</button>
+    <button class="cat-pill" data-cat="🎬 Cinema" style="--c:var(--c-cin)">🎬 Cinema</button>
+    <button class="cat-pill" data-cat="💄 Beauty & Retail" style="--c:var(--c-bty)">💄 Beauty</button>
+    <button class="cat-pill" data-cat="💆 Wellness" style="--c:var(--c-well)">💆 Wellness</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+
+<main id="main">
+  <div class="count-line" id="countLine"></div>
+  <div id="installBanner" class="install-banner">
+    <div class="install-icon">📲</div>
+    <div class="install-text">
+      <strong>Save to Home Screen as an App!</strong>
+      <p>
+        <b>iPhone/iPad:</b> Tap the <b>Share ⬆️</b> button → <b>Add to Home Screen</b><br/>
+        <b>Android:</b> Tap the <b>⋮ menu</b> → <b>Add to Home Screen</b><br/>
+        Your progress saves automatically — no internet needed after install!
+      </p>
+    </div>
+    <button class="install-close" onclick="dismissInstall()">✕</button>
+  </div>
+  <div id="cardArea"></div>
+</main>
+
+<div class="footer-tip">
+  💡 Always carry your <strong>SA ID</strong> · Sign up for apps <strong>2–4 weeks</strong> before your birthday · Progress saves automatically
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+//  DATA
+// ═══════════════════════════════════════════
+const CAT_META = {
+  "🏔️ Attractions":    { color:"#fb923c", bg:"rgba(251,146,60,0.14)",  border:"rgba(251,146,60,0.32)"  },
+  "🍽️ Food & Drink":  { color:"#c084fc", bg:"rgba(192,132,252,0.14)", border:"rgba(192,132,252,0.32)" },
+  "🍷 Wine Farms":     { color:"#f87171", bg:"rgba(248,113,113,0.14)", border:"rgba(248,113,113,0.32)" },
+  "🎬 Cinema":         { color:"#38bdf8", bg:"rgba(56,189,248,0.14)",  border:"rgba(56,189,248,0.32)"  },
+  "💄 Beauty & Retail":{ color:"#f472b6", bg:"rgba(244,114,182,0.14)", border:"rgba(244,114,182,0.32)" },
+  "💆 Wellness":       { color:"#4ade80", bg:"rgba(74,222,128,0.14)",  border:"rgba(74,222,128,0.32)"  },
+};
+
+const NEW_IDS = ["robben","total_ninja","skyhi","upcycles"];
+
+const FREEBIES = [
+  // ATTRACTIONS
+  { id:"tm_cableway",     cat:"🏔️ Attractions", name:"Table Mountain Cableway",       freebie:"Free return trip",                              validity:"Entire birthday month",                      how:"Present SA ID at ticket office – no booking needed. Weather dependent.",                                                                                                                  takeaway:false, priority:"high"   },
+  { id:"two_oceans",      cat:"🏔️ Attractions", name:"Two Oceans Aquarium",            freebie:"Free entry",                                    validity:"Birthday month + 6 days after",              how:"Show SA ID at ticket office on the day. No advance booking needed.",                                                                                                                     takeaway:false, priority:"high"   },
+  { id:"robben",          cat:"🏔️ Attractions", name:"Robben Island Museum 🆕",        freebie:"Free tour & ferry (SA citizens only)",           validity:"Your actual birthday only",                  how:"Collect free ticket in person at Nelson Mandela Gateway, V&A Waterfront. Present valid SA ID. NO advance booking — arrive early as spaces are limited. Tours: 9am, 11am, 1pm & 3pm (weather permitting). Normal price R400.", takeaway:false, priority:"high"   },
+  { id:"zeitz",           cat:"🏔️ Attractions", name:"Zeitz MOCAA Museum",             freebie:"Free entry (African citizens)",                  validity:"Entire birthday month",                      how:"Present SA ID or African passport at entrance. Normal price R210.",                                                                                                                       takeaway:false, priority:"medium" },
+  { id:"cape_wheel",      cat:"🏔️ Attractions", name:"Cape Wheel (V&A)",               freebie:"Free ride",                                     validity:"Birthday day or 30-day voucher",             how:"Sign up at capewheel.co.za/clubs in advance. Voucher is emailed on your birthday.",                                                                                                       takeaway:false, priority:"high"   },
+  { id:"skyhi",           cat:"🏔️ Attractions", name:"Sky-Hi Ride (Hotel Sky) 🆕",     freebie:"50% off ride – R100 instead of R200",           validity:"Entire birthday month",                      how:"Buy 'Birthday Rider Ticket' on Quicket. Enter your SA ID number to verify birthday month. Weather dependent. Min height 1.3m, age 8+. Note: the offer was previously fully free; it is now 50% off.", takeaway:false, priority:"high"   },
+  { id:"total_ninja",     cat:"🏔️ Attractions", name:"Total Ninja (Observatory) 🆕",   freebie:"Free 1-hour Total Ninja session",               validity:"Your actual birthday only – no other day",   how:"Must visit ON your birthday. Present valid SA ID at venue. Cannot combine with any other offer. Compulsory grip socks R45 (buy & keep). Book ahead on weekends. Address: 2 Fir Street, Observatory, Cape Town.", takeaway:false, priority:"high"   },
+  { id:"city_sight",      cat:"🏔️ Attractions", name:"City Sightseeing Bus",           freebie:"Free Classic hop-on-hop-off ticket",            validity:"Birthday day",                               how:"Online form + SA ID. Kids 5–15 register 2 weeks in advance at citysightseeing.co.za and get a ticket for themselves and a friend.",                                                         takeaway:false, priority:"medium" },
+  { id:"galileo",         cat:"🏔️ Attractions", name:"Galileo Open-Air Cinema",        freebie:"Free entry + backrest + blanket",               validity:"Birthday week (Oct–May season only)",        how:"Book on Webtickets with SA ID number. Excludes special screenings. Season Oct–May only — check thegalileo.co.za.",                                                                           takeaway:false, priority:"high"   },
+  { id:"rush",            cat:"🏔️ Attractions", name:"Rush Trampoline Park",           freebie:"Free 1-hour jump session",                      validity:"Your actual birthday only",                  how:"Present SA ID; bring own socks. Book ahead on weekends.",                                                                                                                                  takeaway:false, priority:"medium" },
+  { id:"cool_run",        cat:"🏔️ Attractions", name:"Cool Runnings Toboggan",         freebie:"Free toboggan ride",                            validity:"Entire birthday month",                      how:"Present SA ID. Cape Town branch only.",                                                                                                                                                   takeaway:false, priority:"medium" },
+  { id:"wine_tractor",    cat:"🏔️ Attractions", name:"Stellenbosch Wine Tractor",      freebie:"Free wine tour ticket (SA citizens)",           validity:"Entire birthday month",                      how:"Book online, select 'Birthday Ticket'. Show SA ID or driver's licence on the day.",                                                                                                         takeaway:false, priority:"high"   },
+  { id:"durb_safari",     cat:"🏔️ Attractions", name:"Durbanville Wine Safari",        freebie:"Free 3-stop wine safari (glass at each stop)", validity:"1 week before/after booking date",            how:"Book at durbanvillewinesafari.com. Select birthday option. SA citizens only.",                                                                                                               takeaway:false, priority:"high"   },
+  { id:"waterfront_duck", cat:"🏔️ Attractions", name:"Waterfront Duck Tour",           freebie:"Free land & water tour",                        validity:"Birthday week",                              how:"Present SA ID at V&A Waterfront. SA citizens only.",                                                                                                                                     takeaway:false, priority:"medium" },
+  { id:"upcycles",        cat:"🏔️ Attractions", name:"UpCycles (Sea Point) 🆕",        freebie:"Free 1-hour bicycle hire",                      validity:"Your actual birthday only",                  how:"Show proof of birth date (SA ID / driver's licence) at the Sea Point Promenade location. Birthday special: 1 free hour on the actual day only.",                                           takeaway:false, priority:"medium" },
+  { id:"pedal_boats",     cat:"🏔️ Attractions", name:"V&A Pedal Boats",               freebie:"Free pedal boat ride",                          validity:"Birthday day (before 12pm)",                 how:"Present SA ID. Arrive before 12pm to qualify.",                                                                                                                                          takeaway:false, priority:"medium" },
+  { id:"freedom_park",    cat:"🏔️ Attractions", name:"Freedom Adventure Park",         freebie:"Free play session",                             validity:"Your actual birthday only",                  how:"Present SA ID at Tokai or Canal Walk branch.",                                                                                                                                           takeaway:false, priority:"medium" },
+  { id:"hint_hunt",       cat:"🏔️ Attractions", name:"HintHunt Escape Room",           freebie:"Free game for birthday person",                 validity:"Group booking required",                     how:"Email HintHunt in advance. Must book as a group — birthday person plays free.",                                                                                                           takeaway:false, priority:"medium" },
+  // FOOD & DRINK
+  { id:"spur",            cat:"🍽️ Food & Drink", name:"Spur",                          freebie:"Free kids meal + toy / birthday voucher",       validity:"Birthday day (kids) / birthday week (adults)",how:"Join Spur Family App. Kids under 12 eat-in only on birthday day. Adults get voucher via app.",                                                                                       takeaway:false, priority:"high"   },
+  { id:"muggbean",        cat:"🍽️ Food & Drink", name:"Mugg & Bean",                   freebie:"Free slice of cake",                            validity:"±1 week around birthday",                    how:"Join M&B Loyalty App. Must have used app at least 2x in past 12 months. Eat-in only.",                                                                                                  takeaway:false, priority:"high"   },
+  { id:"wimpy",           cat:"🍽️ Food & Drink", name:"Wimpy",                         freebie:"Free coffee or meal voucher",                   validity:"±7 days before/after birthday",              how:"Register on Wimpy Rewards App.",                                                                                                                                                        takeaway:true,  priority:"high"   },
+  { id:"nandos",          cat:"🍽️ Food & Drink", name:"Nando's",                       freebie:"Birthday voucher (value varies)",               validity:"±1–2 weeks",                                 how:"Must be a Nando's loyalty member. Voucher sent via email — check inbox around birthday.",                                                                                                 takeaway:true,  priority:"high"   },
+  { id:"steers",          cat:"🍽️ Food & Drink", name:"Steers",                        freebie:"Free burger",                                   validity:"±7 days after birthday",                     how:"Join Steers Rewards App.",                                                                                                                                                              takeaway:true,  priority:"high"   },
+  { id:"krispy",          cat:"🍽️ Food & Drink", name:"Krispy Kreme",                  freebie:"Free dozen Original Glazed when buying a dozen",validity:"7 days after birthday",                      how:"Join KK Rewards App. Register at least 48hrs before birthday.",                                                                                                                         takeaway:true,  priority:"high"   },
+  { id:"kauai",           cat:"🍽️ Food & Drink", name:"Kauai",                         freebie:"Free smoothie",                                 validity:"7 days before & after birthday",             how:"Kauai App members only.",                                                                                                                                                               takeaway:true,  priority:"high"   },
+  { id:"roco",            cat:"🍽️ Food & Drink", name:"RocoMamas",                     freebie:"Free birthday burger (R50 voucher)",            validity:"Birthday day (valid 31 days)",                how:"Join Loyalty App. Present app voucher + SA ID.",                                                                                                                                        takeaway:true,  priority:"high"   },
+  { id:"colcacchio",      cat:"🍽️ Food & Drink", name:"Col'Cacchio",                   freebie:"Free pizza with voucher",                       validity:"±1 week around birthday",                    how:"Loyalty sign-up required. Dine-in preferred.",                                                                                                                                          takeaway:false, priority:"medium" },
+  { id:"starbucks",       cat:"🍽️ Food & Drink", name:"Starbucks",                     freebie:"Free drink",                                    validity:"30 days from birthday",                      how:"Must be Gold Level loyalty member.",                                                                                                                                                     takeaway:true,  priority:"medium" },
+  { id:"ctfm",            cat:"🍽️ Food & Drink", name:"Cape Town Fish Market",         freebie:"R150 discount voucher",                         validity:"Birthday month",                             how:"Join loyalty app in advance.",                                                                                                                                                          takeaway:true,  priority:"medium" },
+  { id:"piza_vino",       cat:"🍽️ Food & Drink", name:"Piza e Vino",                   freebie:"R100 birthday voucher",                         validity:"Birthday month",                             how:"Sign up for loyalty programme.",                                                                                                                                                        takeaway:true,  priority:"medium" },
+  { id:"doppio",          cat:"🍽️ Food & Drink", name:"Doppio Zero",                   freebie:"R100 voucher (+ 2 bottles wine for 10+ guests)",validity:"30 days after birthday",                     how:"Join loyalty club.",                                                                                                                                                                    takeaway:true,  priority:"medium" },
+  { id:"bootlegger",      cat:"🍽️ Food & Drink", name:"Bootlegger Coffee",             freebie:"Free coffee",                                   validity:"Birthday day",                               how:"App required.",                                                                                                                                                                         takeaway:true,  priority:"medium" },
+  { id:"panarottis",      cat:"🍽️ Food & Drink", name:"Panarottis",                    freebie:"Free kids meal or dessert",                     validity:"Birthday day",                               how:"Part of Panarottis Rewards Club. Kids only. Eat-in.",                                                                                                                                   takeaway:false, priority:"medium" },
+  { id:"dros",            cat:"🍽️ Food & Drink", name:"Dros",                          freebie:"Free birthday dessert or shooter",              validity:"Birthday day",                               how:"Eat-in only. Adults 18+ only.",                                                                                                                                                         takeaway:false, priority:"low"    },
+  { id:"tashas",          cat:"🍽️ Food & Drink", name:"Tasha's",                       freebie:"Free birthday dessert (discretionary)",         validity:"Birthday day",                               how:"Ask your waiter on the day. Not guaranteed — varies by branch.",                                                                                                                        takeaway:false, priority:"low"    },
+  { id:"hussar",          cat:"🍽️ Food & Drink", name:"The Hussar Grill",              freebie:"Complimentary dessert",                         validity:"Birthday day",                               how:"Eat-in. Mention birthday when booking.",                                                                                                                                                takeaway:false, priority:"low"    },
+  { id:"john_dorys",      cat:"🍽️ Food & Drink", name:"John Dory's",                   freebie:"R100 birthday voucher",                         validity:"Birthday month",                             how:"Join loyalty programme.",                                                                                                                                                               takeaway:true,  priority:"medium" },
+  // WINE FARMS
+  { id:"durb_hills",      cat:"🍷 Wine Farms",    name:"Durbanville Hills",             freebie:"Free wine tasting",                             validity:"On or near birthday",                        how:"Book in advance. Mention it's your birthday.",                                                                                                                                          takeaway:false, priority:"medium" },
+  { id:"spier",           cat:"🍷 Wine Farms",    name:"Spier Wine Farm",               freebie:"Free tasting or birthday drink",                validity:"Flexible / birthday visit",                  how:"Loyalty members get more perks. Book ahead.",                                                                                                                                           takeaway:false, priority:"medium" },
+  { id:"warwick",         cat:"🍷 Wine Farms",    name:"Warwick Wine Estate",           freebie:"Birthday surprise treat",                       validity:"Booking essential",                          how:"Mention birthday when booking. Treats vary.",                                                                                                                                           takeaway:false, priority:"medium" },
+  { id:"grande_prov",     cat:"🍷 Wine Farms",    name:"Grande Provence (Franschhoek)", freebie:"Free glass of sparkling wine on arrival",       validity:"Birthday day with meal booking",             how:"Confirm in advance when booking your table.",                                                                                                                                           takeaway:false, priority:"high"   },
+  { id:"lavenir",         cat:"🍷 Wine Farms",    name:"L'Avenir (Stellenbosch)",       freebie:"Complimentary tasting or glass of wine",       validity:"May vary by season",                         how:"Call ahead to confirm. Mention birthday at booking.",                                                                                                                                   takeaway:false, priority:"medium" },
+  { id:"plaisir",         cat:"🍷 Wine Farms",    name:"Plaisir Wine Estate",           freebie:"Birthday surprise for wine club members",       validity:"Varies",                                     how:"Join wine club online for free.",                                                                                                                                                       takeaway:false, priority:"low"    },
+  // CINEMA
+  { id:"ster_k",          cat:"🎬 Cinema",        name:"Ster-Kinekor (SK Club)",        freebie:"Free 2D or 3D movie ticket",                    validity:"7 days after birthday",                      how:"Join SK Club (free). Must buy at least 1 movie with loyalty number first. Valid for films 1+ week after release.",                                                                      takeaway:false, priority:"high"   },
+  { id:"nu_metro",        cat:"🎬 Cinema",        name:"Nu Metro (Scene Club)",         freebie:"Free movie ticket",                             validity:"7 days after birthday",                      how:"Sign up as Scene Club member. Ticket loaded to your card.",                                                                                                                              takeaway:false, priority:"high"   },
+  // BEAUTY & RETAIL
+  { id:"bodyshop",        cat:"💄 Beauty & Retail", name:"The Body Shop",               freebie:"R50–R75 birthday voucher",                      validity:"±2 weeks before/after birthday",             how:"Join Love Your Body Club. Visit in-store with SA ID.",                                                                                                                                  takeaway:false, priority:"high"   },
+  { id:"clicks",          cat:"💄 Beauty & Retail", name:"Clicks ClubCard",             freebie:"Extra points + discount",                       validity:"Birthday month",                             how:"Ensure birthday is added to your ClubCard profile.",                                                                                                                                    takeaway:false, priority:"medium" },
+  { id:"dischem",         cat:"💄 Beauty & Retail", name:"Dis-Chem",                    freebie:"Birthday vouchers via email",                   validity:"Birthday month",                             how:"Join Dis-Chem Benefit Program.",                                                                                                                                                        takeaway:false, priority:"medium" },
+  { id:"sorbet",          cat:"💄 Beauty & Retail", name:"Sorbet",                      freebie:"Up to 50% off a treatment",                     validity:"Entire birthday month",                      how:"Join Sorbet Society before booking. Discount applies once per birthday month. Cannot combine with other offers.",                                                                        takeaway:false, priority:"high"   },
+  { id:"truworths",       cat:"💄 Beauty & Retail", name:"Truworths",                   freebie:"Birthday gift / specials",                      validity:"Birthday month",                             how:"Must be a loyalty member.",                                                                                                                                                             takeaway:false, priority:"low"    },
+  { id:"foschini",        cat:"💄 Beauty & Retail", name:"Foschini / TFG",              freebie:"Birthday discounts",                            validity:"Birthday month",                             how:"Ensure birthday is listed on your account.",                                                                                                                                            takeaway:true,  priority:"low"    },
+  { id:"cottonton",       cat:"💄 Beauty & Retail", name:"Cotton On / Typo",            freebie:"Birthday discount",                             validity:"±7 days before/after birthday",              how:"Join Cotton On Perks programme.",                                                                                                                                                       takeaway:true,  priority:"medium" },
+  { id:"crazystore",      cat:"💄 Beauty & Retail", name:"Crazy Store",                 freebie:"Free birthday helium balloon 🎈",               validity:"Your actual birthday only",                  how:"Present SA ID / driver's licence / birth certificate. No purchase needed.",                                                                                                            takeaway:true,  priority:"medium" },
+  { id:"pandora",         cat:"💄 Beauty & Retail", name:"Pandora SA",                  freebie:"Free bracelet cleaning or small gift",          validity:"Birthday visit",                             how:"Check with your nearest Pandora store — varies by branch.",                                                                                                                             takeaway:false, priority:"low"    },
+  // WELLNESS
+  { id:"planet_fit",      cat:"💆 Wellness",      name:"Planet Fitness",               freebie:"Free gym day pass",                             validity:"Birthday week / day",                        how:"Request online or ask at local Planet Fitness.",                                                                                                                                         takeaway:false, priority:"medium" },
+  { id:"virgin",          cat:"💆 Wellness",      name:"Virgin Active",                freebie:"Free one-day guest pass",                       validity:"Birthday week / day",                        how:"Ask for birthday pass at your nearest branch.",                                                                                                                                         takeaway:false, priority:"medium" },
+  { id:"placecol",        cat:"💆 Wellness",      name:"Placecol",                     freebie:"Birthday facial discount",                      validity:"Birthday month",                             how:"Loyalty programme members only.",                                                                                                                                                       takeaway:false, priority:"medium" },
+  { id:"mangwanani",      cat:"💆 Wellness",      name:"Mangwanani Spa",               freebie:"Birthday specials / discount coupons",          validity:"Varies",                                     how:"Check via email or WhatsApp for current offers.",                                                                                                                                       takeaway:false, priority:"medium" },
+];
+
+const CATS = ["🏔️ Attractions","🍽️ Food & Drink","🍷 Wine Farms","🎬 Cinema","💄 Beauty & Retail","💆 Wellness"];
+
+// ═══════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════
+let claimed  = JSON.parse(localStorage.getItem('bday_claimed')  || '{}');
+let signedUp = JSON.parse(localStorage.getItem('bday_signed')   || '{}');
+let filter   = 'all';
+let activeCat= 'all';
+let search   = '';
+let openCard = null;
+
+function save() {
+  localStorage.setItem('bday_claimed', JSON.stringify(claimed));
+  localStorage.setItem('bday_signed',  JSON.stringify(signedUp));
+}
+
+// ═══════════════════════════════════════════
+//  RENDER
+// ═══════════════════════════════════════════
+function getVisible() {
+  return FREEBIES.filter(f => {
+    if (activeCat !== 'all' && f.cat !== activeCat) return false;
+    if (filter === 'claimed'   && !claimed[f.id])      return false;
+    if (filter === 'unclaimed' && claimed[f.id])        return false;
+    if (filter === 'mustdo'    && f.priority !== 'high')return false;
+    if (filter === 'takeaway'  && !f.takeaway)          return false;
+    if (filter === 'new'       && !NEW_IDS.includes(f.id)) return false;
+    const s = search.toLowerCase();
+    if (s && !f.name.toLowerCase().includes(s) && !f.freebie.toLowerCase().includes(s)) return false;
+    return true;
+  });
+}
+
+function renderStats() {
+  const total   = FREEBIES.length;
+  const nClaim  = FREEBIES.filter(f=>claimed[f.id]).length;
+  const nSigned = FREEBIES.filter(f=>signedUp[f.id]).length;
+  const pct     = Math.round(nClaim/total*100);
+
+  document.getElementById('totalCount').textContent  = total;
+  document.getElementById('statTotal').textContent   = total;
+  document.getElementById('statClaimed').textContent = nClaim;
+  document.getElementById('statSigned').textContent  = nSigned;
+  document.getElementById('statLeft').textContent    = total - nClaim;
+  document.getElementById('pctLabel').textContent    = pct + '% claimed';
+  document.getElementById('progressBar').style.width = pct + '%';
+}
+
+function buildCard(f, idx) {
+  const m    = CAT_META[f.cat] || { color:'#818cf8', bg:'rgba(129,140,248,0.14)', border:'rgba(129,140,248,0.3)' };
+  const done = !!claimed[f.id];
+  const up   = !!signedUp[f.id];
+  const isNew= NEW_IDS.includes(f.id);
+  const isOpen = openCard === f.id;
+
+  const classes = ['card',
+    done   ? 'claimed' : '',
+    isNew  ? 'is-new'  : '',
+    isOpen ? 'open'    : '',
+  ].filter(Boolean).join(' ');
+
+  return `
+  <div class="${classes}" data-id="${f.id}" style="animation-delay:${idx*0.04}s" onclick="toggleOpen('${f.id}',event)">
+    <div class="card-stripe"></div>
+    <div class="card-top">
+      <span class="cat-badge" style="background:${m.bg};color:${m.color};border:1px solid ${m.border}">${f.cat}</span>
+      <div class="badges">
+        ${isNew ? '<span class="new-badge">🆕 NEW</span>' : ''}
+        ${f.takeaway ? '<span title="Takeaway">🥡</span>' : ''}
+        ${f.priority==='high' ? '<span class="must-badge">⭐ MUST</span>' : ''}
+      </div>
+    </div>
+    <div class="card-name">${f.name}</div>
+    <div class="card-freebie" style="color:${m.color}">🎁 ${f.freebie}</div>
+    <div class="card-validity">⏳ ${f.validity}</div>
+    <div class="card-details"><strong>📋 How to claim:</strong><br>${f.how}</div>
+    <div class="toggle-hint">${isOpen ? '▲ collapse' : '▼ tap for how to claim'}</div>
+    <div class="card-actions" onclick="event.stopPropagation()">
+      <button class="action-btn signup-btn ${up?'active':''}" onclick="toggleSignUp('${f.id}')">
+        ${up ? '📱 Signed Up' : '📱 Sign Up'}
+      </button>
+      <button class="action-btn claim-btn ${done?'active':''}" onclick="toggleClaim('${f.id}')">
+        ${done ? '✅ Claimed!' : '☑️ Claim'}
+      </button>
+    </div>
+  </div>`;
+}
+
+function render() {
+  renderStats();
+  const visible = getVisible();
+  document.getElementById('countLine').textContent = `Showing ${visible.length} of ${FREEBIES.length} freebies`;
+
+  const area = document.getElementById('cardArea');
+
+  if (visible.length === 0) {
+    area.innerHTML = `<div class="empty"><div class="empty-icon">🎈</div><p>No freebies match — try adjusting your filters!</p></div>`;
+    return;
+  }
+
+  // Group by category if showing all cats
+  if (activeCat === 'all') {
+    let html = '';
+    CATS.forEach(cat => {
+      const items = visible.filter(f => f.cat === cat);
+      if (!items.length) return;
+      const m = CAT_META[cat];
+      html += `<div class="section-wrap">
+        <div class="section-head" style="border-bottom-color:${m.border}">
+          <h2 style="color:${m.color}">${cat}</h2>
+          <span class="section-count" style="background:${m.bg};color:${m.color}">${items.length}</span>
+        </div>
+        <div class="card-grid">
+          ${items.map((f,i) => buildCard(f,i)).join('')}
+        </div>
+      </div>`;
+    });
+    area.innerHTML = html;
+  } else {
+    area.innerHTML = `<div class="card-grid">${visible.map((f,i)=>buildCard(f,i)).join('')}</div>`;
+  }
+}
+
+// ═══════════════════════════════════════════
+//  ACTIONS
+// ═══════════════════════════════════════════
+function toggleOpen(id, e) {
+  openCard = openCard === id ? null : id;
+  render();
+  // scroll card into view
+  setTimeout(() => {
+    const el = document.querySelector(`[data-id="${id}"]`);
+    if (el) el.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  }, 50);
+}
+
+function toggleClaim(id) {
+  claimed[id] = !claimed[id];
+  save();
+  if (claimed[id]) confetti();
+  render();
+}
+
+function toggleSignUp(id) {
+  signedUp[id] = !signedUp[id];
+  save();
+  render();
+}
+
+// ═══════════════════════════════════════════
+//  CONFETTI
+// ═══════════════════════════════════════════
+const CONF_COLORS = ['#e040fb','#ce93d8','#f48fb1','#69f0ae','#ffd54f','#fb923c','#38bdf8','#7c4dff'];
+
+function confetti() {
+  for (let i = 0; i < 28; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    const size = 7 + Math.random() * 9;
+    el.style.cssText = `
+      left:${4 + Math.random()*92}%;
+      width:${size}px; height:${size}px;
+      background:${CONF_COLORS[i % CONF_COLORS.length]};
+      border-radius:${Math.random()>.5?'50%':'3px'};
+      animation-duration:${1.3+Math.random()*.9}s;
+      animation-delay:${Math.random()*.6}s;
+      transform:rotate(${Math.random()*360}deg);
+    `;
+    document.body.appendChild(el);
+    el.addEventListener('animationend', () => el.remove());
+  }
+}
+
+// ═══════════════════════════════════════════
+//  INSTALL BANNER
+// ═══════════════════════════════════════════
+function dismissInstall() {
+  document.getElementById('installBanner').style.display = 'none';
+  localStorage.setItem('installDismissed','1');
+}
+
+if (localStorage.getItem('installDismissed')) {
+  document.getElementById('installBanner').style.display = 'none';
+}
+
+// ═══════════════════════════════════════════
+//  EVENT LISTENERS
+// ═══════════════════════════════════════════
+document.getElementById('searchInput').addEventListener('input', e => {
+  search = e.target.value;
+  openCard = null;
+  render();
+});
+
+document.getElementById('filterRow').addEventListener('click', e => {
+  const btn = e.target.closest('[data-filter]');
+  if (!btn) return;
+  filter = btn.dataset.filter;
+  document.querySelectorAll('[data-filter]').forEach(b => b.classList.toggle('active', b===btn));
+  openCard = null;
+  render();
+});
+
+document.getElementById('catRow').addEventListener('click', e => {
+  const btn = e.target.closest('[data-cat]');
+  if (!btn) return;
+  activeCat = btn.dataset.cat;
+  document.querySelectorAll('[data-cat]').forEach(b => {
+    const m = CAT_META[b.dataset.cat];
+    b.classList.toggle('active', b===btn);
+    if (b===btn && m) {
+      b.style.background = m.bg;
+      b.style.color = m.color;
+      b.style.outlineColor = m.border;
+    } else {
+      b.style.background = '';
+      b.style.color = '';
+      b.style.outlineColor = '';
+    }
+  });
+  openCard = null;
+  render();
+});
+
+// ═══════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════
+render();
+</script>
+
+</body>
+</html>
