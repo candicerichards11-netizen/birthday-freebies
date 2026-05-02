@@ -5,35 +5,33 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
 <meta name="apple-mobile-web-app-title" content="🎂 Freebies"/>
 <meta name="mobile-web-app-capable" content="yes"/>
-<meta name="theme-color" content="#0a0014"/>
+<meta name="theme-color" content="#FFF3DB"/>
 <title>🎂 Birthday Freebies – Western Cape</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --bg:       #0a0014;
-  --bg2:      #110022;
-  --surface:  rgba(255,255,255,0.04);
-  --border:   rgba(255,255,255,0.08);
-  --text:     #f0eaff;
-  --muted:    rgba(240,234,255,0.45);
-  --pink:     #e040fb;
-  --purple:   #9c27b0;
-  --gold:     #ffd54f;
-  --green:    #69f0ae;
+  --bg:       #FFF8EE;
+  --bg2:      #FFF3DB;
+  --surface:  rgba(255,255,255,0.75);
+  --border:   rgba(180,155,120,0.18);
+  --text:     #2C1F0F;
+  --muted:    rgba(80,55,35,0.52);
+  --gold:     #C4963A;
+  --green:    #4A9B7F;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bot: env(safe-area-inset-bottom, 0px);
 
-/* category colours */
-–c-attr:   #fb923c;
-–c-food:   #c084fc;
-–c-wine:   #f87171;
-–c-cin:    #38bdf8;
-–c-bty:    #f472b6;
-–c-well:   #4ade80;
+/* Champagne & Sorbet category palette */
+–c-attr:   #6AADAD;  /* dusty teal   – attractions */
+–c-food:   #E07A85;  /* muted coral  – food        */
+–c-wine:   #A0677A;  /* rosé         – wine        */
+–c-cin:    #6B8FC4;  /* periwinkle   – cinema      */
+–c-bty:    #C47A9A;  /* blush        – beauty      */
+–c-well:   #5A9E80;  /* sage         – wellness    */
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,31 +48,24 @@ overflow-x: hidden;
 -webkit-font-smoothing: antialiased;
 }
 
-/* ── BG ORBS ── */
-body::before, body::after {
+/* ── SUBTLE WARM TEXTURE ── */
+body::before {
 content: ‘’;
 position: fixed;
-border-radius: 50%;
+inset: 0;
+background:
+radial-gradient(ellipse at 20% 10%, rgba(247,197,180,0.22) 0%, transparent 55%),
+radial-gradient(ellipse at 80% 90%, rgba(106,173,173,0.14) 0%, transparent 50%);
 pointer-events: none;
 z-index: 0;
-}
-body::before {
-width: 600px; height: 600px;
-background: radial-gradient(circle, rgba(156,39,176,.18) 0%, transparent 70%);
-top: -200px; left: -200px;
-}
-body::after {
-width: 500px; height: 500px;
-background: radial-gradient(circle, rgba(224,64,251,.12) 0%, transparent 70%);
-bottom: -150px; right: -150px;
 }
 
 /* ── HERO ── */
 .hero {
 position: relative; z-index: 1;
 padding: calc(var(–safe-top) + 24px) 18px 22px;
-background: linear-gradient(160deg, #1a0030 0%, #0d001f 60%, #08001a 100%);
-border-bottom: 1px solid rgba(156,39,176,.25);
+background: linear-gradient(160deg, #FFF3DB 0%, #FFE8C8 55%, #FDDCB5 100%);
+border-bottom: 1px solid rgba(180,140,90,.2);
 }
 
 .hero-top {
@@ -96,14 +87,14 @@ font-family: ‘Playfair Display’, serif;
 font-size: clamp(20px, 5vw, 30px);
 font-weight: 900;
 line-height: 1.1;
-background: linear-gradient(120deg, #f48fb1 0%, #ce93d8 40%, #80deea 100%);
+background: linear-gradient(120deg, #8B5E2A 0%, #C4963A 40%, #A0677A 75%, #6AADAD 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
 }
 
 .subtitle {
-font-size: 11px; color: var(–muted); margin-top: 3px;
+font-size: 11px; color: var(–muted); margin-top: 3px; font-weight: 500;
 }
 
 /* NEW banner */
@@ -123,8 +114,8 @@ color: rgba(255,255,255,.65);
 display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px;
 }
 .stat-card {
-background: rgba(255,255,255,.05);
-border: 1px solid rgba(255,255,255,.09);
+background: rgba(255,255,255,0.65);
+border: 1px solid rgba(180,150,100,.22);
 border-radius: 14px;
 padding: 10px 16px;
 display: flex; align-items: center; gap: 10px;
@@ -140,27 +131,27 @@ font-size: 22px; font-weight: 700; line-height: 1;
 /* Progress */
 .progress-wrap { margin-top: 16px; }
 .progress-meta { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 11px; }
-.progress-meta .pct { color: #ce93d8; font-weight: 600; }
+.progress-meta .pct { color: #8B5E2A; font-weight: 700; }
 .progress-track {
 height: 8px;
-background: rgba(255,255,255,.07);
+background: rgba(180,150,100,.15);
 border-radius: 99px; overflow: hidden;
 }
 .progress-bar {
 height: 100%;
-background: linear-gradient(90deg, #7b1fa2, #e040fb, #f48fb1);
+background: linear-gradient(90deg, #C4963A, #E07A85, #6AADAD);
 border-radius: 99px;
 transition: width .6s cubic-bezier(.4,0,.2,1);
-box-shadow: 0 0 14px rgba(224,64,251,.5);
+box-shadow: 0 0 10px rgba(196,150,58,.35);
 }
 
 /* ── STICKY CONTROLS ── */
 .controls {
 position: sticky; top: 0; z-index: 100;
-background: rgba(10,0,20,.92);
+background: rgba(255,248,238,.93);
 backdrop-filter: blur(20px);
 -webkit-backdrop-filter: blur(20px);
-border-bottom: 1px solid rgba(156,39,176,.2);
+border-bottom: 1px solid rgba(180,150,100,.2);
 padding: 11px 16px;
 }
 
@@ -173,16 +164,16 @@ font-size: 14px; pointer-events: none;
 #searchInput {
 width: 100%;
 padding: 10px 14px 10px 36px;
-background: rgba(255,255,255,.07);
-border: 1px solid rgba(255,255,255,.1);
+background: rgba(255,255,255,0.8);
+border: 1px solid rgba(180,150,100,.3);
 border-radius: 10px;
 color: var(–text);
 font-size: 14px;
 font-family: ‘DM Sans’, sans-serif;
 outline: none;
 }
-#searchInput:focus { border-color: rgba(156,39,176,.6); }
-#searchInput::placeholder { color: var(–muted); }
+#searchInput:focus { border-color: rgba(196,150,58,.7); box-shadow: 0 0 0 3px rgba(196,150,58,.12); }
+#searchInput::placeholder { color: rgba(80,55,35,.4); }
 
 .filter-row, .cat-row {
 display: flex; gap: 7px; flex-wrap: nowrap;
@@ -198,17 +189,18 @@ border-radius: 99px;
 font-size: 12px; font-weight: 600;
 white-space: nowrap;
 cursor: pointer;
-border: none;
-background: rgba(255,255,255,.07);
-color: rgba(255,255,255,.5);
+border: 1px solid rgba(180,150,100,.25);
+background: rgba(255,255,255,0.6);
+color: rgba(60,40,15,.6);
 font-family: ‘DM Sans’, sans-serif;
 transition: all .18s;
 flex-shrink: 0;
 }
 .pill.active {
-background: linear-gradient(135deg, #7b1fa2, #c2185b);
+background: linear-gradient(135deg, #C4963A, #A0677A);
 color: #fff;
-box-shadow: 0 4px 14px rgba(123,31,162,.45);
+box-shadow: 0 4px 14px rgba(196,150,58,.35);
+border-color: transparent;
 }
 .cat-row { margin-top: 8px; }
 .cat-pill {
@@ -217,9 +209,9 @@ border-radius: 99px;
 font-size: 11px; font-weight: 600;
 white-space: nowrap;
 cursor: pointer;
-border: 1px solid rgba(255,255,255,.08);
-background: rgba(255,255,255,.04);
-color: rgba(255,255,255,.4);
+border: 1px solid rgba(180,150,100,.2);
+background: rgba(255,255,255,0.55);
+color: rgba(60,40,15,.55);
 font-family: ‘DM Sans’, sans-serif;
 transition: all .18s;
 flex-shrink: 0;
@@ -233,13 +225,13 @@ max-width: 900px; margin: 0 auto;
 padding: 16px 14px calc(80px + var(–safe-bot));
 }
 
-.count-line { font-size: 12px; color: rgba(255,255,255,.25); margin-bottom: 14px; }
+.count-line { font-size: 12px; color: rgba(80,55,35,.4); margin-bottom: 14px; }
 
 /* Section header */
 .section-head {
 display: flex; align-items: center; gap: 8px;
 margin-bottom: 12px; padding-bottom: 10px;
-border-bottom: 1px solid rgba(255,255,255,.08);
+border-bottom: 1px solid rgba(180,150,100,.2);
 }
 .section-head h2 {
 font-family: ‘Playfair Display’, serif;
@@ -262,30 +254,31 @@ gap: 12px;
 border-radius: 16px;
 padding: 14px 15px;
 cursor: pointer;
-border: 1px solid rgba(255,255,255,.07);
-background: var(–surface);
+border: 1px solid rgba(180,150,100,.18);
+background: rgba(255,255,255,0.78);
 position: relative; overflow: hidden;
 transition: transform .2s, box-shadow .2s;
 animation: fadeUp .3s ease both;
+box-shadow: 0 2px 12px rgba(140,100,50,.07);
 }
-.card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,.5); }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(140,100,50,.18); }
 .card:active { transform: scale(0.98); }
 
 .card.claimed {
-background: rgba(105,240,174,.06);
-border-color: rgba(105,240,174,.22);
+background: rgba(74,155,127,.07);
+border-color: rgba(74,155,127,.3);
 }
 .card.is-new {
-border-color: rgba(255,213,79,.35);
-box-shadow: 0 0 20px rgba(255,213,79,.08);
+border-color: rgba(196,150,58,.4);
+box-shadow: 0 2px 16px rgba(196,150,58,.1);
 }
 
 .card-stripe {
 position: absolute; top: 0; left: 0; right: 0; height: 3px;
 border-radius: 16px 16px 0 0;
 }
-.card.claimed .card-stripe { background: linear-gradient(90deg, #69f0ae, #00e5ff); }
-.card.is-new:not(.claimed) .card-stripe { background: linear-gradient(90deg, #ffd54f, #fb923c); }
+.card.claimed .card-stripe { background: linear-gradient(90deg, #4A9B7F, #6AADAD); }
+.card.is-new:not(.claimed) .card-stripe { background: linear-gradient(90deg, #C4963A, #E07A85); }
 
 .card-top {
 display: flex; justify-content: space-between; align-items: flex-start;
@@ -299,15 +292,15 @@ flex-shrink: 0;
 .badges { display: flex; gap: 5px; align-items: center; flex-shrink: 0; }
 .new-badge {
 font-size: 9px; font-weight: 700;
-background: rgba(255,213,79,.18); color: var(–gold);
+background: rgba(196,150,58,.12); color: #8B5E2A;
 padding: 2px 7px; border-radius: 99px;
-border: 1px solid rgba(255,213,79,.35);
+border: 1px solid rgba(196,150,58,.35);
 }
 .must-badge {
 font-size: 9px; font-weight: 700;
-background: rgba(255,213,79,.14); color: var(–gold);
+background: rgba(196,150,58,.1); color: #8B5E2A;
 padding: 2px 7px; border-radius: 99px;
-border: 1px solid rgba(255,213,79,.25);
+border: 1px solid rgba(196,150,58,.28);
 }
 
 .card-name {
@@ -318,9 +311,9 @@ color: var(–text);
 transition: color .2s;
 }
 .card.claimed .card-name {
-color: var(–green);
+color: #4A9B7F;
 text-decoration: line-through;
-text-decoration-color: rgba(105,240,174,.5);
+text-decoration-color: rgba(74,155,127,.4);
 }
 .card-freebie {
 font-size: 13px; font-weight: 500; margin-bottom: 5px;
@@ -331,18 +324,18 @@ font-size: 11px; color: var(–muted); margin-bottom: 0;
 
 /* Expanded details */
 .card-details {
-border-top: 1px solid rgba(255,255,255,.07);
+border-top: 1px solid rgba(180,150,100,.15);
 margin-top: 10px; padding-top: 10px; margin-bottom: 10px;
 font-size: 12px; line-height: 1.8;
-color: rgba(255,255,255,.62);
+color: rgba(50,35,15,.65);
 display: none;
 }
-.card-details strong { color: rgba(255,255,255,.85); font-weight: 600; }
+.card-details strong { color: rgba(50,35,15,.9); font-weight: 600; }
 .card.open .card-details { display: block; }
 .card.open .card-validity { margin-bottom: 0; }
 
 .toggle-hint {
-font-size: 10px; color: rgba(255,255,255,.2);
+font-size: 10px; color: rgba(80,55,35,.35);
 text-align: center; margin: 8px 0 10px;
 }
 
@@ -362,24 +355,30 @@ transition: all .18s;
 .action-btn:active { transform: scale(0.96); }
 
 .signup-btn {
-background: rgba(255,255,255,.06);
-color: rgba(255,255,255,.4);
-outline: 1px solid rgba(255,255,255,.1);
+background: rgba(255,213,79,.2);
+color: #ffd54f;
+outline: 2px solid rgba(255,213,79,.55);
+font-weight: 700;
+letter-spacing: 0.2px;
 }
 .signup-btn.active {
-background: rgba(255,213,79,.14);
-color: var(–gold);
-outline: 1px solid rgba(255,213,79,.35);
+background: rgba(255,213,79,.38);
+color: #fff8e1;
+outline: 2px solid #ffd54f;
+box-shadow: 0 0 14px rgba(255,213,79,.4);
 }
 .claim-btn {
-background: rgba(255,255,255,.06);
-color: rgba(255,255,255,.4);
-outline: 1px solid rgba(255,255,255,.1);
+background: rgba(105,240,174,.2);
+color: #69f0ae;
+outline: 2px solid rgba(105,240,174,.55);
+font-weight: 700;
+letter-spacing: 0.2px;
 }
 .claim-btn.active {
-background: rgba(105,240,174,.14);
-color: var(–green);
-outline: 1px solid rgba(105,240,174,.35);
+background: rgba(105,240,174,.38);
+color: #e8fff5;
+outline: 2px solid #69f0ae;
+box-shadow: 0 0 14px rgba(105,240,174,.4);
 }
 
 /* Empty state */
@@ -387,40 +386,21 @@ outline: 1px solid rgba(105,240,174,.35);
 text-align: center; padding: 70px 20px;
 }
 .empty-icon { font-size: 44px; margin-bottom: 12px; }
-.empty p { color: var(–muted); font-size: 15px; }
+.empty p { color: rgba(80,55,35,.5); font-size: 15px; }
 
 /* Footer tip */
 .footer-tip {
 position: fixed; bottom: 0; left: 0; right: 0;
 padding: calc(10px) 16px calc(10px + var(–safe-bot));
-background: rgba(10,0,20,.95);
+background: rgba(255,248,238,.96);
 backdrop-filter: blur(20px);
 -webkit-backdrop-filter: blur(20px);
-border-top: 1px solid rgba(156,39,176,.2);
+border-top: 1px solid rgba(180,150,100,.2);
 text-align: center;
-font-size: 11px; color: rgba(255,255,255,.38);
+font-size: 11px; color: rgba(80,55,35,.55);
 z-index: 50;
 }
-.footer-tip strong { color: var(–text); }
-
-/* Install banner */
-.install-banner {
-background: linear-gradient(135deg, rgba(123,31,162,.25), rgba(194,24,91,.15));
-border: 1px solid rgba(224,64,251,.3);
-border-radius: 14px;
-padding: 13px 15px;
-margin-bottom: 18px;
-display: flex; align-items: flex-start; gap: 12px;
-}
-.install-icon { font-size: 24px; flex-shrink: 0; margin-top: 1px; }
-.install-text { flex: 1; }
-.install-text strong { font-size: 13px; color: #ce93d8; display: block; margin-bottom: 3px; }
-.install-text p { font-size: 12px; color: var(–muted); line-height: 1.6; }
-.install-close {
-background: none; border: none; color: var(–muted);
-font-size: 18px; cursor: pointer; padding: 0 4px; line-height: 1;
-flex-shrink: 0; align-self: flex-start;
-}
+.footer-tip strong { color: #2C1F0F; }
 
 /* Confetti */
 .confetti-piece {
@@ -443,7 +423,7 @@ to   { opacity: 1; transform: translateY(0); }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; height: 5px; }
-::-webkit-scrollbar-thumb { background: rgba(156,39,176,.3); border-radius: 99px; }
+::-webkit-scrollbar-thumb { background: rgba(180,150,100,.4); border-radius: 99px; }
 </style>
 
 </head>
@@ -460,36 +440,32 @@ to   { opacity: 1; transform: translateY(0); }
     </div>
   </div>
 
-  <div class="new-banner">
-    🆕 <strong>Just added:</strong> Total Ninja · Sky-Hi Ride · Robben Island · UpCycles (updated)
-  </div>
-
   <div class="stats">
     <div class="stat-card">
       <div class="stat-icon">🎁</div>
       <div>
-        <div class="stat-val" id="statTotal" style="color:#ce93d8">0</div>
+        <div class="stat-val" id="statTotal" style="color:#8B5E2A">0</div>
         <div class="stat-lbl">Total</div>
       </div>
     </div>
     <div class="stat-card">
       <div class="stat-icon">✅</div>
       <div>
-        <div class="stat-val" id="statClaimed" style="color:#69f0ae">0</div>
+        <div class="stat-val" id="statClaimed" style="color:#4A9B7F">0</div>
         <div class="stat-lbl">Claimed</div>
       </div>
     </div>
     <div class="stat-card">
       <div class="stat-icon">📱</div>
       <div>
-        <div class="stat-val" id="statSigned" style="color:#ffd54f">0</div>
+        <div class="stat-val" id="statSigned" style="color:#C4963A">0</div>
         <div class="stat-lbl">Signed Up</div>
       </div>
     </div>
     <div class="stat-card">
       <div class="stat-icon">⏳</div>
       <div>
-        <div class="stat-val" id="statLeft" style="color:#f48fb1">0</div>
+        <div class="stat-val" id="statLeft" style="color:#A0677A">0</div>
         <div class="stat-lbl">Left</div>
       </div>
     </div>
@@ -538,18 +514,6 @@ to   { opacity: 1; transform: translateY(0); }
 
 <main id="main">
   <div class="count-line" id="countLine"></div>
-  <div id="installBanner" class="install-banner">
-    <div class="install-icon">📲</div>
-    <div class="install-text">
-      <strong>Save to Home Screen as an App!</strong>
-      <p>
-        <b>iPhone/iPad:</b> Tap the <b>Share ⬆️</b> button → <b>Add to Home Screen</b><br/>
-        <b>Android:</b> Tap the <b>⋮ menu</b> → <b>Add to Home Screen</b><br/>
-        Your progress saves automatically — no internet needed after install!
-      </p>
-    </div>
-    <button class="install-close" onclick="dismissInstall()">✕</button>
-  </div>
   <div id="cardArea"></div>
 </main>
 
@@ -558,16 +522,16 @@ to   { opacity: 1; transform: translateY(0); }
 </div>
 
 <script>
-// ═══════════════════════════════════════════
+// ==========================================
 //  DATA
-// ═══════════════════════════════════════════
+// ==========================================
 const CAT_META = {
-  "🏔️ Attractions":    { color:"#fb923c", bg:"rgba(251,146,60,0.14)",  border:"rgba(251,146,60,0.32)"  },
-  "🍽️ Food & Drink":  { color:"#c084fc", bg:"rgba(192,132,252,0.14)", border:"rgba(192,132,252,0.32)" },
-  "🍷 Wine Farms":     { color:"#f87171", bg:"rgba(248,113,113,0.14)", border:"rgba(248,113,113,0.32)" },
-  "🎬 Cinema":         { color:"#38bdf8", bg:"rgba(56,189,248,0.14)",  border:"rgba(56,189,248,0.32)"  },
-  "💄 Beauty & Retail":{ color:"#f472b6", bg:"rgba(244,114,182,0.14)", border:"rgba(244,114,182,0.32)" },
-  "💆 Wellness":       { color:"#4ade80", bg:"rgba(74,222,128,0.14)",  border:"rgba(74,222,128,0.32)"  },
+  "🏔️ Attractions":    { color:"#3D9494", bg:"rgba(106,173,173,0.12)", border:"rgba(106,173,173,0.32)" },
+  "🍽️ Food & Drink":  { color:"#C05A65", bg:"rgba(224,122,133,0.12)", border:"rgba(224,122,133,0.32)" },
+  "🍷 Wine Farms":     { color:"#8A4A5E", bg:"rgba(160,103,122,0.12)", border:"rgba(160,103,122,0.32)" },
+  "🎬 Cinema":         { color:"#3D5F9E", bg:"rgba(107,143,196,0.12)", border:"rgba(107,143,196,0.32)" },
+  "💄 Beauty & Retail":{ color:"#A04870", bg:"rgba(196,122,154,0.12)", border:"rgba(196,122,154,0.32)" },
+  "💆 Wellness":       { color:"#2D7A5F", bg:"rgba(90,158,128,0.12)", border:"rgba(90,158,128,0.32)" },
 };
 
 const NEW_IDS = ["robben","total_ninja","skyhi","upcycles"];
@@ -641,9 +605,9 @@ const FREEBIES = [
 
 const CATS = ["🏔️ Attractions","🍽️ Food & Drink","🍷 Wine Farms","🎬 Cinema","💄 Beauty & Retail","💆 Wellness"];
 
-// ═══════════════════════════════════════════
+// ==========================================
 //  STATE
-// ═══════════════════════════════════════════
+// ==========================================
 let claimed  = JSON.parse(localStorage.getItem('bday_claimed')  || '{}');
 let signedUp = JSON.parse(localStorage.getItem('bday_signed')   || '{}');
 let filter   = 'all';
@@ -656,9 +620,9 @@ function save() {
   localStorage.setItem('bday_signed',  JSON.stringify(signedUp));
 }
 
-// ═══════════════════════════════════════════
+// ==========================================
 //  RENDER
-// ═══════════════════════════════════════════
+// ==========================================
 function getVisible() {
   return FREEBIES.filter(f => {
     if (activeCat !== 'all' && f.cat !== activeCat) return false;
@@ -763,9 +727,9 @@ function render() {
   }
 }
 
-// ═══════════════════════════════════════════
+// ==========================================
 //  ACTIONS
-// ═══════════════════════════════════════════
+// ==========================================
 function toggleOpen(id, e) {
   openCard = openCard === id ? null : id;
   render();
@@ -789,10 +753,10 @@ function toggleSignUp(id) {
   render();
 }
 
-// ═══════════════════════════════════════════
+// ==========================================
 //  CONFETTI
-// ═══════════════════════════════════════════
-const CONF_COLORS = ['#e040fb','#ce93d8','#f48fb1','#69f0ae','#ffd54f','#fb923c','#38bdf8','#7c4dff'];
+// ==========================================
+const CONF_COLORS = ['#E07A85','#6AADAD','#C4963A','#C47A9A','#6B8FC4','#5A9E80','#A0677A','#D4A84B'];
 
 function confetti() {
   for (let i = 0; i < 28; i++) {
@@ -813,21 +777,11 @@ function confetti() {
   }
 }
 
-// ═══════════════════════════════════════════
-//  INSTALL BANNER
-// ═══════════════════════════════════════════
-function dismissInstall() {
-  document.getElementById('installBanner').style.display = 'none';
-  localStorage.setItem('installDismissed','1');
-}
 
-if (localStorage.getItem('installDismissed')) {
-  document.getElementById('installBanner').style.display = 'none';
-}
 
-// ═══════════════════════════════════════════
+// ==========================================
 //  EVENT LISTENERS
-// ═══════════════════════════════════════════
+// ==========================================
 document.getElementById('searchInput').addEventListener('input', e => {
   search = e.target.value;
   openCard = null;
@@ -864,9 +818,9 @@ document.getElementById('catRow').addEventListener('click', e => {
   render();
 });
 
-// ═══════════════════════════════════════════
+// ==========================================
 //  INIT
-// ═══════════════════════════════════════════
+// ==========================================
 render();
 </script>
 
