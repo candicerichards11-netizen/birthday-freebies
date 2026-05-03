@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<!-- ================================================
+     Birthday Freebies Tracker – Western Cape, SA
+     Conceived, designed & built by Candice Klein
+     © 2026 Candice Klein. All rights reserved.
+     Unauthorised copying or redistribution
+     of this work is strictly prohibited.
+================================================ -->
+
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -9,6 +17,9 @@
 <meta name="apple-mobile-web-app-title" content="🎂 Freebies"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#FFF3DB"/>
+<meta name="author" content="Candice Klein"/>
+<meta name="copyright" content="© 2026 Candice Klein. All rights reserved."/>
+<meta name="designer" content="Candice Klein"/>
 <title>🎂 Birthday Freebies – Western Cape</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -392,6 +403,7 @@ text-align: center; padding: 70px 20px;
 .footer-tip {
 position: fixed; bottom: 0; left: 0; right: 0;
 padding: calc(10px) 16px calc(10px + var(–safe-bot));
+margin-top: 16px;
 background: rgba(255,248,238,.96);
 backdrop-filter: blur(20px);
 -webkit-backdrop-filter: blur(20px);
@@ -401,6 +413,20 @@ font-size: 11px; color: rgba(80,55,35,.55);
 z-index: 50;
 }
 .footer-tip strong { color: #2C1F0F; }
+
+/* Copyright bar */
+.copyright-bar {
+text-align: center;
+font-size: 10px;
+color: rgba(80,55,35,.38);
+padding: 6px 16px 0;
+letter-spacing: 0.3px;
+position: fixed;
+bottom: calc(38px + var(–safe-bot));
+left: 0; right: 0;
+z-index: 49;
+pointer-events: none;
+}
 
 /* Confetti */
 .confetti-piece {
@@ -517,6 +543,7 @@ to   { opacity: 1; transform: translateY(0); }
   <div id="cardArea"></div>
 </main>
 
+<div class="copyright-bar">© 2026 Candice Klein &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Designed &amp; built by Candice Klein</div>
 <div class="footer-tip">
   💡 Always carry your <strong>SA ID</strong> · Sign up for apps <strong>2–4 weeks</strong> before your birthday · Progress saves automatically
 </div>
