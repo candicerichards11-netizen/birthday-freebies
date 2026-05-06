@@ -417,15 +417,13 @@ z-index: 50;
 /* Copyright bar */
 .copyright-bar {
 text-align: center;
-font-size: 10px;
-color: rgba(80,55,35,.38);
-padding: 6px 16px 0;
-letter-spacing: 0.3px;
-position: fixed;
-bottom: calc(38px + var(–safe-bot));
-left: 0; right: 0;
-z-index: 49;
-pointer-events: none;
+font-size: 12px;
+font-weight: 500;
+color: rgba(80,55,35,.6);
+background: rgba(255,243,219,0.9);
+border-top: 1px solid rgba(180,150,100,.2);
+padding: 12px 20px;
+letter-spacing: 0.2px;
 }
 
 /* Confetti */
@@ -541,9 +539,11 @@ to   { opacity: 1; transform: translateY(0); }
 <main id="main">
   <div class="count-line" id="countLine"></div>
   <div id="cardArea"></div>
+  <div class="copyright-bar">
+    🎂 &nbsp;© 2026 <strong>Candice Klein</strong> &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Designed &amp; built by Candice Klein
+  </div>
 </main>
 
-<div class="copyright-bar">© 2026 Candice Klein &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Designed &amp; built by Candice Klein</div>
 <div class="footer-tip">
   💡 Always carry your <strong>SA ID</strong> · Sign up for apps <strong>2–4 weeks</strong> before your birthday · Progress saves automatically
 </div>
