@@ -1,0 +1,10 @@
+{
+  "name": "birthday-freebies-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Birthday Freebies Tracker for the Western Cape",
+  "dependencies": {
+    "@netlify/blobs": "^10.7.9"
+  }
+}

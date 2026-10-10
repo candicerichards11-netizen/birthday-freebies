@@ -448,6 +448,140 @@ to   { opacity: 1; transform: translateY(0); }
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-thumb { background: rgba(180,150,100,.4); border-radius: 99px; }
+
+/* Sharing, contact, ads and owner controls */
+.site-actions {
+  position: relative; z-index: 1; max-width: 900px; margin: 14px auto 0;
+  padding: 0 14px; display: flex; flex-wrap: wrap; gap: 8px;
+}
+.site-action, .offer-link {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 9px 13px; border-radius: 11px; border: 1px solid rgba(180,150,100,.25);
+  background: rgba(255,255,255,.76); color: #65451f; text-decoration: none;
+  font: 600 12px 'DM Sans', sans-serif; cursor: pointer;
+}
+.site-action:hover, .offer-link:hover { background: #fff; transform: translateY(-1px); }
+.ad-wrap {
+  position: relative; z-index: 1; max-width: 900px; min-height: 0;
+  margin: 12px auto 0; padding: 0 14px; text-align: center;
+}
+.ad-wrap:not([hidden]) { min-height: 100px; }
+.ad-wrap ins { display: block; min-height: 90px; }
+.affiliate-note, .disclaimer {
+  font-size: 11px; line-height: 1.6; color: rgba(80,55,35,.62);
+}
+.contact-section {
+  margin: 26px 0 16px; padding: 18px; border: 1px solid rgba(180,150,100,.2);
+  border-radius: 16px; background: rgba(255,255,255,.66);
+}
+.contact-section h2 { font: 700 20px 'Playfair Display', serif; margin-bottom: 8px; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+.contact-links a { color: #735125; font-weight: 600; text-decoration: none; }
+.contact-links a:hover { text-decoration: underline; }
+.contact-empty { color: rgba(80,55,35,.55); font-size: 12px; }
+.business-details { margin-top: 8px; color: #6c5967; font-size: 12px; font-weight: 600; }
+.feedback-form { margin-top: 18px; padding-top: 15px; border-top: 1px solid rgba(121,91,107,.16); }
+.feedback-form h3 { font: 700 15px 'Playfair Display', serif; margin-bottom: 10px; color: #493748; }
+.feedback-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; margin-bottom: 10px; }
+.feedback-fields label { display: flex; flex-direction: column; gap: 5px; font-size: 11px; color: #715e6b; font-weight: 600; }
+.feedback-fields input, .feedback-fields select, .feedback-fields textarea {
+  width: 100%; border: 1px solid rgba(121,91,107,.23); border-radius: 9px; padding: 9px;
+  font: 12px 'DM Sans', sans-serif; color: #392d38; background: #fffdfb;
+}
+.feedback-fields textarea { min-height: 72px; resize: vertical; }
+.feedback-wide { grid-column: 1 / -1; }
+.feedback-status { margin-top: 7px; font-size: 11px; color: #806f7b; }
+.disclaimer { margin: 10px 0 15px; }
+.copyright-bar { line-height: 1.6; }
+.offer-link { margin-top: 8px; }
+
+.owner-modal {
+  display: none; position: fixed; inset: 0; z-index: 10000; overflow-y: auto;
+  align-items: flex-start; justify-content: center; padding: 5vh 14px;
+  background: rgba(25,18,10,.58); backdrop-filter: blur(5px);
+}
+.owner-modal.open { display: flex; }
+.owner-card {
+  width: min(760px, 100%); max-height: 90vh; overflow-y: auto;
+  background: #fffaf2; border: 1px solid rgba(180,150,100,.25);
+  border-radius: 18px; padding: 20px; box-shadow: 0 22px 80px rgba(0,0,0,.25);
+}
+.owner-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.owner-head h2 { font: 700 22px 'Playfair Display', serif; }
+.owner-close { border: 0; background: transparent; font-size: 26px; cursor: pointer; color: #65451f; }
+.owner-tabs { display: flex; flex-wrap: wrap; gap: 7px; margin: 12px 0 18px; }
+.owner-tab {
+  border: 1px solid rgba(180,150,100,.3); background: #fff; padding: 8px 11px;
+  border-radius: 10px; color: #65451f; font: 600 12px 'DM Sans', sans-serif; cursor: pointer;
+}
+.owner-tab.active { background: #8B5E2A; color: #fff; }
+.owner-pane { display: none; }
+.owner-pane.active { display: block; }
+.owner-form { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 11px; }
+.owner-form label { display: flex; flex-direction: column; gap: 5px; font-size: 12px; font-weight: 600; color: #65451f; }
+.owner-form label.full { grid-column: 1 / -1; }
+.owner-form input, .owner-form select, .owner-form textarea {
+  width: 100%; border: 1px solid rgba(180,150,100,.35); border-radius: 9px;
+  padding: 10px; background: #fff; color: #2C1F0F; font: 13px 'DM Sans', sans-serif;
+}
+.owner-form textarea { min-height: 78px; resize: vertical; }
+.owner-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
+.owner-primary, .owner-secondary, .owner-danger {
+  border: 0; border-radius: 9px; padding: 10px 13px; font: 600 12px 'DM Sans', sans-serif; cursor: pointer;
+}
+.owner-primary { color: white; background: #8B5E2A; }
+.owner-secondary { color: #65451f; background: #f0e3cf; }
+.owner-danger { color: #9c3131; background: #fae2df; }
+.owner-status { min-height: 18px; margin: 8px 0; font-size: 12px; color: #65451f; }
+.owner-list { display: grid; gap: 8px; margin-top: 18px; }
+.owner-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px; background: #fff; border: 1px solid rgba(180,150,100,.2); border-radius: 10px; }
+.owner-row strong { display: block; font-size: 13px; }
+.owner-row small { color: rgba(80,55,35,.6); }
+.owner-row-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.owner-hint { color: rgba(80,55,35,.66); font-size: 12px; line-height: 1.6; margin: 8px 0 14px; }
+.owner-trigger { border: 0; background: transparent; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; }
+
+/* Refined birthday palette: warm cream, dusty rose, sage and lilac */
+:root {
+  --bg: #fff8f5;
+  --bg2: #fff0ec;
+  --surface: #fffdfb;
+  --border: rgba(121, 91, 107, .18);
+  --text: #392d38;
+  --muted: #806f7b;
+  --gold: #b88752;
+  --green: #568a72;
+  --rose: #cf8295;
+  --lilac: #9180ad;
+  --teal: #588a88;
+}
+body { background: var(--bg); color: var(--text); }
+.hero { background: linear-gradient(145deg, #fff2e8 0%, #f8e6eb 52%, #e8e8f1 100%); }
+.controls, .footer-tip { background: rgba(255,248,245,.96); }
+.stat-card, .card, .contact-section { border-color: rgba(121,91,107,.18); }
+.stat-card { background: rgba(255,255,255,.78); }
+.pill.active { background: linear-gradient(135deg, #bd8292, #81779f); }
+.signup-btn { background: #f8e5e9; color: #845568; outline: 1px solid #e8c5ce; }
+.signup-btn.active { background: #e8c5ce; color: #503443; outline-color: #ce8b9a; box-shadow: 0 0 12px rgba(206,139,154,.25); }
+.claim-btn { background: #e5f0e9; color: #456f5b; outline: 1px solid #b7d3c2; }
+.claim-btn.active { background: #c3dfce; color: #315640; outline-color: #7ca98d; box-shadow: 0 0 12px rgba(86,138,114,.2); }
+.claim-btn, .signup-btn { font-weight: 700; }
+.action-btn:focus-visible, .site-action:focus-visible, .owner-primary:focus-visible { outline: 3px solid #8d7aa9; outline-offset: 2px; }
+.copyright-bar { color: #6d5866; background: #f7ebed; }
+.footer-tip { color: #71616d; }
+.owner-primary { background: #8f7187; }
+.owner-tab.active { background: #8f7187; }
+
+@media (max-width: 560px) {
+  .site-actions { gap: 6px; }
+  .site-action { flex: 1 1 calc(50% - 6px); }
+  .owner-card { padding: 16px; }
+  .owner-form { grid-template-columns: 1fr; }
+  .owner-form label.full { grid-column: auto; }
+  .owner-row { align-items: flex-start; }
+  .feedback-fields { grid-template-columns: 1fr; }
+  .feedback-wide { grid-column: auto; }
+}
 </style>
 
 </head>
@@ -460,7 +594,7 @@ to   { opacity: 1; transform: translateY(0); }
     <div class="hero-icon">🎂</div>
     <div>
       <h1>Birthday Freebies Tracker</h1>
-      <div class="subtitle">Western Cape, South Africa · <span id="totalCount">0</span> freebies · Updated May 2026</div>
+      <div class="subtitle">Western Cape, South Africa · <span id="totalCount">0</span> freebies · <span id="updatedLabel">Updated May 2026</span></div>
     </div>
   </div>
 
@@ -506,6 +640,14 @@ to   { opacity: 1; transform: translateY(0); }
   </div>
 </div>
 
+<div class="ad-wrap" id="adWrap" hidden aria-label="Advertisement"></div>
+
+<div class="site-actions" aria-label="Birthday Freebies actions">
+  <button class="site-action" type="button" onclick="focusFeedbackForm()">💬 Suggest / report a freebie</button>
+  <button class="site-action" type="button" onclick="shareSite()">📲 Share with friends</button>
+  <a class="site-action" href="/birthday-planner.html">🎂 Birthday planner</a>
+</div>
+
 <!-- CONTROLS -->
 
 <div class="controls">
@@ -539,13 +681,110 @@ to   { opacity: 1; transform: translateY(0); }
 <main id="main">
   <div class="count-line" id="countLine"></div>
   <div id="cardArea"></div>
+  <section class="contact-section" id="contactSection" aria-label="Contact and social links">
+    <h2>About &amp; Contact</h2>
+    <p class="contact-empty" id="contactIntro">Birthday Freebies Tracker for the Western Cape. Have a correction or a freebie to share? Get in touch.</p>
+    <p class="business-details" id="businessDetails"></p>
+    <div class="contact-links" id="contactLinks"></div>
+    <form id="freebieFeedbackForm" class="feedback-form">
+      <h3>Know a freebie we should add—or one that has ended?</h3>
+      <div class="feedback-fields">
+        <label>What’s the update?
+          <select id="feedbackType" required>
+            <option value="New freebie">Suggest a new freebie</option>
+            <option value="No longer available">Report a freebie that’s no longer available</option>
+            <option value="Correction">Send a correction or updated details</option>
+          </select>
+        </label>
+        <label>Business or freebie name<input id="feedbackName" maxlength="120" required placeholder="Venue or offer name" /></label>
+        <label class="feedback-wide">Details<textarea id="feedbackDetails" maxlength="1200" required placeholder="What should we add or change?"></textarea></label>
+        <label class="feedback-wide">Source link (optional)<input id="feedbackUrl" type="url" placeholder="https://…" /></label>
+      </div>
+      <button class="site-action" type="submit">Send update privately</button>
+      <p class="feedback-status" id="feedbackStatus" role="status">Your message opens in WhatsApp or your email app; it is not stored on this site.</p>
+    </form>
+  </section>
+  <p class="affiliate-note" id="affiliateNote">Some links may be affiliate or sponsored links. Any paid placement will be clearly labelled and does not guarantee an offer.</p>
+  <p class="disclaimer">Freebies are listed for information only and are not guaranteed. Offers, eligibility, terms and availability can change without notice. Always check with the business and call ahead before travelling.</p>
   <div class="copyright-bar">
     🎂 &nbsp;© 2026 <strong>Candice Klein</strong> &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Designed &amp; built by Candice Klein
   </div>
 </main>
 
 <div class="footer-tip">
-  💡 Always carry your <strong>SA ID</strong> · Sign up for apps <strong>2–4 weeks</strong> before your birthday · Progress saves automatically
+  💡 Always carry your <strong>SA ID</strong> · Sign up for apps <strong>2–4 weeks</strong> before your birthday · Progress saves automatically · <button class="owner-trigger" type="button" onclick="openOwnerPanel()">Owner Panel</button>
+</div>
+
+<div class="owner-modal" id="ownerModal" role="dialog" aria-modal="true" aria-labelledby="ownerTitle">
+  <div class="owner-card">
+    <div class="owner-head">
+      <h2 id="ownerTitle">Owner Panel</h2>
+      <button class="owner-close" type="button" aria-label="Close" onclick="closeOwnerPanel()">×</button>
+    </div>
+    <div id="ownerLogin">
+      <p class="owner-hint">Sign in with the password configured privately in your Netlify site settings. It is never stored in this page.</p>
+      <form id="ownerLoginForm" class="owner-form">
+        <label class="full">Owner password<input id="ownerPassword" type="password" autocomplete="current-password" required /></label>
+        <div class="owner-actions full"><button class="owner-primary" type="submit">Sign in</button></div>
+      </form>
+      <div class="owner-status" id="ownerLoginStatus" role="status"></div>
+    </div>
+    <div id="ownerDashboard" hidden>
+      <p class="owner-hint">Changes here are saved to the shared site store and then appear to all visitors. Contact details and social links are optional; add them when you’re ready.</p>
+      <div class="owner-tabs" role="tablist">
+        <button class="owner-tab active" type="button" data-pane="freebiesPane">Freebies</button>
+        <button class="owner-tab" type="button" data-pane="contactPane">Contact &amp; social</button>
+        <button class="owner-tab" type="button" data-pane="incomePane">Ads &amp; links</button>
+      </div>
+      <section class="owner-pane active" id="freebiesPane">
+        <form id="freebieForm" class="owner-form">
+          <input id="freebieId" type="hidden" />
+          <label>Category<select id="freebieCategory" required></select></label>
+          <label>Business / venue<input id="freebieName" maxlength="100" required /></label>
+          <label>What’s free<input id="freebieOffer" maxlength="160" required /></label>
+          <label>When it’s valid<input id="freebieValidity" maxlength="120" required /></label>
+          <label class="full">How to claim<textarea id="freebieHow" maxlength="1200" required></textarea></label>
+          <label class="full">Optional partner / affiliate URL<input id="freebieUrl" type="url" placeholder="https://…" /></label>
+          <label>Priority<select id="freebiePriority"><option value="medium">Standard</option><option value="high">Must-do</option></select></label>
+          <label><span> </span><span><input id="freebieTakeaway" type="checkbox" /> Takeaway offer</span></label>
+          <label class="full"><span> </span><span><input id="freebieNew" type="checkbox" /> Mark as new</span></label>
+          <div class="owner-actions full">
+            <button class="owner-primary" type="submit">Save freebie</button>
+            <button class="owner-secondary" type="button" onclick="resetFreebieForm()">Clear form</button>
+          </div>
+        </form>
+        <div class="owner-status" id="freebieStatus" role="status"></div>
+        <div class="owner-list" id="ownerFreebieList"></div>
+      </section>
+      <section class="owner-pane" id="contactPane">
+        <form id="contactForm" class="owner-form">
+          <label>Phone number<input id="contactPhone" type="tel" maxlength="40" placeholder="+27…" /></label>
+          <label>Email address<input id="contactEmail" type="email" maxlength="160" placeholder="you@example.com" /></label>
+          <label>WhatsApp number<input id="contactWhatsApp" type="tel" maxlength="40" placeholder="+27…" /></label>
+          <label>Business / page name<input id="businessName" maxlength="100" placeholder="Public name" /></label>
+          <label>Public location / service area<input id="businessLocation" maxlength="120" placeholder="e.g. Cape Town, Western Cape" /></label>
+          <label>Instagram URL<input id="socialInstagram" type="url" placeholder="https://instagram.com/…" /></label>
+          <label>Facebook URL<input id="socialFacebook" type="url" placeholder="https://facebook.com/…" /></label>
+          <label>TikTok URL<input id="socialTikTok" type="url" placeholder="https://tiktok.com/@…" /></label>
+          <label class="full">Other social / website link label<input id="socialOtherLabel" maxlength="60" placeholder="Website, YouTube, etc." /></label>
+          <label class="full">Other social / website URL<input id="socialOtherUrl" type="url" placeholder="https://…" /></label>
+          <div class="owner-actions full"><button class="owner-primary" type="submit">Save contact details</button></div>
+        </form>
+        <div class="owner-status" id="contactStatus" role="status"></div>
+      </section>
+      <section class="owner-pane" id="incomePane">
+        <p class="owner-hint">AdSense fields stay empty until you have an approved publisher ID and ad unit ID. Optional partner links can be added to individual freebies; disclose paid links clearly.</p>
+        <form id="incomeForm" class="owner-form">
+          <label>AdSense publisher ID<input id="adsPublisher" maxlength="30" placeholder="ca-pub-…" /></label>
+          <label>Ad unit slot ID<input id="adsSlot" maxlength="30" placeholder="Numeric slot ID" /></label>
+          <label class="full"><span> </span><span><input id="adsEnabled" type="checkbox" /> Display the ad banner when both IDs are set</span></label>
+          <div class="owner-actions full"><button class="owner-primary" type="submit">Save ad settings</button></div>
+        </form>
+        <div class="owner-status" id="incomeStatus" role="status"></div>
+      </section>
+      <div class="owner-actions"><button class="owner-secondary" type="button" onclick="ownerLogout()">Sign out</button></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -553,17 +792,17 @@ to   { opacity: 1; transform: translateY(0); }
 //  DATA
 // ==========================================
 const CAT_META = {
-  "🏔️ Attractions":    { color:"#3D9494", bg:"rgba(106,173,173,0.12)", border:"rgba(106,173,173,0.32)" },
-  "🍽️ Food & Drink":  { color:"#C05A65", bg:"rgba(224,122,133,0.12)", border:"rgba(224,122,133,0.32)" },
-  "🍷 Wine Farms":     { color:"#8A4A5E", bg:"rgba(160,103,122,0.12)", border:"rgba(160,103,122,0.32)" },
-  "🎬 Cinema":         { color:"#3D5F9E", bg:"rgba(107,143,196,0.12)", border:"rgba(107,143,196,0.32)" },
-  "💄 Beauty & Retail":{ color:"#A04870", bg:"rgba(196,122,154,0.12)", border:"rgba(196,122,154,0.32)" },
-  "💆 Wellness":       { color:"#2D7A5F", bg:"rgba(90,158,128,0.12)", border:"rgba(90,158,128,0.32)" },
+  "🏔️ Attractions":    { color:"#588A88", bg:"rgba(88,138,136,0.12)", border:"rgba(88,138,136,0.32)" },
+  "🍽️ Food & Drink":  { color:"#B86F7D", bg:"rgba(207,130,149,0.13)", border:"rgba(207,130,149,0.32)" },
+  "🍷 Wine Farms":     { color:"#84677F", bg:"rgba(145,128,173,0.13)", border:"rgba(145,128,173,0.32)" },
+  "🎬 Cinema":         { color:"#687CA1", bg:"rgba(126,148,184,0.13)", border:"rgba(126,148,184,0.32)" },
+  "💄 Beauty & Retail":{ color:"#A66E86", bg:"rgba(196,136,160,0.13)", border:"rgba(196,136,160,0.32)" },
+  "💆 Wellness":       { color:"#568A72", bg:"rgba(86,138,114,0.13)", border:"rgba(86,138,114,0.32)" },
 };
 
 const NEW_IDS = ["robben","total_ninja","skyhi","upcycles"];
 
-const FREEBIES = [
+let FREEBIES = [
   // ATTRACTIONS
   { id:"tm_cableway",     cat:"🏔️ Attractions", name:"Table Mountain Cableway",       freebie:"Free return trip",                              validity:"Entire birthday month",                      how:"Present SA ID at ticket office – no booking needed. Weather dependent.",                                                                                                                  takeaway:false, priority:"high"   },
   { id:"two_oceans",      cat:"🏔️ Attractions", name:"Two Oceans Aquarium",            freebie:"Free entry",                                    validity:"Birthday month + 6 days after",              how:"Show SA ID at ticket office on the day. No advance booking needed.",                                                                                                                     takeaway:false, priority:"high"   },
@@ -657,7 +896,7 @@ function getVisible() {
     if (filter === 'unclaimed' && claimed[f.id])        return false;
     if (filter === 'mustdo'    && f.priority !== 'high')return false;
     if (filter === 'takeaway'  && !f.takeaway)          return false;
-    if (filter === 'new'       && !NEW_IDS.includes(f.id)) return false;
+    if (filter === 'new'       && !f.isNew && !NEW_IDS.includes(f.id)) return false;
     const s = search.toLowerCase();
     if (s && !f.name.toLowerCase().includes(s) && !f.freebie.toLowerCase().includes(s)) return false;
     return true;
@@ -668,7 +907,7 @@ function renderStats() {
   const total   = FREEBIES.length;
   const nClaim  = FREEBIES.filter(f=>claimed[f.id]).length;
   const nSigned = FREEBIES.filter(f=>signedUp[f.id]).length;
-  const pct     = Math.round(nClaim/total*100);
+  const pct     = total ? Math.round(nClaim/total*100) : 0;
 
   document.getElementById('totalCount').textContent  = total;
   document.getElementById('statTotal').textContent   = total;
@@ -679,11 +918,17 @@ function renderStats() {
   document.getElementById('progressBar').style.width = pct + '%';
 }
 
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, ch => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+  }[ch]));
+}
+
 function buildCard(f, idx) {
   const m    = CAT_META[f.cat] || { color:'#818cf8', bg:'rgba(129,140,248,0.14)', border:'rgba(129,140,248,0.3)' };
   const done = !!claimed[f.id];
   const up   = !!signedUp[f.id];
-  const isNew= NEW_IDS.includes(f.id);
+  const isNew= !!f.isNew || NEW_IDS.includes(f.id);
   const isOpen = openCard === f.id;
 
   const classes = ['card',
@@ -703,11 +948,12 @@ function buildCard(f, idx) {
         ${f.priority==='high' ? '<span class="must-badge">⭐ MUST</span>' : ''}
       </div>
     </div>
-    <div class="card-name">${f.name}</div>
-    <div class="card-freebie" style="color:${m.color}">🎁 ${f.freebie}</div>
-    <div class="card-validity">⏳ ${f.validity}</div>
-    <div class="card-details"><strong>📋 How to claim:</strong><br>${f.how}</div>
+    <div class="card-name">${escapeHtml(f.name)}</div>
+    <div class="card-freebie" style="color:${m.color}">🎁 ${escapeHtml(f.freebie)}</div>
+    <div class="card-validity">⏳ ${escapeHtml(f.validity)}</div>
+    <div class="card-details"><strong>📋 How to claim:</strong><br>${escapeHtml(f.how).replace(/\n/g,'<br>')}</div>
     <div class="toggle-hint">${isOpen ? '▲ collapse' : '▼ tap for how to claim'}</div>
+    ${f.affiliateUrl ? `<a class="offer-link" href="${escapeHtml(f.affiliateUrl)}" target="_blank" rel="sponsored nofollow noopener" onclick="event.stopPropagation()">🔗 View offer</a>` : ''}
     <div class="card-actions" onclick="event.stopPropagation()">
       <button class="action-btn signup-btn ${up?'active':''}" onclick="toggleSignUp('${f.id}')">
         ${up ? '📱 Signed Up' : '📱 Sign Up'}
@@ -848,7 +1094,404 @@ document.getElementById('catRow').addEventListener('click', e => {
 // ==========================================
 //  INIT
 // ==========================================
+// The shared site data and first render are initialized in the next script.
+</script>
+
+<script>
+// Shared public content is fetched from Netlify Functions; the original list is the safe fallback.
+const EMPTY_SETTINGS = {
+  contact: { phone: "", email: "", whatsapp: "", businessName: "", location: "" },
+  social: { instagram: "", facebook: "", tiktok: "", otherLinks: [] },
+  ads: { publisherId: "", slotId: "", enabled: false }
+};
+let siteSettings = JSON.parse(JSON.stringify(EMPTY_SETTINGS));
+let ownerSiteData = null;
+
+function mergeSettings(value) {
+  const incoming = value && typeof value === 'object' ? value : {};
+  return {
+    contact: { ...EMPTY_SETTINGS.contact, ...(incoming.contact || {}) },
+    social: { ...EMPTY_SETTINGS.social, ...(incoming.social || {}) },
+    ads: { ...EMPTY_SETTINGS.ads, ...(incoming.ads || {}) }
+  };
+}
+
+function safeDigits(value) { return String(value || '').replace(/\D/g, ''); }
+function safeExternalUrl(value) {
+  try {
+    const url = new URL(String(value || ''));
+    return url.protocol === 'https:' ? url.href : '';
+  } catch { return ''; }
+}
+function displayUpdatedDate(value) {
+  if (!value) return;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return;
+  document.getElementById('updatedLabel').textContent =
+    `Updated ${new Intl.DateTimeFormat('en-ZA', { month: 'long', year: 'numeric', timeZone: 'Africa/Johannesburg' }).format(date)}`;
+}
+
+function renderContact() {
+  const contact = siteSettings.contact || EMPTY_SETTINGS.contact;
+  const social = siteSettings.social || EMPTY_SETTINGS.social;
+  const links = [];
+  const phone = String(contact.phone || '').trim();
+  const email = String(contact.email || '').trim();
+  const whatsapp = safeDigits(contact.whatsapp || contact.phone);
+  if (phone) links.push(`<a href="tel:${escapeHtml(phone.replace(/[^\d+]/g,''))}">📞 ${escapeHtml(phone)}</a>`);
+  if (email) links.push(`<a href="mailto:${escapeHtml(email)}">📧 ${escapeHtml(email)}</a>`);
+  if (whatsapp) links.push(`<a href="https://wa.me/${whatsapp}" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>`);
+  for (const [label, value] of [['Instagram',social.instagram],['Facebook',social.facebook],['TikTok',social.tiktok]]) {
+    const url = safeExternalUrl(value);
+    if (url) links.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label}</a>`);
+  }
+  (Array.isArray(social.otherLinks) ? social.otherLinks : []).slice(0,10).forEach(item => {
+    const url = safeExternalUrl(item?.url);
+    const label = String(item?.label || '').trim();
+    if (url && label) links.push(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`);
+  });
+  const businessBits = [contact.businessName, contact.location].filter(value => String(value || '').trim());
+  document.getElementById('businessDetails').textContent = businessBits.join(' · ');
+  document.getElementById('contactLinks').innerHTML = links.join('');
+  document.getElementById('contactIntro').textContent =
+    links.length ? 'Questions, corrections, or a birthday freebie to share? Reach Candice using the links below.' :
+      'Birthday Freebies Tracker for the Western Cape. Contact details and social links will appear here when added by the owner.';
+}
+
+function renderAds() {
+  const box = document.getElementById('adWrap');
+  const ads = siteSettings.ads || EMPTY_SETTINGS.ads;
+  const publisherId = String(ads.publisherId || '').trim();
+  const slotId = String(ads.slotId || '').trim();
+  if (!ads.enabled || !/^ca-pub-\d{16}$/.test(publisherId) || !/^\d+$/.test(slotId)) {
+    box.hidden = true;
+    box.replaceChildren();
+    return;
+  }
+  box.hidden = false;
+  box.innerHTML = `<ins class="adsbygoogle" data-ad-client="${escapeHtml(publisherId)}" data-ad-slot="${escapeHtml(slotId)}" data-ad-format="auto" data-full-width-responsive="true"></ins>`;
+  if (!document.getElementById('adsense-library')) {
+    const script = document.createElement('script');
+    script.id = 'adsense-library';
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(publisherId)}`;
+    document.head.appendChild(script);
+  }
+  try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch {}
+}
+
+async function loadPublicData() {
+  try {
+    const response = await fetch('/api/site', { cache: 'no-store' });
+    if (!response.ok) throw new Error('Site data is not available yet.');
+    const data = await response.json();
+    if (Array.isArray(data.freebies)) FREEBIES = data.freebies;
+    siteSettings = mergeSettings(data.settings);
+    displayUpdatedDate(data.updatedAt);
+  } catch (error) {
+    // Static pages and deploy previews remain usable even before the function is deployed.
+  }
+  renderContact();
+  renderAds();
+  render();
+}
+
+function shareSite() {
+  const message = `Birthday freebies in the Western Cape 🎂 ${window.location.origin}`;
+  window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+}
+
+function suggestFreebie() {
+  const number = safeDigits(siteSettings.contact?.whatsapp || siteSettings.contact?.phone);
+  const body = `Hi Candice! I'd like to suggest a birthday freebie for the tracker.\n\nBusiness/venue:\nOffer:\nHow to claim:\nLink (if any):\n\n${window.location.href}`;
+  if (number) {
+    window.open(`https://wa.me/${number}?text=${encodeURIComponent(body)}`, '_blank', 'noopener,noreferrer');
+  } else if (siteSettings.contact?.email) {
+    window.location.href = `mailto:${encodeURIComponent(siteSettings.contact.email)}?subject=${encodeURIComponent('Birthday freebie suggestion')}&body=${encodeURIComponent(body)}`;
+  } else {
+    alert('The owner has not added a WhatsApp number or email address yet.');
+  }
+}
+
+function focusFeedbackForm() {
+  document.getElementById('freebieFeedbackForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  document.getElementById('feedbackName').focus({ preventScroll: true });
+}
+
+function setOwnerView(isSignedIn) {
+  document.getElementById('ownerLogin').hidden = !!isSignedIn;
+  document.getElementById('ownerDashboard').hidden = !isSignedIn;
+}
+function closeOwnerPanel() { document.getElementById('ownerModal').classList.remove('open'); }
+
+async function openOwnerPanel() {
+  document.getElementById('ownerModal').classList.add('open');
+  setOwnerView(false);
+  document.getElementById('ownerLoginStatus').textContent = '';
+  try {
+    const response = await fetch('/api/owner', { cache: 'no-store' });
+    if (response.ok) {
+      ownerSiteData = await response.json();
+      setOwnerView(true);
+      populateOwnerForms();
+      renderOwnerFreebieList();
+    }
+  } catch {}
+}
+
+function updateOwnerData(data) {
+  ownerSiteData = data;
+  FREEBIES = Array.isArray(data.freebies) ? data.freebies : FREEBIES;
+  siteSettings = mergeSettings(data.settings);
+  renderContact();
+  renderAds();
+  render();
+  displayUpdatedDate(data.updatedAt || new Date().toISOString());
+}
+
+async function saveOwnerData(statusElement, updatedData) {
+  const status = document.getElementById(statusElement);
+  status.textContent = 'Saving…';
+  try {
+    const response = await fetch('/api/owner', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedData)
+    });
+    const result = await response.json().catch(() => ({}));
+    if (response.status === 401) {
+      setOwnerView(false);
+      document.getElementById('ownerLoginStatus').textContent = 'Your session ended. Please sign in again.';
+      return false;
+    }
+    if (!response.ok) throw new Error(result.error || 'Could not save changes.');
+    updateOwnerData(result);
+    status.textContent = 'Saved. The public site now uses these settings.';
+    return true;
+  } catch (error) {
+    status.textContent = error.message || 'Could not save changes. Check that the site functions are deployed.';
+    return false;
+  }
+}
+
+async function loadOwnerData() {
+  const response = await fetch('/api/owner', { cache: 'no-store' });
+  if (!response.ok) throw new Error('Sign in required.');
+  const data = await response.json();
+  if (!Array.isArray(data.freebies)) data.freebies = FREEBIES;
+  data.settings = mergeSettings(data.settings);
+  ownerSiteData = data;
+  updateOwnerData(data);
+  populateOwnerForms();
+  renderOwnerFreebieList();
+}
+
+document.getElementById('ownerLoginForm').addEventListener('submit', async event => {
+  event.preventDefault();
+  const status = document.getElementById('ownerLoginStatus');
+  status.textContent = 'Signing in…';
+  try {
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: document.getElementById('ownerPassword').value })
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.error || 'Sign-in failed.');
+    document.getElementById('ownerPassword').value = '';
+    await loadOwnerData();
+    setOwnerView(true);
+  } catch (error) {
+    status.textContent = error.message || 'Sign-in failed.';
+  }
+});
+
+async function ownerLogout() {
+  try { await fetch('/api/logout', { method: 'POST' }); } catch {}
+  ownerSiteData = null;
+  setOwnerView(false);
+  document.getElementById('ownerLoginStatus').textContent = 'Signed out.';
+}
+
+document.getElementById('ownerModal').addEventListener('click', event => {
+  if (event.target.id === 'ownerModal') closeOwnerPanel();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeOwnerPanel();
+});
+document.querySelectorAll('.owner-tab').forEach(button => button.addEventListener('click', () => {
+  document.querySelectorAll('.owner-tab').forEach(tab => tab.classList.toggle('active', tab === button));
+  document.querySelectorAll('.owner-pane').forEach(pane => pane.classList.toggle('active', pane.id === button.dataset.pane));
+}));
+
+function populateOwnerForms() {
+  const settings = mergeSettings(ownerSiteData?.settings || siteSettings);
+  const contact = settings.contact, social = settings.social, ads = settings.ads;
+  document.getElementById('contactPhone').value = contact.phone || '';
+  document.getElementById('contactEmail').value = contact.email || '';
+  document.getElementById('contactWhatsApp').value = contact.whatsapp || '';
+  document.getElementById('businessName').value = contact.businessName || '';
+  document.getElementById('businessLocation').value = contact.location || '';
+  document.getElementById('socialInstagram').value = social.instagram || '';
+  document.getElementById('socialFacebook').value = social.facebook || '';
+  document.getElementById('socialTikTok').value = social.tiktok || '';
+  const other = Array.isArray(social.otherLinks) && social.otherLinks[0] ? social.otherLinks[0] : {};
+  document.getElementById('socialOtherLabel').value = other.label || '';
+  document.getElementById('socialOtherUrl').value = other.url || '';
+  document.getElementById('adsPublisher').value = ads.publisherId || '';
+  document.getElementById('adsSlot').value = ads.slotId || '';
+  document.getElementById('adsEnabled').checked = !!ads.enabled;
+  const select = document.getElementById('freebieCategory');
+  if (!select.options.length) CATS.forEach(category => {
+    const option = document.createElement('option');
+    option.value = category;
+    option.textContent = category;
+    select.appendChild(option);
+  });
+}
+
+function renderOwnerFreebieList() {
+  const items = Array.isArray(ownerSiteData?.freebies) ? ownerSiteData.freebies : FREEBIES;
+  document.getElementById('ownerFreebieList').innerHTML = items.map(item => `
+    <div class="owner-row">
+      <div><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.cat)} · ${escapeHtml(item.freebie)}</small></div>
+      <div class="owner-row-actions">
+        <button class="owner-secondary" type="button" onclick="editFreebie('${escapeHtml(item.id)}')">Edit</button>
+        <button class="owner-danger" type="button" onclick="deleteFreebie('${escapeHtml(item.id)}')">Remove</button>
+      </div>
+    </div>`).join('');
+}
+
+function resetFreebieForm() {
+  document.getElementById('freebieForm').reset();
+  document.getElementById('freebieId').value = '';
+  document.getElementById('freebiePriority').value = 'medium';
+}
+function editFreebie(id) {
+  const item = (ownerSiteData?.freebies || FREEBIES).find(value => value.id === id);
+  if (!item) return;
+  document.getElementById('freebieId').value = item.id;
+  document.getElementById('freebieCategory').value = item.cat;
+  document.getElementById('freebieName').value = item.name || '';
+  document.getElementById('freebieOffer').value = item.freebie || '';
+  document.getElementById('freebieValidity').value = item.validity || '';
+  document.getElementById('freebieHow').value = item.how || '';
+  document.getElementById('freebieUrl').value = item.affiliateUrl || '';
+  document.getElementById('freebiePriority').value = item.priority || 'medium';
+  document.getElementById('freebieTakeaway').checked = !!item.takeaway;
+  document.getElementById('freebieNew').checked = !!item.isNew;
+  document.getElementById('freebieName').focus();
+}
+
+document.getElementById('freebieForm').addEventListener('submit', async event => {
+  event.preventDefault();
+  const idField = document.getElementById('freebieId');
+  const name = document.getElementById('freebieName').value.trim();
+  const id = idField.value || `${name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}-${Date.now().toString(36)}`;
+  const item = {
+    id, cat: document.getElementById('freebieCategory').value, name,
+    freebie: document.getElementById('freebieOffer').value.trim(),
+    validity: document.getElementById('freebieValidity').value.trim(),
+    how: document.getElementById('freebieHow').value.trim(),
+    affiliateUrl: document.getElementById('freebieUrl').value.trim(),
+    takeaway: document.getElementById('freebieTakeaway').checked,
+    priority: document.getElementById('freebiePriority').value,
+    isNew: document.getElementById('freebieNew').checked
+  };
+  const freebies = [...(ownerSiteData?.freebies || FREEBIES)];
+  const index = freebies.findIndex(value => value.id === id);
+  if (index >= 0) freebies[index] = item;
+  else freebies.push(item);
+  const data = { freebies, settings: mergeSettings(ownerSiteData?.settings || siteSettings) };
+  if (await saveOwnerData('freebieStatus', data)) {
+    ownerSiteData = { ...ownerSiteData, ...data };
+    renderOwnerFreebieList();
+    resetFreebieForm();
+  }
+});
+
+async function deleteFreebie(id) {
+  const item = (ownerSiteData?.freebies || FREEBIES).find(value => value.id === id);
+  if (!item || !confirm(`Remove “${item.name}” from the public list?`)) return;
+  const data = {
+    freebies: (ownerSiteData?.freebies || FREEBIES).filter(value => value.id !== id),
+    settings: mergeSettings(ownerSiteData?.settings || siteSettings)
+  };
+  if (await saveOwnerData('freebieStatus', data)) {
+    ownerSiteData = { ...ownerSiteData, ...data };
+    renderOwnerFreebieList();
+  }
+}
+
+document.getElementById('contactForm').addEventListener('submit', async event => {
+  event.preventDefault();
+  const current = mergeSettings(ownerSiteData?.settings || siteSettings);
+  const label = document.getElementById('socialOtherLabel').value.trim();
+  const url = document.getElementById('socialOtherUrl').value.trim();
+  const settings = {
+    ...current,
+    contact: {
+      phone: document.getElementById('contactPhone').value.trim(),
+      email: document.getElementById('contactEmail').value.trim(),
+      whatsapp: document.getElementById('contactWhatsApp').value.trim(),
+      businessName: document.getElementById('businessName').value.trim(),
+      location: document.getElementById('businessLocation').value.trim()
+    },
+    social: {
+      instagram: document.getElementById('socialInstagram').value.trim(),
+      facebook: document.getElementById('socialFacebook').value.trim(),
+      tiktok: document.getElementById('socialTikTok').value.trim(),
+      otherLinks: label && url ? [{ label, url }] : []
+    }
+  };
+  await saveOwnerData('contactStatus', { freebies: ownerSiteData?.freebies || FREEBIES, settings });
+});
+
+document.getElementById('incomeForm').addEventListener('submit', async event => {
+  event.preventDefault();
+  const settings = mergeSettings(ownerSiteData?.settings || siteSettings);
+  settings.ads = {
+    publisherId: document.getElementById('adsPublisher').value.trim(),
+    slotId: document.getElementById('adsSlot').value.trim(),
+    enabled: document.getElementById('adsEnabled').checked
+  };
+  await saveOwnerData('incomeStatus', { freebies: ownerSiteData?.freebies || FREEBIES, settings });
+});
+
+document.getElementById('freebieFeedbackForm').addEventListener('submit', event => {
+  event.preventDefault();
+  const type = document.getElementById('feedbackType').value;
+  const name = document.getElementById('feedbackName').value.trim();
+  const details = document.getElementById('feedbackDetails').value.trim();
+  const source = document.getElementById('feedbackUrl').value.trim();
+  const message = [
+    `Birthday freebies tracker update: ${type}`,
+    `Business/freebie: ${name}`,
+    `Details: ${details}`,
+    source ? `Source: ${source}` : '',
+    `Page: ${window.location.href}`
+  ].filter(Boolean).join('\n\n');
+  const number = safeDigits(siteSettings.contact?.whatsapp || siteSettings.contact?.phone);
+  const email = String(siteSettings.contact?.email || '').trim();
+  const status = document.getElementById('feedbackStatus');
+  if (number) {
+    window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+    status.textContent = 'Your update is ready in WhatsApp. Please press Send there.';
+  } else if (email) {
+    window.location.href = `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(`Freebie tracker: ${type}`)}&body=${encodeURIComponent(message)}`;
+    status.textContent = 'Your update is ready in your email app. Please press Send there.';
+  } else {
+    status.textContent = 'The owner has not added a WhatsApp number or email address yet.';
+    return;
+  }
+  event.target.reset();
+});
+
+renderContact();
+renderAds();
 render();
+loadPublicData();
 </script>
 
 </body>
