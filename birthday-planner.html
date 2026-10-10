@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Candice Klein" />
+  <meta name="copyright" content="© 2026 Candice Klein. All rights reserved." />
+  <title>Birthday Freebies Planner · Western Cape</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#392d38; --muted:#806f7b; --rose:#cf8295; --sage:#568a72; --lilac:#9180ad; --cream:#fff8f5; --line:#eadfe4; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--cream); color:var(--ink); font:14px 'DM Sans',sans-serif; }
+    .toolbar { display:flex; justify-content:center; gap:10px; padding:14px; position:sticky; top:0; background:rgba(255,248,245,.96); border-bottom:1px solid var(--line); z-index:2; }
+    button,.back { border:0; border-radius:10px; padding:10px 14px; background:var(--lilac); color:#fff; font:600 13px 'DM Sans',sans-serif; text-decoration:none; cursor:pointer; }
+    button.secondary { background:#eee5e7; color:#5c4657; }
+    .sheet { max-width:850px; margin:22px auto; padding:38px; background:#fffdfb; border:1px solid var(--line); border-radius:20px; box-shadow:0 12px 42px rgba(90,60,80,.08); }
+    .eyebrow { color:var(--sage); text-transform:uppercase; letter-spacing:.13em; font-size:10px; font-weight:700; }
+    h1,h2,h3 { font-family:'Playfair Display',serif; }
+    h1 { font-size:35px; line-height:1.1; margin:8px 0; }
+    h2 { font-size:21px; margin:0 0 12px; }
+    h3 { font-size:16px; margin:0 0 8px; }
+    p { color:var(--muted); line-height:1.55; }
+    .hero { padding-bottom:18px; border-bottom:1px solid var(--line); margin-bottom:20px; }
+    .fields { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:18px 0 24px; }
+    label { color:var(--muted); font-size:11px; font-weight:700; display:flex; flex-direction:column; gap:6px; }
+    input[type=text],input[type=date] { width:100%; min-height:38px; border:1px solid var(--line); border-radius:9px; padding:8px 10px; background:#fff; color:var(--ink); font:13px 'DM Sans',sans-serif; }
+    .checklist { display:grid; grid-template-columns:repeat(2,1fr); gap:9px 18px; margin-bottom:24px; }
+    .check { display:flex; align-items:flex-start; gap:9px; padding:9px 10px; border-radius:10px; background:#fbf4f5; color:#554651; line-height:1.45; }
+    .check input { accent-color:var(--sage); margin-top:2px; }
+    .offers { width:100%; border-collapse:collapse; margin:8px 0 20px; }
+    .offers th,.offers td { border:1px solid var(--line); padding:8px; text-align:left; }
+    .offers th { background:#f8ecef; color:#674f60; font-size:11px; }
+    .offers td { height:34px; }
+    .offers input { border:0; border-bottom:1px solid #eee1e6; border-radius:0; padding:4px; }
+    .notes { min-height:90px; border:1px solid var(--line); border-radius:10px; padding:10px; }
+    .footer { border-top:1px solid var(--line); margin-top:24px; padding-top:12px; font-size:10px; text-align:center; color:var(--muted); }
+    @media(max-width:600px) { .sheet { margin:10px; padding:22px 17px; } h1 { font-size:29px; } .fields,.checklist { grid-template-columns:1fr; } .offers th,.offers td { padding:5px; font-size:10px; } }
+    @media print {
+      body { background:#fff; font-size:12px; }
+      .toolbar { display:none; }
+      .sheet { width:100%; max-width:none; margin:0; padding:14mm; border:0; box-shadow:none; border-radius:0; }
+      input[type=text],input[type=date] { border:0; border-bottom:1px solid #aaa; border-radius:0; padding-left:0; }
+      .check { border:1px solid #eee; background:#fff; }
+      .offers th { background:#f2e9ec !important; print-color-adjust:exact; }
+      .notes { min-height:70px; }
+      .page-break { break-before:page; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="toolbar" aria-label="Planner actions">
+    <a class="back" href="/">← Birthday Freebies</a>
+    <button type="button" onclick="window.print()">Print / Save as PDF</button>
+    <button class="secondary" type="button" onclick="clearPlanner()">Clear planner</button>
+  </nav>
+  <main class="sheet">
+    <header class="hero">
+      <div class="eyebrow">Western Cape · South Africa</div>
+      <h1>My Birthday Freebies Planner 🎂</h1>
+      <p>Plan ahead, keep your sign-ups together, and note which offers you want to claim. Use your browser’s print option to save a PDF copy.</p>
+      <div class="fields">
+        <label>Your name<input type="text" data-save="name" /></label>
+        <label>Birthday<input type="date" data-save="birthday" /></label>
+        <label>Birthday month / year<input type="text" data-save="month" placeholder="e.g. November 2026" /></label>
+        <label>Area<input type="text" data-save="area" placeholder="e.g. Cape Town" /></label>
+      </div>
+    </header>
+    <section>
+      <h2>Get ready in advance</h2>
+      <div class="checklist">
+        <label class="check"><input type="checkbox" data-save="check-spur" /> Check which loyalty apps need an account before my birthday.</label>
+        <label class="check"><input type="checkbox" data-save="check-profile" /> Add or confirm my birthday in rewards profiles.</label>
+        <label class="check"><input type="checkbox" data-save="check-book" /> Check booking, age, spend and date restrictions.</label>
+        <label class="check"><input type="checkbox" data-save="check-id" /> Keep my SA ID or other required proof ready.</label>
+        <label class="check"><input type="checkbox" data-save="check-terms" /> Re-check offers and call venues before travelling.</label>
+        <label class="check"><input type="checkbox" data-save="check-route" /> Group nearby freebies into a realistic route.</label>
+      </div>
+    </section>
+    <section>
+      <h2>Offers I want to claim</h2>
+      <table class="offers">
+        <thead><tr><th>Business / freebie</th><th>Sign-up / booking</th><th>Claim date</th><th>Done</th></tr></thead>
+        <tbody>
+          <tr><td><input type="text" data-save="offer1" aria-label="Offer one" /></td><td><input type="text" data-save="signup1" aria-label="Sign-up one" /></td><td><input type="text" data-save="date1" aria-label="Date one" /></td><td><input type="checkbox" data-save="done1" aria-label="Done one" /></td></tr>
+          <tr><td><input type="text" data-save="offer2" aria-label="Offer two" /></td><td><input type="text" data-save="signup2" aria-label="Sign-up two" /></td><td><input type="text" data-save="date2" aria-label="Date two" /></td><td><input type="checkbox" data-save="done2" aria-label="Done two" /></td></tr>
+          <tr><td><input type="text" data-save="offer3" aria-label="Offer three" /></td><td><input type="text" data-save="signup3" aria-label="Sign-up three" /></td><td><input type="text" data-save="date3" aria-label="Date three" /></td><td><input type="checkbox" data-save="done3" aria-label="Done three" /></td></tr>
+          <tr><td><input type="text" data-save="offer4" aria-label="Offer four" /></td><td><input type="text" data-save="signup4" aria-label="Sign-up four" /></td><td><input type="text" data-save="date4" aria-label="Date four" /></td><td><input type="checkbox" data-save="done4" aria-label="Done four" /></td></tr>
+          <tr><td><input type="text" data-save="offer5" aria-label="Offer five" /></td><td><input type="text" data-save="signup5" aria-label="Sign-up five" /></td><td><input type="text" data-save="date5" aria-label="Date five" /></td><td><input type="checkbox" data-save="done5" aria-label="Done five" /></td></tr>
+          <tr><td><input type="text" data-save="offer6" aria-label="Offer six" /></td><td><input type="text" data-save="signup6" aria-label="Sign-up six" /></td><td><input type="text" data-save="date6" aria-label="Date six" /></td><td><input type="checkbox" data-save="done6" aria-label="Done six" /></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Notes &amp; reminders</h2>
+      <textarea class="notes" data-save="notes" aria-label="Planner notes"></textarea>
+      <p class="disclaimer">Offers can change or end without notice. Confirm the latest terms and availability directly with each business before you go.</p>
+    </section>
+    <footer class="footer">© 2026 Candice Klein · All rights reserved · Birthday Freebies Tracker</footer>
+  </main>
+  <script>
+    const PLANNER_KEY = 'birthday-freebies-planner-v1';
+    function readPlanner() {
+      try { return JSON.parse(localStorage.getItem(PLANNER_KEY) || '{}'); } catch { return {}; }
+    }
+    function savePlanner() {
+      const values = {};
+      document.querySelectorAll('[data-save]').forEach(field => {
+        values[field.dataset.save] = field.type === 'checkbox' ? field.checked : field.value;
+      });
+      localStorage.setItem(PLANNER_KEY, JSON.stringify(values));
+    }
+    function clearPlanner() {
+      if (!confirm('Clear this planner on this device?')) return;
+      localStorage.removeItem(PLANNER_KEY);
+      document.querySelectorAll('[data-save]').forEach(field => {
+        if (field.type === 'checkbox') field.checked = false;
+        else field.value = '';
+      });
+    }
+    const saved = readPlanner();
+    document.querySelectorAll('[data-save]').forEach(field => {
+      if (field.type === 'checkbox') field.checked = !!saved[field.dataset.save];
+      else field.value = saved[field.dataset.save] || '';
+      field.addEventListener('input', savePlanner);
+      field.addEventListener('change', savePlanner);
+    });
+  </script>
+</body>
+</html>
