@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <!--
-  Birthday Freebies SA
+  Birthday Freebies SA – Western Cape
   Conceived, designed & built by Candice Klein
   © 2026 Candice Klein. All rights reserved.
+  Unauthorised copying or redistribution is strictly prohibited.
 -->
 <html lang="en">
 <head>
@@ -12,535 +13,595 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
 <meta name="apple-mobile-web-app-title" content="🎂 Freebies SA"/>
 <meta name="mobile-web-app-capable" content="yes"/>
-<meta name="theme-color" content="#FAF6F1"/>
+<meta name="theme-color" content="#FDF8F0"/>
 <meta name="author" content="Candice Klein"/>
-<meta name="copyright" content="© 2026 Candice Klein"/>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9545218162778501" crossorigin="anonymous"></script>
+<meta name="copyright" content="© 2026 Candice Klein. All rights reserved."/>
 <title>🎂 Birthday Freebies SA – Western Cape</title>
+<!-- Google Analytics placeholder – add your G-XXXXXXXXXX via Owner Dashboard -->
+<script id="ga-script"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-/* ═══════════════════════════════════
-   PALETTE: Cream · Dusty Rose · Sage · Soft Lilac
-   Dark text on light surfaces — easy to read
-═══════════════════════════════════ */
+/* ═══════════════════════════════════════
+   ROSÉ GARDEN PALETTE
+   Warm ivory · Dusty rose · Deep sage · Soft gold · Muted lilac
+═══════════════════════════════════════ */
 :root {
-  /* Backgrounds */
-  --bg:        #FAF6F1;
-  --bg2:       #F4EDE5;
-  --surface:   #FFFFFF;
-  --surface2:  #FDF9F5;
-
-  /* Text */
-  --text:      #2C1A0E;
-  --text2:     #5C3D28;
-  --muted:     #9C7B65;
-
-  /* Palette accents */
-  --rose:      #C17C8A;
-  --rose-l:    #F0D5DA;
-  --rose-d:    #8A4A56;
-  --sage:      #7A9E82;
-  --sage-l:    #D4E8D8;
-  --sage-d:    #4A7055;
-  --lilac:     #9B8EC4;
-  --lilac-l:   #E0DAF0;
-  --lilac-d:   #5E4E8A;
-  --cream:     #E8C99A;
-  --cream-l:   #FBF0DC;
-  --cream-d:   #A07840;
-
-  /* Borders */
-  --border:    rgba(44,26,14,0.1);
-  --border2:   rgba(44,26,14,0.06);
-
-  /* Category colours */
-  --c-attr:    #6AADAD;
-  --c-food:    #C17C8A;
-  --c-wine:    #9B5070;
-  --c-cin:     #7A8EC4;
-  --c-bty:     #C4849A;
-  --c-well:    #7A9E82;
-
-  --safe-top:  env(safe-area-inset-top,0px);
-  --safe-bot:  env(safe-area-inset-bottom,0px);
+  --bg:       #FDF8F0;
+  --bg2:      #F8F0E4;
+  --surface:  #FFFFFF;
+  --surface2: #FBF6EE;
+  --text:     #2A1A10;
+  --text2:    #5A3A28;
+  --muted:    #9A7A65;
+  --border:   rgba(42,26,16,.1);
+  --border2:  rgba(42,26,16,.06);
+  /* Core palette */
+  --rose:     #B5637A;
+  --rose-l:   #F2D8DF;
+  --rose-d:   #8A3A52;
+  --rose-xl:  #FDF0F3;
+  --sage:     #5C8A6A;
+  --sage-l:   #D0E8D8;
+  --sage-d:   #3A5E46;
+  --gold:     #C9A84C;
+  --gold-l:   #F5EAC8;
+  --gold-d:   #8A6A20;
+  --lilac:    #8B7FB8;
+  --lilac-l:  #E0DBF5;
+  --lilac-d:  #5A4E8A;
+  --teal:     #4A9898;
+  --teal-l:   #CCE8E8;
+  /* Category */
+  --c-attr:   #3D8A8A;
+  --c-food:   #B5637A;
+  --c-wine:   #7A3A5A;
+  --c-cin:    #4A5A9A;
+  --c-bty:    #9A4A6A;
+  --c-well:   #4A7A5A;
+  --safe-top: env(safe-area-inset-top,0px);
+  --safe-bot: env(safe-area-inset-bottom,0px);
+}
+/* DARK MODE */
+.dark {
+  --bg:       #1A1018;
+  --bg2:      #221520;
+  --surface:  #2A1A25;
+  --surface2: #241520;
+  --text:     #F5E8F0;
+  --text2:    #D0B8C8;
+  --muted:    #9A7A90;
+  --border:   rgba(245,232,240,.1);
+  --border2:  rgba(245,232,240,.06);
+  --rose-l:   rgba(181,99,122,.2);
+  --rose-xl:  rgba(181,99,122,.08);
+  --sage-l:   rgba(92,138,106,.2);
+  --gold-l:   rgba(201,168,76,.2);
+  --lilac-l:  rgba(139,127,184,.2);
+  --teal-l:   rgba(74,152,152,.2);
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{
   font-family:'DM Sans',sans-serif;
-  background:var(--bg);
-  color:var(--text);
+  background:var(--bg);color:var(--text);
   min-height:100dvh;
   -webkit-tap-highlight-color:transparent;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
+  transition:background .3s,color .3s;
 }
-
-/* subtle warm texture */
 body::before{
   content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
-    radial-gradient(ellipse at 0% 0%,   rgba(193,124,138,.07) 0%,transparent 50%),
-    radial-gradient(ellipse at 100% 100%,rgba(122,158,130,.06) 0%,transparent 50%);
+    radial-gradient(ellipse at 5% 5%,   rgba(181,99,122,.06) 0%,transparent 50%),
+    radial-gradient(ellipse at 95% 95%, rgba(92,138,106,.05) 0%,transparent 50%);
 }
 
 /* ── NAV ── */
 .nav{
   position:fixed;bottom:0;left:0;right:0;z-index:200;
-  background:rgba(250,246,241,.97);
+  background:rgba(253,248,240,.97);
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border-top:1px solid var(--border);
   display:flex;padding-bottom:var(--safe-bot);
+  transition:background .3s;
 }
+.dark .nav{background:rgba(26,16,24,.97);}
 .nav-btn{
-  flex:1;padding:9px 4px 8px;
-  display:flex;flex-direction:column;align-items:center;gap:3px;
+  flex:1;padding:9px 2px 7px;
+  display:flex;flex-direction:column;align-items:center;gap:2px;
   cursor:pointer;border:none;background:none;
   color:var(--muted);font-family:'DM Sans',sans-serif;
-  font-size:9px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;
+  font-size:8.5px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;
   transition:color .2s;
 }
 .nav-btn.active{color:var(--rose-d);}
-.nav-btn .ni{font-size:20px;line-height:1;}
+.nav-btn .ni{font-size:19px;line-height:1;}
 
 /* ── PAGES ── */
-.page{display:none;position:relative;z-index:1;min-height:100dvh;padding-bottom:calc(62px + var(--safe-bot));}
+.page{display:none;position:relative;z-index:1;min-height:100dvh;padding-bottom:calc(64px + var(--safe-bot));}
 .page.active{display:block;}
 
 /* ── HERO ── */
 .hero{
-  padding:calc(var(--safe-top) + 20px) 18px 18px;
-  background:linear-gradient(150deg,#FDF5EC 0%,#F8EDE0 60%,#F4E6D8 100%);
+  padding:calc(var(--safe-top) + 18px) 16px 16px;
+  background:linear-gradient(150deg,#FEF5EC 0%,#FAF0E4 55%,#F5E8DA 100%);
   border-bottom:1px solid var(--border);
   position:relative;overflow:hidden;
 }
+.dark .hero{background:linear-gradient(150deg,#2A1820 0%,#221520 55%,#1E1018 100%);}
 .hero::after{
   content:'';position:absolute;
-  width:280px;height:280px;border-radius:50%;
-  background:radial-gradient(circle,rgba(193,124,138,.12) 0%,transparent 70%);
-  top:-100px;right:-70px;pointer-events:none;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(181,99,122,.1) 0%,transparent 70%);
+  top:-100px;right:-80px;pointer-events:none;
 }
-.hero-top{display:flex;align-items:center;gap:12px;margin-bottom:4px;}
-.hero-icon{font-size:36px;line-height:1;animation:floatY 3s ease-in-out infinite;}
+.hero-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
+.hero-left{display:flex;align-items:center;gap:11px;}
+.hero-icon{font-size:34px;line-height:1;animation:floatY 3s ease-in-out infinite;}
 @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
-
 h1{
   font-family:'Playfair Display',serif;
-  font-size:clamp(18px,4.5vw,26px);font-weight:900;line-height:1.1;
+  font-size:clamp(17px,4vw,24px);font-weight:900;line-height:1.1;
   background:linear-gradient(120deg,var(--rose-d) 0%,var(--rose) 50%,var(--lilac-d) 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.subtitle{font-size:11px;color:var(--muted);margin-top:3px;font-weight:500;}
+.sub{font-size:11px;color:var(--muted);margin-top:2px;font-weight:500;}
 
-/* Birthday countdown */
-.bday-wrap{
-  background:var(--cream-l);border:1px solid rgba(160,120,64,.2);
-  border-radius:12px;padding:10px 13px;margin-top:12px;
+/* Dark mode & print toggles */
+.hero-btns{display:flex;gap:7px;flex-shrink:0;}
+.icon-btn{
+  width:34px;height:34px;border-radius:50%;border:1px solid var(--border);
+  background:var(--surface);cursor:pointer;font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;box-shadow:0 1px 4px rgba(42,26,16,.08);
 }
-.bday-label{font-size:11px;color:var(--cream-d);font-weight:700;margin-bottom:5px;}
+.icon-btn:hover{transform:scale(1.08);}
+
+/* Countdown */
+.cd-wrap{
+  background:var(--gold-l);border:1px solid rgba(201,168,76,.25);
+  border-radius:11px;padding:9px 12px;margin-top:11px;
+}
+.dark .cd-wrap{background:rgba(201,168,76,.1);}
+.cd-lbl{font-size:11px;color:var(--gold-d);font-weight:700;margin-bottom:4px;}
 #bdayInput{
-  background:#fff;border:1px solid rgba(160,120,64,.25);
-  border-radius:8px;padding:7px 10px;color:var(--text);font-size:13px;
+  background:var(--surface);border:1px solid rgba(201,168,76,.3);
+  border-radius:8px;padding:6px 10px;color:var(--text);font-size:13px;
   font-family:'DM Sans',sans-serif;width:100%;outline:none;
 }
-#bdayInput:focus{border-color:var(--cream-d);}
-.countdown-txt{font-size:13px;font-weight:700;color:var(--cream-d);margin-top:7px;display:none;text-align:center;}
+#bdayInput:focus{border-color:var(--gold);}
+.cd-txt{font-size:13px;font-weight:700;color:var(--gold-d);margin-top:6px;display:none;text-align:center;}
 
 /* Stats */
-.stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.stats{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px;}
 .stat{
-  flex:1;min-width:75px;
-  background:#fff;border:1px solid var(--border);
-  border-radius:12px;padding:9px 12px;
+  flex:1;min-width:70px;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:11px;padding:8px 10px;
   display:flex;align-items:center;gap:8px;
-  box-shadow:0 1px 6px rgba(44,26,14,.05);
+  box-shadow:0 1px 5px rgba(42,26,16,.05);
 }
-.stat-val{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;line-height:1;}
-.stat-lbl{font-size:10px;color:var(--muted);margin-top:1px;}
+.sv{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;line-height:1;}
+.sl{font-size:9.5px;color:var(--muted);margin-top:1px;}
 
 /* Progress */
-.prog-wrap{margin-top:12px;}
-.prog-meta{display:flex;justify-content:space-between;margin-bottom:5px;font-size:11px;color:var(--muted);}
+.prog{margin-top:11px;}
+.prog-top{display:flex;justify-content:space-between;margin-bottom:4px;font-size:11px;color:var(--muted);}
 .prog-pct{color:var(--rose-d);font-weight:700;}
-.prog-track{height:7px;background:rgba(44,26,14,.08);border-radius:99px;overflow:hidden;}
-.prog-bar{height:100%;background:linear-gradient(90deg,var(--rose-d),var(--rose),var(--lilac));border-radius:99px;transition:width .6s ease;box-shadow:0 0 8px rgba(193,124,138,.4);}
+.prog-track{height:7px;background:rgba(42,26,16,.08);border-radius:99px;overflow:hidden;}
+.prog-bar{height:100%;background:linear-gradient(90deg,var(--rose-d),var(--rose),var(--lilac));border-radius:99px;transition:width .6s ease;box-shadow:0 0 8px rgba(181,99,122,.35);}
 
 /* ── CONTROLS ── */
-.controls{
+.ctrl{
   position:sticky;top:0;z-index:100;
-  background:rgba(250,246,241,.96);
+  background:rgba(253,248,240,.96);
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
-  padding:10px 14px;
+  padding:9px 13px;
+  transition:background .3s;
 }
-.search-wrap{position:relative;margin-bottom:8px;}
-.s-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:14px;pointer-events:none;}
-#searchInput{
-  width:100%;padding:9px 12px 9px 32px;
-  background:#fff;border:1px solid var(--border);
-  border-radius:10px;color:var(--text);font-size:13px;
-  font-family:'DM Sans',sans-serif;outline:none;
-  box-shadow:0 1px 4px rgba(44,26,14,.05);
-}
-#searchInput:focus{border-color:var(--rose);box-shadow:0 0 0 3px rgba(193,124,138,.12);}
-#searchInput::placeholder{color:var(--muted);}
+.dark .ctrl{background:rgba(26,16,24,.96);}
 
-.pill-row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:1px;flex-wrap:nowrap;}
-.pill-row::-webkit-scrollbar{display:none;}
-.pill-row + .pill-row{margin-top:7px;}
-
-.pill{
-  padding:6px 12px;border-radius:99px;
-  font-size:11px;font-weight:600;white-space:nowrap;
-  cursor:pointer;flex-shrink:0;
-  border:1.5px solid var(--border);
-  background:#fff;color:var(--text2);
+/* Mood search */
+.mood-row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-bottom:8px;}
+.mood-row::-webkit-scrollbar{display:none;}
+.mood-btn{
+  padding:5px 12px;border-radius:99px;font-size:11px;font-weight:600;
+  white-space:nowrap;cursor:pointer;flex-shrink:0;
+  border:1.5px solid var(--border);background:var(--surface);color:var(--text2);
   font-family:'DM Sans',sans-serif;transition:all .18s;
 }
-.pill.active{
-  background:var(--rose-d);color:#fff;border-color:var(--rose-d);
-  box-shadow:0 3px 10px rgba(138,74,86,.3);
+.mood-btn.active{background:var(--rose-d);color:#fff;border-color:var(--rose-d);}
+
+.sw{position:relative;margin-bottom:8px;}
+.si{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:14px;pointer-events:none;}
+#searchInput{
+  width:100%;padding:9px 36px 9px 32px;
+  background:var(--surface);border:1.5px solid var(--border);
+  border-radius:10px;color:var(--text);font-size:13px;
+  font-family:'DM Sans',sans-serif;outline:none;
 }
+#searchInput:focus{border-color:var(--rose);box-shadow:0 0 0 3px rgba(181,99,122,.1);}
+#searchInput::placeholder{color:var(--muted);}
+.near-btn{
+  position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  background:none;border:none;font-size:18px;cursor:pointer;padding:2px;
+  opacity:.6;transition:opacity .2s;
+}
+.near-btn:hover{opacity:1;}
+
+.pr,.cr,.ar{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap;}
+.pr::-webkit-scrollbar,.cr::-webkit-scrollbar,.ar::-webkit-scrollbar{display:none;}
+.cr{margin-top:7px;}.ar{margin-top:6px;}
+.pill{
+  padding:6px 12px;border-radius:99px;font-size:11px;font-weight:600;
+  white-space:nowrap;cursor:pointer;flex-shrink:0;
+  border:1.5px solid var(--border);background:var(--surface);color:var(--text2);
+  font-family:'DM Sans',sans-serif;transition:all .18s;
+}
+.pill.active{background:var(--rose-d);color:#fff;border-color:var(--rose-d);box-shadow:0 2px 8px rgba(138,58,82,.25);}
 .cpill{
-  padding:5px 11px;border-radius:99px;
-  font-size:11px;font-weight:600;white-space:nowrap;
-  cursor:pointer;flex-shrink:0;
-  border:1.5px solid var(--border);
-  background:var(--surface2);color:var(--muted);
+  padding:5px 10px;border-radius:99px;font-size:10.5px;font-weight:600;
+  white-space:nowrap;cursor:pointer;flex-shrink:0;
+  border:1.5px solid var(--border);background:var(--surface2);color:var(--muted);
   font-family:'DM Sans',sans-serif;transition:all .18s;
 }
 
 /* ── MAIN ── */
-main{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:14px 14px calc(70px + var(--safe-bot));}
-.count-ln{font-size:12px;color:var(--muted);margin-bottom:12px;}
+main{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:12px 13px calc(68px + var(--safe-bot));}
+.cln{font-size:12px;color:var(--muted);margin-bottom:10px;}
+
+/* Affiliate banner */
+.aff-banner{
+  display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:13px;
+}
+.aff-banner::-webkit-scrollbar{display:none;}
+.aff-card{
+  flex-shrink:0;background:linear-gradient(135deg,var(--rose-xl),var(--lilac-l));
+  border:1px solid rgba(181,99,122,.2);border-radius:12px;
+  padding:10px 14px;display:flex;align-items:center;gap:8px;
+  text-decoration:none;font-size:12px;font-weight:600;color:var(--rose-d);
+  transition:all .2s;min-width:160px;
+}
+.aff-card:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(181,99,122,.15);}
 
 /* AdSense */
-.ad-slot{
-  background:var(--surface2);border:1px dashed rgba(44,26,14,.1);
-  border-radius:12px;overflow:hidden;margin-bottom:14px;
-  min-height:80px;display:flex;align-items:center;justify-content:center;
-}
-.ad-placeholder{font-size:11px;color:var(--muted);text-align:center;padding:12px;}
+.ad-slot{background:var(--surface2);border:1px dashed rgba(42,26,16,.1);border-radius:11px;overflow:hidden;margin-bottom:12px;min-height:70px;display:flex;align-items:center;justify-content:center;}
+.ad-ph{font-size:11px;color:var(--muted);text-align:center;padding:10px;}
 
 /* Disclaimer */
-.disclaimer{
-  background:var(--cream-l);border:1px solid rgba(160,120,64,.2);
-  border-radius:12px;padding:12px 14px;margin-bottom:14px;
-  display:flex;gap:10px;align-items:flex-start;
+.disc{
+  background:var(--gold-l);border:1px solid rgba(201,168,76,.25);
+  border-radius:11px;padding:11px 13px;margin-bottom:12px;
+  display:flex;gap:9px;align-items:flex-start;
 }
-.disclaimer p{font-size:12px;color:var(--text2);line-height:1.7;}
-.disclaimer strong{color:var(--cream-d);}
+.dark .disc{background:rgba(201,168,76,.08);}
+.disc p{font-size:12px;color:var(--text2);line-height:1.7;}
+.disc strong{color:var(--gold-d);}
+
+/* FOTW – Freebie of the Week */
+.fotw{
+  background:linear-gradient(135deg,var(--rose-xl),var(--gold-l));
+  border:1.5px solid rgba(181,99,122,.25);border-radius:14px;
+  padding:13px 14px;margin-bottom:14px;
+  box-shadow:0 2px 12px rgba(181,99,122,.1);
+}
+.fotw-lbl{font-size:10px;font-weight:700;color:var(--rose-d);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px;}
+.fotw-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text);}
+.fotw-freebie{font-size:13px;color:var(--rose);font-weight:600;margin-top:2px;}
+.fotw-note{font-size:11px;color:var(--muted);margin-top:3px;}
 
 /* Section */
-.sec-wrap{margin-bottom:24px;}
-.sec-head{
-  display:flex;align-items:center;gap:8px;
-  margin-bottom:11px;padding-bottom:8px;
-  border-bottom:1px solid var(--border);
-}
-.sec-head h2{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;}
-.sec-count{font-size:11px;padding:2px 9px;border-radius:99px;margin-left:auto;font-weight:600;}
+.sw2{margin-bottom:22px;}
+.sh{display:flex;align-items:center;gap:7px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.sh h2{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;}
+.sc{font-size:11px;padding:2px 8px;border-radius:99px;margin-left:auto;font-weight:600;}
 
 /* Card grid */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:11px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:10px;}
 
-/* Card */
+/* ── CARD ── */
 .card{
-  border-radius:14px;padding:13px 14px;cursor:pointer;
-  border:1px solid var(--border);
-  background:var(--surface);
+  border-radius:13px;padding:12px 13px;cursor:pointer;
+  border:1px solid var(--border);background:var(--surface);
   position:relative;overflow:hidden;
   transition:transform .2s,box-shadow .2s;
   animation:fadeUp .3s ease both;
-  box-shadow:0 1px 8px rgba(44,26,14,.07);
+  box-shadow:0 1px 6px rgba(42,26,16,.06);
 }
-.card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(44,26,14,.12);}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(42,26,16,.1);}
 .card:active{transform:scale(.98);}
-.card.claimed{background:#F5FAF6;border-color:rgba(122,158,130,.3);}
-.card.featured{border-color:rgba(160,120,64,.4);box-shadow:0 2px 16px rgba(160,120,64,.1);}
-.card-stripe{position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;}
-.card.claimed .card-stripe{background:linear-gradient(90deg,var(--sage),var(--sage-l));}
-.card.featured:not(.claimed) .card-stripe{background:linear-gradient(90deg,var(--cream-d),var(--cream));}
+.card.claimed{background:#F5FAF6;border-color:rgba(92,138,106,.3);}
+.dark .card.claimed{background:rgba(92,138,106,.08);}
+.card.featured{border-color:rgba(201,168,76,.4);box-shadow:0 2px 14px rgba(201,168,76,.1);}
+.card-stripe{position:absolute;top:0;left:0;right:0;height:3px;border-radius:13px 13px 0 0;}
+.card.claimed .card-stripe{background:linear-gradient(90deg,var(--sage),var(--teal));}
+.card.featured:not(.claimed) .card-stripe{background:linear-gradient(90deg,var(--gold-d),var(--gold));}
 
-.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px;gap:5px;}
-.cbadge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:99px;flex-shrink:0;}
-.badges{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;flex-shrink:0;}
-.b-must{font-size:9px;font-weight:700;background:var(--rose-l);color:var(--rose-d);padding:2px 7px;border-radius:99px;}
-.b-feat{font-size:9px;font-weight:700;background:var(--cream-l);color:var(--cream-d);padding:2px 7px;border-radius:99px;}
-.b-kids{font-size:9px;font-weight:700;background:var(--sage-l);color:var(--sage-d);padding:2px 7px;border-radius:99px;}
-.b-new{font-size:9px;font-weight:700;background:var(--lilac-l);color:var(--lilac-d);padding:2px 7px;border-radius:99px;}
+.ct{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;gap:5px;}
+.cbadge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:99px;flex-shrink:0;}
+.bgs{display:flex;gap:3px;flex-wrap:wrap;justify-content:flex-end;flex-shrink:0;}
+.bm{font-size:9px;font-weight:700;padding:2px 6px;border-radius:99px;}
+.bm-must{background:var(--rose-l);color:var(--rose-d);}
+.bm-feat{background:var(--gold-l);color:var(--gold-d);}
+.bm-kids{background:var(--sage-l);color:var(--sage-d);}
+.bm-new{background:var(--lilac-l);color:var(--lilac-d);}
+.bm-ver{background:#E8F5E8;color:#3A7A3A;}
 
-.dtags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px;}
+.dtags{display:flex;gap:3px;flex-wrap:wrap;margin-bottom:4px;}
 .dtag{font-size:9px;padding:2px 6px;border-radius:99px;font-weight:600;}
-.dtag-h{background:#E8F5E8;color:#3D8A3D;}
-.dtag-v{background:var(--sage-l);color:var(--sage-d);}
-.dtag-k{background:var(--lilac-l);color:var(--lilac-d);}
+.dh{background:#E8F5E8;color:#3A7A3A;}
+.dv{background:var(--sage-l);color:var(--sage-d);}
+.dk{background:var(--lilac-l);color:var(--lilac-d);}
 
-.card-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;line-height:1.3;}
-.card.claimed .card-name{color:var(--sage-d);text-decoration:line-through;text-decoration-color:rgba(122,158,130,.5);}
-.card-freebie{font-size:13px;font-weight:600;margin-bottom:3px;}
-.card-validity{font-size:11px;color:var(--muted);}
-.card-meta{font-size:10px;color:var(--muted);margin-top:2px;display:flex;gap:10px;flex-wrap:wrap;}
+.cn{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;line-height:1.3;}
+.card.claimed .cn{color:var(--sage-d);text-decoration:line-through;text-decoration-color:rgba(92,138,106,.45);}
+.cf{font-size:13px;font-weight:600;margin-bottom:3px;}
+.cv{font-size:11px;color:var(--muted);}
+.cm{font-size:10px;color:var(--muted);margin-top:2px;display:flex;gap:8px;flex-wrap:wrap;}
 
 /* Expanded */
-.card-detail{
-  border-top:1px solid var(--border2);
-  margin-top:10px;padding-top:10px;margin-bottom:10px;
-  font-size:12px;line-height:1.8;color:var(--text2);display:none;
-}
-.card.open .card-detail{display:block;}
-.card-detail strong{color:var(--text);font-weight:600;}
-.card-detail .biz-info{
-  background:var(--surface2);border:1px solid var(--border2);
-  border-radius:9px;padding:9px 11px;margin-top:8px;font-size:11px;
-}
-.card-detail .biz-info a{color:var(--rose-d);font-weight:600;text-decoration:none;}
+.cd{border-top:1px solid var(--border2);margin-top:9px;padding-top:9px;margin-bottom:9px;font-size:12px;line-height:1.8;color:var(--text2);display:none;}
+.card.open .cd{display:block;}
+.cd strong{color:var(--text);font-weight:600;}
+.biz-info{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:8px 10px;margin-top:7px;font-size:11px;}
+.biz-info a{color:var(--rose-d);font-weight:600;text-decoration:none;}
+.app-lnk{display:inline-flex;align-items:center;gap:5px;margin-top:7px;font-size:11px;font-weight:700;color:var(--lilac-d);background:var(--lilac-l);padding:5px 10px;border-radius:8px;border:1px solid rgba(139,127,184,.25);text-decoration:none;}
 
-.app-link-btn{
-  display:inline-flex;align-items:center;gap:5px;margin-top:8px;
-  font-size:11px;font-weight:700;color:var(--lilac-d);
-  background:var(--lilac-l);padding:5px 11px;border-radius:8px;
-  border:1px solid rgba(155,142,196,.25);text-decoration:none;
-}
+/* Notes */
+.nlbl{font-size:10px;color:var(--muted);font-weight:700;margin:9px 0 3px;text-transform:uppercase;letter-spacing:.4px;}
+.cnote{width:100%;padding:7px 9px;border-radius:8px;font-size:12px;background:var(--surface2);border:1.5px solid var(--border);color:var(--text);font-family:'DM Sans',sans-serif;resize:none;outline:none;min-height:48px;}
+.cnote:focus{border-color:var(--rose);}
+.cnote::placeholder{color:var(--muted);}
 
-.note-lbl{font-size:10px;color:var(--muted);font-weight:700;margin:10px 0 4px;text-transform:uppercase;letter-spacing:.4px;}
-.card-note{
-  width:100%;padding:7px 10px;border-radius:8px;font-size:12px;
-  background:var(--surface2);border:1px solid var(--border);
-  color:var(--text);font-family:'DM Sans',sans-serif;resize:none;
-  outline:none;min-height:50px;
-}
-.card-note:focus{border-color:var(--rose);}
-.card-note::placeholder{color:var(--muted);}
+/* Reviews */
+.rev-wrap{margin-top:9px;border-top:1px solid var(--border2);padding-top:9px;}
+.rev-lbl{font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px;}
+.rev-btns{display:flex;gap:8px;align-items:center;margin-bottom:6px;}
+.rev-btn{padding:5px 12px;border-radius:99px;font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid var(--border);background:var(--surface);color:var(--text2);transition:all .18s;font-family:'DM Sans',sans-serif;}
+.rev-btn.up.voted{background:var(--sage-l);color:var(--sage-d);border-color:var(--sage);}
+.rev-btn.dn.voted{background:var(--rose-l);color:var(--rose-d);border-color:var(--rose);}
+.rev-score{font-size:11px;color:var(--muted);}
+.rev-comment{width:100%;padding:6px 9px;border-radius:8px;font-size:12px;background:var(--surface2);border:1.5px solid var(--border);color:var(--text);font-family:'DM Sans',sans-serif;outline:none;margin-bottom:5px;}
+.rev-comment::placeholder{color:var(--muted);}
+.rev-comment:focus{border-color:var(--rose);}
+.rev-submit{padding:5px 14px;border-radius:8px;border:none;cursor:pointer;background:var(--rose-d);color:#fff;font-size:11px;font-weight:700;font-family:'DM Sans',sans-serif;}
+.rev-list{margin-top:6px;max-height:100px;overflow-y:auto;}
+.rev-item{font-size:11px;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border2);line-height:1.5;}
 
-.toggle-hint{font-size:10px;color:rgba(44,26,14,.3);text-align:center;margin:7px 0 9px;}
+.th{font-size:10px;color:rgba(42,26,16,.28);text-align:center;margin:6px 0 8px;}
 
-/* Action buttons — clear contrast on light bg */
-.card-actions{display:flex;gap:8px;margin-top:2px;}
-.abtn{
-  flex:1;padding:9px 0;border-radius:10px;
-  font-size:12px;font-weight:700;cursor:pointer;
-  font-family:'DM Sans',sans-serif;transition:all .18s;
-  letter-spacing:.2px;border:none;
-}
-.abtn:active{transform:scale(.97);}
-.sbtn{background:var(--cream-l);color:var(--cream-d);border:2px solid rgba(160,120,64,.35);}
-.sbtn.on{background:var(--cream-d);color:#fff;border-color:var(--cream-d);box-shadow:0 3px 10px rgba(160,120,64,.3);}
-.cbtn{background:var(--sage-l);color:var(--sage-d);border:2px solid rgba(122,158,130,.35);}
-.cbtn.on{background:var(--sage-d);color:#fff;border-color:var(--sage-d);box-shadow:0 3px 10px rgba(122,158,130,.3);}
+/* Card action buttons */
+.ca{display:flex;gap:6px;margin-top:2px;}
+.ab{flex:1;padding:8px 0;border-radius:9px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .18s;letter-spacing:.2px;border:none;text-align:center;}
+.ab:active{transform:scale(.96);}
+.sb{background:var(--gold-l);color:var(--gold-d);border:2px solid rgba(201,168,76,.35);}
+.sb.on{background:var(--gold-d);color:#fff;border-color:var(--gold-d);box-shadow:0 2px 8px rgba(138,106,32,.25);}
+.cb{background:var(--sage-l);color:var(--sage-d);border:2px solid rgba(92,138,106,.35);}
+.cb.on{background:var(--sage-d);color:#fff;border-color:var(--sage-d);box-shadow:0 2px 8px rgba(58,94,70,.25);}
+/* Share & Report buttons */
+.card-bottom{display:flex;gap:6px;margin-top:6px;}
+.sm-btn{flex:1;padding:6px 0;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .18s;text-decoration:none;text-align:center;display:block;}
+.share-btn{background:var(--rose-xl);color:var(--rose-d);border:1.5px solid rgba(181,99,122,.25);}
+.report-btn{background:#FFF5F5;color:#B05050;border:1.5px solid rgba(200,80,80,.2);}
 
 /* Empty */
-.empty{text-align:center;padding:60px 20px;}
-.empty p{color:var(--muted);font-size:15px;margin-top:10px;}
+.empty{text-align:center;padding:55px 20px;}
+.empty p{color:var(--muted);font-size:14px;margin-top:9px;}
 
-/* ══ INFO CARDS (Tips/FAQ/About) ══ */
-.ipage{max-width:700px;margin:0 auto;padding:18px 16px calc(70px + var(--safe-bot));}
-.ipage h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--rose-d);margin-bottom:4px;}
-.ipage .tag{font-size:13px;color:var(--muted);margin-bottom:20px;display:block;}
-.isec{margin-bottom:20px;}
-.isec h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--rose-d);margin-bottom:10px;display:flex;align-items:center;gap:7px;}
-.icard{background:#fff;border:1px solid var(--border);border-radius:13px;padding:13px 14px;margin-bottom:9px;box-shadow:0 1px 6px rgba(44,26,14,.04);}
-.icard p{font-size:13px;color:var(--text2);line-height:1.8;}
-.icard strong{color:var(--text);}
-.step-n{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--rose-d);color:#fff;font-size:10px;font-weight:700;flex-shrink:0;margin-right:7px;float:left;margin-top:2px;}
+/* ── INFO PAGES ── */
+.ip{max-width:700px;margin:0 auto;padding:16px 14px calc(68px + var(--safe-bot));}
+.ip h2{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--rose-d);margin-bottom:3px;}
+.ip .tg{font-size:13px;color:var(--muted);margin-bottom:18px;display:block;}
+.isec{margin-bottom:18px;}
+.isec h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--rose-d);margin-bottom:9px;display:flex;align-items:center;gap:7px;}
+.ic{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 13px;margin-bottom:8px;box-shadow:0 1px 4px rgba(42,26,16,.04);}
+.ic p{font-size:13px;color:var(--text2);line-height:1.8;}
+.ic strong{color:var(--text);}
+.sn{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border-radius:50%;background:var(--rose-d);color:#fff;font-size:10px;font-weight:700;flex-shrink:0;margin-right:7px;float:left;margin-top:2px;}
 
 /* FAQ */
-.faq{background:#fff;border:1px solid var(--border);border-radius:13px;margin-bottom:8px;overflow:hidden;box-shadow:0 1px 6px rgba(44,26,14,.04);}
-.faq-q{padding:13px 14px;font-size:13px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
-.faq-q::after{content:"▼";font-size:10px;color:var(--rose-d);transition:transform .2s;flex-shrink:0;margin-left:8px;}
-.faq.open .faq-q::after{transform:rotate(180deg);}
-.faq-a{display:none;padding:0 14px 13px;font-size:12px;color:var(--text2);line-height:1.8;border-top:1px solid var(--border2);}
-.faq.open .faq-a{display:block;}
+.faq{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:7px;overflow:hidden;box-shadow:0 1px 4px rgba(42,26,16,.04);}
+.fq{padding:12px 13px;font-size:13px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.fq::after{content:"▼";font-size:10px;color:var(--rose-d);transition:transform .2s;flex-shrink:0;}
+.faq.open .fq::after{transform:rotate(180deg);}
+.fa{display:none;padding:0 13px 12px;font-size:12px;color:var(--text2);line-height:1.8;border-top:1px solid var(--border2);}
+.faq.open .fa{display:block;}
 
-/* Loyalty cards */
-.lcard{background:#fff;border:1px solid var(--border);border-radius:13px;padding:13px 14px;margin-bottom:9px;}
-.lcard h4{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;}
-.lcard p{font-size:12px;color:var(--text2);line-height:1.75;}
-.ltag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;margin-bottom:7px;background:var(--sage-l);color:var(--sage-d);}
+/* Loyalty */
+.lc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 13px;margin-bottom:8px;}
+.lc h4{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.lc p{font-size:12px;color:var(--text2);line-height:1.75;}
+.ltg{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;margin-bottom:6px;background:var(--sage-l);color:var(--sage-d);}
 
-/* ══ CONTACT PAGE ══ */
-.cpage{max-width:700px;margin:0 auto;padding:18px 16px calc(70px + var(--safe-bot));}
-.about-hero{
-  background:linear-gradient(135deg,var(--rose-l),var(--lilac-l));
-  border:1px solid rgba(193,124,138,.2);border-radius:16px;
-  padding:22px;margin-bottom:16px;text-align:center;
+/* Blog */
+.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:9px;box-shadow:0 1px 4px rgba(42,26,16,.04);}
+.blog-date{font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px;}
+.blog-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--rose-d);margin-bottom:5px;}
+.blog-body{font-size:13px;color:var(--text2);line-height:1.75;}
+
+/* ── CONTACT PAGE ── */
+.cp2{max-width:700px;margin:0 auto;padding:16px 14px calc(68px + var(--safe-bot));}
+.ah{
+  background:linear-gradient(135deg,var(--rose-xl),var(--lilac-l));
+  border:1px solid rgba(181,99,122,.18);border-radius:15px;
+  padding:20px;margin-bottom:14px;text-align:center;
 }
-.about-avi{font-size:52px;margin-bottom:8px;}
-.about-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--rose-d);}
-.about-title{font-size:13px;color:var(--rose);margin-top:3px;}
-.about-bio{font-size:13px;color:var(--text2);line-height:1.8;margin-top:12px;text-align:left;}
+.dark .ah{background:linear-gradient(135deg,rgba(181,99,122,.12),rgba(139,127,184,.12));}
+.av{font-size:50px;margin-bottom:7px;}
+.an{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--rose-d);}
+.at{font-size:13px;color:var(--rose);margin-top:3px;}
+.ab2{font-size:13px;color:var(--text2);line-height:1.8;margin-top:11px;text-align:left;}
 
-/* Contact buttons */
-.contact-btns{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
-.cta-btn{
-  display:flex;align-items:center;justify-content:center;gap:9px;
-  padding:13px 20px;border-radius:13px;font-size:14px;font-weight:700;
-  text-decoration:none;transition:all .2s;font-family:'DM Sans',sans-serif;
-}
-.cta-btn:hover{transform:translateY(-2px);}
-.cta-wa{background:#25D366;color:#fff;box-shadow:0 4px 16px rgba(37,211,102,.35);}
-.cta-em{background:var(--rose-d);color:#fff;box-shadow:0 4px 16px rgba(138,74,86,.3);}
+.cbtns{display:flex;flex-direction:column;gap:9px;margin-bottom:14px;}
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.cta:hover{transform:translateY(-2px);}
+.cta-wa{background:#25D366;color:#fff;box-shadow:0 3px 14px rgba(37,211,102,.3);}
+.cta-em{background:var(--rose-d);color:#fff;box-shadow:0 3px 14px rgba(138,58,82,.25);}
+.cta-pay{background:linear-gradient(135deg,var(--gold-d),var(--gold));color:#fff;box-shadow:0 3px 14px rgba(138,106,32,.25);}
+.cta-pdf{background:linear-gradient(135deg,var(--lilac-d),var(--lilac));color:#fff;box-shadow:0 3px 14px rgba(90,78,138,.25);}
 
-/* Social links */
-.social-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
-.soc-btn{
-  flex:1;min-width:100px;
-  display:flex;align-items:center;justify-content:center;gap:7px;
-  padding:11px 10px;border-radius:12px;font-size:13px;font-weight:700;
-  text-decoration:none;background:#fff;border:1.5px solid var(--border);
-  color:var(--text2);transition:all .2s;
-}
-.soc-btn:hover{border-color:var(--rose);color:var(--rose-d);}
+.sr{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:13px;}
+.sc2{flex:1;min-width:90px;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 8px;border-radius:11px;font-size:12px;font-weight:700;text-decoration:none;background:var(--surface);border:1.5px solid var(--border);color:var(--text2);transition:all .2s;}
+.sc2:hover{border-color:var(--rose);color:var(--rose-d);}
 
-/* Submit box */
-.sub-box{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px;}
-.sub-box h3{font-family:'Playfair Display',serif;font-size:16px;color:var(--rose-d);margin-bottom:12px;}
-.sub-step{display:flex;gap:10px;margin-bottom:10px;font-size:13px;color:var(--text2);line-height:1.7;}
-.sub-num{width:22px;height:22px;border-radius:50%;flex-shrink:0;background:var(--rose-d);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-top:2px;}
+/* Newsletter */
+.nl-box{background:linear-gradient(135deg,var(--rose-xl),var(--gold-l));border:1px solid rgba(181,99,122,.2);border-radius:13px;padding:14px;margin-bottom:13px;}
+.nl-box h3{font-family:'Playfair Display',serif;font-size:15px;color:var(--rose-d);margin-bottom:4px;}
+.nl-box p{font-size:12px;color:var(--text2);margin-bottom:10px;line-height:1.6;}
+.nl-input{width:100%;padding:9px 12px;background:var(--surface);border:1.5px solid rgba(181,99,122,.25);border-radius:9px;color:var(--text);font-size:13px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:8px;}
+.nl-input:focus{border-color:var(--rose);}
+.nl-btn{width:100%;padding:10px;border-radius:9px;border:none;cursor:pointer;background:var(--rose-d);color:#fff;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;}
 
-/* Share btn */
-.share-card{
-  background:linear-gradient(135deg,var(--rose-l),var(--lilac-l));
-  border:1px solid rgba(193,124,138,.2);border-radius:14px;padding:16px;text-align:center;
-}
-.share-card p{font-size:13px;color:var(--text2);margin-bottom:10px;}
+.sub-box{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:14px;margin-bottom:12px;}
+.sub-box h3{font-family:'Playfair Display',serif;font-size:15px;color:var(--rose-d);margin-bottom:10px;}
+.ss{display:flex;gap:9px;margin-bottom:9px;font-size:13px;color:var(--text2);line-height:1.7;}
+.sn2{width:21px;height:21px;border-radius:50%;flex-shrink:0;background:var(--rose-d);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-top:2px;}
 
-/* ══ OWNER PANEL ══ */
-.opage{max-width:700px;margin:0 auto;padding:18px 16px calc(70px + var(--safe-bot));}
-.o-login{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;box-shadow:0 2px 12px rgba(44,26,14,.07);}
-.o-login h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--rose-d);margin-bottom:6px;}
-.o-login p{font-size:12px;color:var(--muted);margin-bottom:16px;}
-.oinput{
-  width:100%;padding:10px 13px;background:#fff;
-  border:1.5px solid var(--border);border-radius:10px;
-  color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;outline:none;
-  margin-bottom:10px;
-}
-.oinput:focus{border-color:var(--rose);}
-.obtn{
-  width:100%;padding:11px;border-radius:10px;border:none;cursor:pointer;
-  background:var(--rose-d);color:#fff;font-family:'DM Sans',sans-serif;
-  font-size:14px;font-weight:700;box-shadow:0 3px 12px rgba(138,74,86,.3);
-  transition:all .2s;
-}
-.obtn:hover{filter:brightness(1.05);}
-.o-panel{display:none;}
-.o-panel.vis{display:block;}
+.share-app{background:linear-gradient(135deg,var(--rose-xl),var(--lilac-l));border:1px solid rgba(181,99,122,.18);border-radius:13px;padding:14px;text-align:center;}
+.share-app p{font-size:13px;color:var(--text2);margin-bottom:9px;}
 
-/* Owner tabs */
-.o-tabs{display:flex;gap:8px;margin-bottom:16px;overflow-x:auto;scrollbar-width:none;}
+/* ── OWNER PANEL ── */
+.op{max-width:700px;margin:0 auto;padding:16px 14px calc(68px + var(--safe-bot));}
+.ol{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:22px;text-align:center;box-shadow:0 2px 10px rgba(42,26,16,.06);}
+.ol h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--rose-d);margin-bottom:5px;}
+.ol p{font-size:12px;color:var(--muted);margin-bottom:14px;}
+.oi{width:100%;padding:9px 12px;background:var(--surface);border:1.5px solid var(--border);border-radius:9px;color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:9px;}
+.oi:focus{border-color:var(--rose);}
+.ob{width:100%;padding:10px;border-radius:9px;border:none;cursor:pointer;background:var(--rose-d);color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;box-shadow:0 3px 10px rgba(138,58,82,.25);transition:all .2s;}
+.ob:hover{filter:brightness(1.05);}
+.o-pan{display:none;}
+.o-pan.vis{display:block;}
+.o-tabs{display:flex;gap:7px;margin-bottom:14px;overflow-x:auto;scrollbar-width:none;}
 .o-tabs::-webkit-scrollbar{display:none;}
-.otab{
-  padding:8px 16px;border-radius:99px;font-size:12px;font-weight:700;
-  cursor:pointer;border:1.5px solid var(--border);background:#fff;color:var(--text2);
-  flex-shrink:0;transition:all .18s;font-family:'DM Sans',sans-serif;
-}
+.otab{padding:7px 14px;border-radius:99px;font-size:11px;font-weight:700;cursor:pointer;border:1.5px solid var(--border);background:var(--surface);color:var(--text2);flex-shrink:0;transition:all .18s;font-family:'DM Sans',sans-serif;}
 .otab.active{background:var(--rose-d);color:#fff;border-color:var(--rose-d);}
+.os{display:none;}
+.os.vis{display:block;}
+.of{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:14px;margin-bottom:13px;box-shadow:0 1px 6px rgba(42,26,16,.04);}
+.of h3{font-family:'Playfair Display',serif;font-size:15px;color:var(--rose-d);margin-bottom:11px;}
+.fr{margin-bottom:10px;}
+.fl{font-size:10.5px;color:var(--muted);font-weight:700;display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:.4px;}
+.fi,.fsl,.fta{width:100%;padding:8px 11px;background:var(--surface);border:1.5px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;font-family:'DM Sans',sans-serif;outline:none;}
+.fta{resize:vertical;min-height:56px;}
+.fi:focus,.fsl:focus,.fta:focus{border-color:var(--rose);}
+.fr2{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.fa2{width:100%;padding:10px;border-radius:9px;border:none;cursor:pointer;background:var(--rose-d);color:#fff;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;margin-top:4px;box-shadow:0 3px 10px rgba(138,58,82,.25);transition:all .2s;}
+.fa2:hover{filter:brightness(1.05);}
+.fs2{padding:8px 16px;border-radius:9px;border:none;cursor:pointer;background:var(--sage-d);color:#fff;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif;box-shadow:0 2px 8px rgba(58,94,70,.25);transition:all .2s;}
+.o-item{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:10px 12px;margin-bottom:7px;display:flex;justify-content:space-between;align-items:flex-start;gap:9px;box-shadow:0 1px 4px rgba(42,26,16,.04);}
+.o-item .nm{font-size:13px;font-weight:700;color:var(--text);}
+.o-item .mt{font-size:11px;color:var(--muted);margin-top:1px;}
+.del{background:#FFF0F0;border:1px solid rgba(200,80,80,.25);color:#B05050;border-radius:7px;padding:4px 9px;font-size:11px;font-weight:700;cursor:pointer;transition:all .18s;}
+.del:hover{background:#FFE0E0;}
+.ok{background:#F0FAF4;border:1px solid rgba(92,138,106,.3);border-radius:9px;padding:8px 12px;font-size:12px;color:var(--sage-d);margin-bottom:10px;display:none;}
+.er{font-size:11px;color:#B05050;margin-bottom:7px;display:none;}
 
-.o-section{display:none;}
-.o-section.vis{display:block;}
+/* Legal pages */
+.legal{max-width:700px;margin:0 auto;padding:16px 14px calc(68px + var(--safe-bot));}
+.legal h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--rose-d);margin-bottom:4px;}
+.legal h3{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--text);margin:14px 0 5px;}
+.legal p,.legal li{font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:5px;}
+.legal ul{padding-left:18px;margin-bottom:8px;}
+.legal-date{font-size:11px;color:var(--muted);margin-bottom:16px;}
 
-.oform{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 1px 8px rgba(44,26,14,.05);}
-.oform h3{font-family:'Playfair Display',serif;font-size:16px;color:var(--rose-d);margin-bottom:13px;}
-.frow{margin-bottom:11px;}
-.flbl{font-size:11px;color:var(--muted);font-weight:700;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:.4px;}
-.finput,.fselect,.ftarea{
-  width:100%;padding:9px 12px;background:#fff;
-  border:1.5px solid var(--border);border-radius:9px;
-  color:var(--text);font-size:13px;font-family:'DM Sans',sans-serif;outline:none;
-}
-.ftarea{resize:vertical;min-height:58px;}
-.finput:focus,.fselect:focus,.ftarea:focus{border-color:var(--rose);}
-.frow2{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
-.fadd{
-  width:100%;padding:11px;border-radius:10px;border:none;cursor:pointer;
-  background:var(--rose-d);color:#fff;font-size:14px;font-weight:700;
-  font-family:'DM Sans',sans-serif;margin-top:4px;
-  box-shadow:0 3px 12px rgba(138,74,86,.3);transition:all .2s;
-}
-.fadd:hover{filter:brightness(1.05);}
-.fsave{
-  padding:9px 18px;border-radius:10px;border:none;cursor:pointer;
-  background:var(--sage-d);color:#fff;font-size:13px;font-weight:700;
-  font-family:'DM Sans',sans-serif;box-shadow:0 3px 10px rgba(74,112,85,.3);
-  transition:all .2s;
-}
-.fsave:hover{filter:brightness(1.05);}
-
-.o-list-item{
-  background:#fff;border:1px solid var(--border);border-radius:12px;padding:11px 13px;margin-bottom:8px;
-  display:flex;justify-content:space-between;align-items:flex-start;gap:10px;
-  box-shadow:0 1px 5px rgba(44,26,14,.04);
-}
-.o-list-item .nm{font-size:13px;font-weight:700;color:var(--text);}
-.o-list-item .mt{font-size:11px;color:var(--muted);margin-top:2px;}
-.delbtn{
-  background:#FFF0F0;border:1px solid rgba(200,80,80,.3);
-  color:#B05050;border-radius:8px;padding:5px 10px;font-size:11px;
-  font-weight:700;cursor:pointer;flex-shrink:0;transition:all .18s;
-}
-.delbtn:hover{background:#FFE0E0;}
-.ok-msg{background:#F0FDF4;border:1px solid rgba(122,158,130,.35);border-radius:10px;padding:9px 13px;font-size:12px;color:var(--sage-d);margin-bottom:11px;display:none;}
-.err-msg{font-size:11px;color:#B05050;margin-bottom:8px;display:none;}
+/* Plan my day modal */
+.modal-bg{position:fixed;inset:0;background:rgba(42,26,16,.5);z-index:300;display:none;align-items:flex-end;justify-content:center;}
+.modal-bg.vis{display:flex;}
+.modal{background:var(--bg);border-radius:20px 20px 0 0;padding:20px 16px calc(20px + var(--safe-bot));max-width:600px;width:100%;max-height:80dvh;overflow-y:auto;}
+.modal h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--rose-d);margin-bottom:4px;}
+.modal-close{float:right;font-size:20px;cursor:pointer;color:var(--muted);background:none;border:none;line-height:1;}
+.plan-item{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:11px 12px;margin-bottom:8px;display:flex;gap:10px;align-items:flex-start;}
+.plan-time{font-size:11px;font-weight:700;color:var(--rose-d);flex-shrink:0;min-width:55px;}
+.plan-info .pn{font-size:13px;font-weight:600;color:var(--text);}
+.plan-info .pf{font-size:12px;color:var(--muted);}
 
 /* Copyright */
-.copy{
-  text-align:center;font-size:11px;color:var(--muted);
-  border-top:1px solid var(--border);padding:14px 20px;margin-top:10px;
+.copy{text-align:center;font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding:12px 16px;margin-top:8px;}
+.copy strong{color:var(--text2);}
+
+/* Print */
+@media print{
+  .nav,.ctrl,.hero-btns,.ca,.card-bottom,.rev-wrap,.ad-slot,.aff-banner,.modal-bg{display:none!important;}
+  body{background:#fff!important;color:#000!important;}
+  .card{break-inside:avoid;box-shadow:none!important;border:1px solid #ddd!important;}
+  .page{display:block!important;}
+  #pg-freebies .page{display:block!important;}
 }
 
-/* Animations */
-@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(9px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fall{0%{transform:translateY(0) rotate(0deg);opacity:1;}100%{transform:translateY(110dvh) rotate(600deg);opacity:0;}}
-.cp{position:fixed;top:-20px;pointer-events:none;z-index:9999;animation:fall linear forwards;}
+.cfp{position:fixed;top:-20px;pointer-events:none;z-index:9999;animation:fall linear forwards;}
 
 ::-webkit-scrollbar{width:4px;height:4px;}
-::-webkit-scrollbar-thumb{background:rgba(193,124,138,.3);border-radius:99px;}
+::-webkit-scrollbar-thumb{background:rgba(181,99,122,.3);border-radius:99px;}
 </style>
 </head>
 <body>
 
-<!-- PAGE: FREEBIES -->
+<!-- ═══ PAGE: FREEBIES ═══ -->
 <div class="page active" id="pg-freebies">
   <div class="hero">
-    <div class="hero-top">
-      <div class="hero-icon">🎂</div>
-      <div>
-        <h1>Birthday Freebies SA</h1>
-        <div class="subtitle">Western Cape · <span id="totCount">0</span> freebies · by Candice Klein</div>
+    <div class="hero-row">
+      <div class="hero-left">
+        <div class="hero-icon">🎂</div>
+        <div>
+          <h1>Birthday Freebies SA</h1>
+          <div class="sub">Western Cape · <span id="totC">0</span> freebies · by Candice Klein</div>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <button class="icon-btn" onclick="toggleDark()" title="Dark mode" id="dmBtn">🌙</button>
+        <button class="icon-btn" onclick="window.print()" title="Print">🖨️</button>
       </div>
     </div>
-    <div class="bday-wrap">
-      <div class="bday-label">🎂 Enter your birthday for a countdown</div>
+    <div class="cd-wrap">
+      <div class="cd-lbl">🎂 Your birthday — get a countdown & reminder</div>
       <input type="date" id="bdayInput"/>
-      <div class="countdown-txt" id="cdTxt"></div>
+      <div class="cd-txt" id="cdTxt"></div>
     </div>
     <div class="stats">
-      <div class="stat"><span style="font-size:17px">🎁</span><div><div class="stat-val" id="stTotal" style="color:var(--rose-d)">0</div><div class="stat-lbl">Total</div></div></div>
-      <div class="stat"><span style="font-size:17px">✅</span><div><div class="stat-val" id="stClaimed" style="color:var(--sage-d)">0</div><div class="stat-lbl">Claimed</div></div></div>
-      <div class="stat"><span style="font-size:17px">📱</span><div><div class="stat-val" id="stSigned" style="color:var(--cream-d)">0</div><div class="stat-lbl">Apps</div></div></div>
-      <div class="stat"><span style="font-size:17px">⏳</span><div><div class="stat-val" id="stLeft" style="color:var(--lilac-d)">0</div><div class="stat-lbl">Left</div></div></div>
+      <div class="stat"><span style="font-size:16px">🎁</span><div><div class="sv" id="stT" style="color:var(--rose-d)">0</div><div class="sl">Total</div></div></div>
+      <div class="stat"><span style="font-size:16px">✅</span><div><div class="sv" id="stC" style="color:var(--sage-d)">0</div><div class="sl">Claimed</div></div></div>
+      <div class="stat"><span style="font-size:16px">📱</span><div><div class="sv" id="stS" style="color:var(--gold-d)">0</div><div class="sl">Apps</div></div></div>
+      <div class="stat"><span style="font-size:16px">⏳</span><div><div class="sv" id="stL" style="color:var(--lilac-d)">0</div><div class="sl">Left</div></div></div>
     </div>
-    <div class="prog-wrap">
-      <div class="prog-meta"><span>Progress</span><span class="prog-pct" id="pctLbl">0%</span></div>
-      <div class="prog-track"><div class="prog-bar" id="progBar" style="width:0%"></div></div>
+    <div class="prog">
+      <div class="prog-top"><span>Progress</span><span class="prog-pct" id="pctL">0%</span></div>
+      <div class="prog-track"><div class="prog-bar" id="progB" style="width:0%"></div></div>
     </div>
   </div>
 
-  <div class="controls">
-    <div class="search-wrap"><span class="s-icon">🔍</span><input type="search" id="searchInput" placeholder="Search freebies…" autocomplete="off"/></div>
-    <div class="pill-row" id="filterRow">
+  <div class="ctrl">
+    <!-- Mood search -->
+    <div class="mood-row" id="moodRow">
+      <button class="mood-btn active" data-mood="all">✨ All</button>
+      <button class="mood-btn" data-mood="food">🍽️ I want food</button>
+      <button class="mood-btn" data-mood="activity">🏔️ I want an activity</button>
+      <button class="mood-btn" data-mood="treat">💆 I want a treat</button>
+      <button class="mood-btn" data-mood="drink">🍷 I want a drink</button>
+      <button class="mood-btn" data-mood="movie">🎬 I want a movie</button>
+      <button class="mood-btn" data-mood="shop">💄 I want to shop</button>
+    </div>
+    <div class="sw">
+      <span class="si">🔍</span>
+      <input type="search" id="searchInput" placeholder="Search freebies…" autocomplete="off"/>
+      <button class="near-btn" onclick="findNearMe()" title="Find near me">📍</button>
+    </div>
+    <div class="pr" id="filterRow">
       <button class="pill active" data-f="all">All 🎉</button>
       <button class="pill" data-f="unclaimed">To Claim ⏳</button>
       <button class="pill" data-f="claimed">Claimed ✅</button>
       <button class="pill" data-f="mustdo">⭐ Must-Do</button>
       <button class="pill" data-f="kids">👶 Kids</button>
       <button class="pill" data-f="takeaway">🥡 Takeaway</button>
+      <button class="pill" data-f="verified">✅ Verified</button>
       <button class="pill" data-f="sponsored">✨ Sponsored</button>
     </div>
-    <div class="pill-row" id="catRow">
+    <div class="cr" id="catRow">
       <button class="cpill active" data-cat="all">All</button>
       <button class="cpill" data-cat="🏔️ Attractions">🏔️ Attractions</button>
       <button class="cpill" data-cat="🍽️ Food & Drink">🍽️ Food</button>
@@ -549,10 +610,10 @@ main{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:14px 14px
       <button class="cpill" data-cat="💄 Beauty & Retail">💄 Beauty</button>
       <button class="cpill" data-cat="💆 Wellness">💆 Wellness</button>
     </div>
-    <div class="pill-row" id="areaRow">
+    <div class="ar" id="areaRow">
       <button class="cpill active" data-area="all">All Areas</button>
       <button class="cpill" data-area="City Bowl">City Bowl</button>
-      <button class="cpill" data-area="Southern Suburbs">South Suburbs</button>
+      <button class="cpill" data-area="Southern Suburbs">S. Suburbs</button>
       <button class="cpill" data-area="Tygervalley">Tygervalley</button>
       <button class="cpill" data-area="Stellenbosch">Stellenbosch</button>
       <button class="cpill" data-area="Franschhoek">Franschhoek</button>
@@ -561,222 +622,336 @@ main{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:14px 14px
   </div>
 
   <main id="main">
-    <div class="ad-slot" id="adSlot">
-      <div class="ad-placeholder">Advertisement — Set up your AdSense ID in the Owner Dashboard to display ads here</div>
-    </div>
-    <div class="disclaimer">
-      <span style="font-size:18px;flex-shrink:0">⚠️</span>
-      <p><strong>Freebies are not guaranteed.</strong> Offers change without notice. Always call ahead before visiting. This app is a guide only — we accept no responsibility for offers that are unavailable or have changed.</p>
-    </div>
-    <div class="count-ln" id="countLn"></div>
+    <!-- Affiliate banners -->
+    <div class="aff-banner" id="affBanner"></div>
+    <!-- AdSense -->
+    <div class="ad-slot" id="adSlot"><div class="ad-ph">Ad space — set up AdSense in Owner Dashboard</div></div>
+    <!-- Disclaimer -->
+    <div class="disc"><span style="font-size:18px;flex-shrink:0">⚠️</span><p><strong>Freebies are not guaranteed.</strong> Offers change without notice. Always call ahead before visiting. This app is a guide only — we accept no responsibility for offers that are unavailable or have changed.</p></div>
+    <!-- Freebie of the Week -->
+    <div id="fotwWrap" style="display:none"></div>
+    <!-- Recently Added -->
+    <div id="recentWrap" style="display:none"></div>
+    <div class="cln" id="cln"></div>
     <div id="cardArea"></div>
-    <div class="copy">🎂 © 2026 <strong>Candice Klein</strong> · All rights reserved · Designed &amp; built by Candice Klein</div>
+    <div class="copy">🎂 © 2026 <strong>Candice Klein</strong> · All rights reserved · Designed &amp; built by Candice Klein
+      <br><span style="font-size:10px">Last updated: <span id="lastUpdated">May 2026</span></span>
+    </div>
   </main>
 </div>
 
-<!-- PAGE: TIPS -->
+<!-- ═══ PAGE: TIPS ═══ -->
 <div class="page" id="pg-tips">
-  <div class="ipage">
+  <div class="ip">
     <h2>💡 Tips & Guides</h2>
-    <span class="tag">Get the most out of every birthday freebie!</span>
+    <span class="tg">Get the most out of every birthday freebie!</span>
     <div class="isec">
       <h3>📅 4 Weeks Before Your Birthday</h3>
-      <div class="icard"><p><span class="step-n">1</span>Sign up for <strong>all restaurant loyalty apps</strong> — Spur, Mugg &amp; Bean, Nando's, Steers, Krispy Kreme, Kauai &amp; RocoMamas. Most require prior membership to unlock the birthday freebie.</p></div>
-      <div class="icard"><p><span class="step-n">2</span>Register your birthday on <strong>Dis-Chem, Clicks, The Body Shop, Sorbet &amp; Truworths</strong> — vouchers are sent via email and you'll miss them if you sign up late.</p></div>
-      <div class="icard"><p><span class="step-n">3</span>Book the <strong>Stellenbosch Wine Tractor</strong> and <strong>Durbanville Wine Safari</strong> well in advance — both are extremely popular.</p></div>
-      <div class="icard"><p><span class="step-n">4</span>Sign up for the <strong>Cape Wheel Birthday Club</strong> at capewheel.co.za/clubs — your voucher is emailed on your birthday so register before.</p></div>
-      <div class="icard"><p><span class="step-n">5</span>Join <strong>Ster-Kinekor SK Club</strong> and buy at least 1 ticket first to activate your free birthday ticket.</p></div>
+      <div class="ic"><p><span class="sn">1</span>Sign up for <strong>all restaurant loyalty apps</strong> — Spur, Mugg &amp; Bean, Nando's, Steers, Krispy Kreme, Kauai &amp; RocoMamas. Most require prior membership.</p></div>
+      <div class="ic"><p><span class="sn">2</span>Register your birthday on <strong>Dis-Chem, Clicks, The Body Shop, Sorbet &amp; Truworths</strong> — vouchers arrive via email and you'll miss them if you sign up late.</p></div>
+      <div class="ic"><p><span class="sn">3</span>Book the <strong>Stellenbosch Wine Tractor</strong> and <strong>Durbanville Wine Safari</strong> — both require advance booking and are very popular.</p></div>
+      <div class="ic"><p><span class="sn">4</span>Sign up for the <strong>Cape Wheel Birthday Club</strong> at capewheel.co.za/clubs — your voucher is emailed on your birthday so register before.</p></div>
+      <div class="ic"><p><span class="sn">5</span>Join <strong>Ster-Kinekor SK Club</strong> and buy at least 1 ticket first to activate your birthday freebie.</p></div>
     </div>
     <div class="isec">
       <h3>🎂 Ideal Birthday Day Plan</h3>
-      <div class="icard"><p>Table Mountain (morning) → Two Oceans Aquarium → Cape Wheel → Waterfront Duck Tour → dinner at RocoMamas or Nando's. That's <strong>5 freebies in one day</strong> — all free with your SA ID!</p></div>
-      <div class="icard"><p>Most restaurant freebies are valid <strong>7–30 days</strong> around your birthday — spread them across the month rather than rushing everything into one day.</p></div>
+      <div class="ic"><p>Table Mountain → Two Oceans Aquarium → Cape Wheel → Waterfront Duck → Dinner at RocoMamas. That's <strong>5 freebies in one day</strong> — all free with your SA ID! Use the <strong>"Plan My Day" button</strong> on the freebies page for a personalised itinerary.</p></div>
+      <div class="ic"><p>Most restaurant freebies are valid <strong>7–30 days</strong> around your birthday — spread them across the month rather than rushing everything into one day.</p></div>
     </div>
     <div class="isec">
       <h3>📱 Loyalty Programme Guide</h3>
-      <div class="lcard"><h4>Spur Family Club</h4><span class="ltag">Free to join</span><p>Download Spur app. Kids under 12 get a free meal on their birthday (eat-in). Adults get a birthday week voucher.</p></div>
-      <div class="lcard"><h4>Nando's Loyalty</h4><span class="ltag">Free to join</span><p>Register on Nando's app. Birthday voucher (R50–R100) emailed about 1 week before your birthday.</p></div>
-      <div class="lcard"><h4>Krispy Kreme Rewards</h4><span class="ltag">Free — register 48hrs before</span><p>Register on the KK app. Buy any dozen and get a free Original Glazed dozen. Valid 7 days after birthday. Takeaway!</p></div>
-      <div class="lcard"><h4>Sorbet Society</h4><span class="ltag">Free to join</span><p>Join at sorbet.co.za/society. Up to 50% off any treatment your entire birthday month. Cannot combine with other offers.</p></div>
-      <div class="lcard"><h4>Ster-Kinekor SK Club</h4><span class="ltag">Free — must buy 1 ticket first</span><p>Must purchase at least 1 movie before birthday to activate. Free 2D/3D ticket loaded 7 days after birthday.</p></div>
+      <div class="lc"><h4>Spur Family Club</h4><span class="ltg">Free to join</span><p>Download Spur app. Kids under 12 get a free meal (eat-in) on birthday day. Adults get a birthday week voucher via app.</p></div>
+      <div class="lc"><h4>Nando's Loyalty</h4><span class="ltg">Free to join</span><p>Register on Nando's app. Birthday voucher (R50–R100) emailed about 1 week before your birthday.</p></div>
+      <div class="lc"><h4>Krispy Kreme Rewards</h4><span class="ltg">Free — register 48hrs before</span><p>Buy any dozen, get Original Glazed dozen free. Valid 7 days after birthday. Takeaway!</p></div>
+      <div class="lc"><h4>Sorbet Society</h4><span class="ltg">Free to join</span><p>Up to 50% off any treatment your entire birthday month. Cannot combine with other offers.</p></div>
+      <div class="lc"><h4>Ster-Kinekor SK Club</h4><span class="ltg">Free — must buy 1 ticket first</span><p>Free 2D/3D ticket loaded 7 days after birthday. Valid for films released 1+ week ago.</p></div>
+    </div>
+    <!-- Blog/News section -->
+    <div class="isec">
+      <h3>📰 News &amp; Updates</h3>
+      <div id="blogList"><div class="ic"><p style="color:var(--muted)">No posts yet — add news posts in the Owner Dashboard.</p></div></div>
     </div>
     <div class="copy">🎂 © 2026 Candice Klein · All rights reserved</div>
   </div>
 </div>
 
-<!-- PAGE: FAQ -->
+<!-- ═══ PAGE: FAQ ═══ -->
 <div class="page" id="pg-faq">
-  <div class="ipage">
+  <div class="ip">
     <h2>❓ FAQ</h2>
-    <span class="tag">Everything you need to know about birthday freebies.</span>
-    <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">What if they refuse my freebie?</div><div class="faq-a">Politely ask for a manager, show your SA ID and loyalty app. Contact the brand's customer service if still refused. Always call ahead first — this app is a guide and offers can change.</div></div>
-    <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Do I always need my SA ID?</div><div class="faq-a">Yes — almost always. A green ID book, smart ID card, driver's licence or passport is accepted. Always carry it!</div></div>
-    <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Can I claim freebies on a different day?</div><div class="faq-a">Many yes — most restaurant freebies are valid 7 days before/after. Table Mountain and Two Oceans are valid the whole birthday month. Robben Island, Total Ninja and UpCycles require your actual birthday.</div></div>
-    <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Are wine farm freebies really free?</div><div class="faq-a">Usually a complimentary glass or tasting — not a free full meal. Always call ahead to confirm what is included and whether a meal booking is required.</div></div>
-    <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">When should I sign up for loyalty apps?</div><div class="faq-a">At least 4 weeks before your birthday. Krispy Kreme requires 48hrs minimum; Sorbet and SK Club require prior activity to activate your birthday reward.</div></div>
-    <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Can kids claim freebies too?</div><div class="faq-a">Yes! Use the 👶 Kids filter to see all child-friendly freebies. Always bring a birth certificate or ID as proof of age and birthday.</div></div>
-    <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">How do I save this as a phone app?</div><div class="faq-a">iPhone/iPad: Open in Safari → tap Share ⬆️ → Add to Home Screen. Android: Open in Chrome → tap ⋮ menu → Add to Home Screen. Works offline once saved!</div></div>
-    <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">How often is this app updated?</div><div class="faq-a">Candice Klein reviews and updates freebies regularly. Each card shows a verified date. Found a change or a new freebie? Send it via WhatsApp on the Contact page!</div></div>
+    <span class="tg">Everything you need to know.</span>
+    <div class="faq" onclick="this.classList.toggle('open')"><div class="fq">What if they refuse my freebie?</div><div class="fa">Politely ask for a manager and show your SA ID and loyalty app. If still refused, contact the brand's customer service. Always call ahead — offers can change without notice.</div></div>
+    <div class="faq" onclick="this.classList.toggle('open')"><div class="fq">Do I always need my SA ID?</div><div class="fa">Yes — almost always. A green ID book, smart ID card, driver's licence or passport. Always carry it!</div></div>
+    <div class="faq" onclick="this.classList.toggle('open')"><div class="fq">Can I claim freebies on a different day?</div><div class="fa">Many yes — most restaurants are valid 7 days before/after. Table Mountain and Two Oceans are valid the whole birthday month. Robben Island, Total Ninja and UpCycles require your actual birthday only.</div></div>
+    <div class="faq" onclick="this.classList.toggle('open')"><div class="fq">Are wine farm freebies really free?</div><div class="fa">Usually a complimentary glass or tasting — not a free full meal. Always call ahead to confirm what is included.</div></div>
+    <div class="faq" onclick="this.classList.toggle('open')"><div class="fq">When should I sign up for loyalty apps?</div><div class="fa">At least 4 weeks before your birthday. Krispy Kreme requires 48hrs minimum; Sorbet and SK Club require prior activity first.</div></div>
+    <div class="faq" onclick="this.classList.toggle('open')"><div class="fq">Can kids claim freebies?</div><div class="fa">Yes! Use the 👶 Kids filter. Always bring a birth certificate or ID as proof of birthday and age.</div></div>
+    <div class="faq" onclick="this.classList.toggle('open')"><div class="fq">How do I save this as a phone app?</div><div class="fa">iPhone/iPad: Open in Safari → Share ⬆️ → Add to Home Screen. Android: Chrome → ⋮ menu → Add to Home Screen.</div></div>
+    <div class="faq" onclick="this.classList.toggle('open')"><div class="fq">How do I export my personalised checklist?</div><div class="fa">Tap the 🖨️ print button at the top of the freebies page — it produces a clean print-friendly view of all freebies including which ones you've claimed. Save as PDF from your browser's print menu.</div></div>
+    <div class="faq" onclick="this.classList.toggle('open')"><div class="fq">How often is this updated?</div><div class="fa">Candice Klein reviews and updates freebies regularly. Each card shows a verified date. Found a change? Send it via WhatsApp on the Contact page!</div></div>
     <div class="copy">🎂 © 2026 Candice Klein · All rights reserved</div>
   </div>
 </div>
 
-<!-- PAGE: CONTACT -->
+<!-- ═══ PAGE: CONTACT ═══ -->
 <div class="page" id="pg-contact">
-  <div class="cpage">
-    <div class="about-hero">
-      <div class="about-avi">👑</div>
-      <div class="about-name">Candice Klein</div>
-      <div class="about-title">Creator · Birthday Freebies SA</div>
-      <div class="about-bio">Hi! I'm Candice, a Cape Town-based HR professional and app creator. I built this app because everyone deserves to be spoiled on their birthday — and there are SO many amazing freebies in the Western Cape that most people don't know about! If you find a new freebie or notice one that has changed, please reach out!</div>
+  <div class="cp2">
+    <div class="ah">
+      <div class="av">👑</div>
+      <div class="an">Candice Klein</div>
+      <div class="at">Creator · Birthday Freebies SA</div>
+      <div class="ab2">Hi! I'm Candice, a Cape Town-based HR professional and app creator. I built this app because everyone deserves to be spoiled on their birthday — and there are SO many amazing Western Cape freebies that most people don't know about. If you find a new freebie or notice one that's changed, please reach out!</div>
     </div>
-
-    <!-- Contact buttons — populated from Owner Dashboard -->
-    <div class="contact-btns" id="contactBtns"></div>
-
-    <!-- Social links -->
-    <div class="social-row" id="socialRow"></div>
-
-    <!-- Submit a freebie guide -->
+    <div class="cbtns" id="cBtns"></div>
+    <div class="sr" id="socRow"></div>
+    <!-- Newsletter -->
+    <div class="nl-box">
+      <h3>📧 Birthday Reminders Newsletter</h3>
+      <p>Sign up to get a reminder email 4 weeks before your birthday with a checklist of apps to sign up for!</p>
+      <input type="email" class="nl-input" id="nlEmail" placeholder="your@email.com"/>
+      <button class="nl-btn" onclick="nlSignup()">Subscribe — It's Free!</button>
+    </div>
     <div class="sub-box">
-      <h3>📋 Share a freebie with me</h3>
-      <div class="sub-step"><div class="sub-num">1</div><div><strong>Brand / business name</strong><br/>e.g. "The Hussar Grill, Canal Walk"</div></div>
-      <div class="sub-step"><div class="sub-num">2</div><div><strong>What the freebie is</strong><br/>e.g. "Free dessert on your birthday"</div></div>
-      <div class="sub-step"><div class="sub-num">3</div><div><strong>How to claim it</strong><br/>e.g. "Eat-in only, show SA ID"</div></div>
-      <div class="sub-step"><div class="sub-num">4</div><div><strong>How long it's valid</strong><br/>e.g. "Birthday day only"</div></div>
+      <h3>📋 Share a new freebie</h3>
+      <div class="ss"><div class="sn2">1</div><div><strong>Brand name</strong> — e.g. "The Hussar Grill, Canal Walk"</div></div>
+      <div class="ss"><div class="sn2">2</div><div><strong>What the freebie is</strong> — e.g. "Free dessert"</div></div>
+      <div class="ss"><div class="sn2">3</div><div><strong>How to claim</strong> — e.g. "Eat-in, show SA ID"</div></div>
+      <div class="ss"><div class="sn2">4</div><div><strong>How long it's valid</strong> — e.g. "Birthday day only"</div></div>
     </div>
-
-    <!-- Share app -->
-    <div class="share-card">
+    <div class="share-app">
       <p><strong>Know someone with a birthday coming up?</strong><br/>Share this app so they can claim all their freebies too!</p>
-      <a class="cta-btn cta-wa" href="https://wa.me/?text=Check%20out%20Birthday%20Freebies%20SA%20%F0%9F%8E%82%20https%3A%2F%2Fbirthdayfreebiessa.netlify.app" target="_blank">💬 Share via WhatsApp</a>
+      <a class="cta cta-wa" href="https://wa.me/?text=Check%20out%20Birthday%20Freebies%20SA%20%F0%9F%8E%82%20https%3A%2F%2Fbirthdayfreebiessa.netlify.app" target="_blank">💬 Share via WhatsApp</a>
     </div>
-
-    <div class="copy" style="margin-top:16px">🎂 © 2026 <strong>Candice Klein</strong> · All rights reserved</div>
+    <div class="copy" style="margin-top:14px">🎂 © 2026 <strong>Candice Klein</strong> · All rights reserved
+      <br><a href="#" onclick="navToLegal('pg-tc')" style="color:var(--rose-d);font-size:11px">Terms &amp; Conditions</a> &nbsp;·&nbsp; <a href="#" onclick="navToLegal('pg-pp')" style="color:var(--rose-d);font-size:11px">Privacy Policy</a>
+    </div>
   </div>
 </div>
 
-<!-- PAGE: OWNER -->
+<!-- ═══ PAGE: OWNER ═══ -->
 <div class="page" id="pg-owner">
-  <div class="opage">
-    <div id="oLogin" class="o-login">
-      <div style="font-size:38px;margin-bottom:8px">🔐</div>
+  <div class="op">
+    <div id="oLgn" class="ol">
+      <div style="font-size:36px;margin-bottom:7px">🔐</div>
       <h3>Owner Dashboard</h3>
       <p>Enter your password to manage your app.</p>
-      <input type="password" class="oinput" id="oPwd" placeholder="Password…"/>
-      <div class="err-msg" id="pwErr">Incorrect password. Try again.</div>
-      <button class="obtn" onclick="doLogin()">Unlock Dashboard</button>
+      <input type="password" class="oi" id="oPwd" placeholder="Password…"/>
+      <div class="er" id="pwErr">Incorrect password. Try again.</div>
+      <button class="ob" onclick="doLogin()">Unlock Dashboard</button>
     </div>
-
-    <div id="oPanel" class="o-panel">
+    <div id="oPan" class="o-pan">
       <div class="o-tabs">
-        <button class="otab active" data-ot="freebies" onclick="switchOTab(this)">➕ Freebies</button>
-        <button class="otab" data-ot="contact" onclick="switchOTab(this)">📞 Contact &amp; Socials</button>
-        <button class="otab" data-ot="ads" onclick="switchOTab(this)">💰 AdSense &amp; Ads</button>
-        <button class="otab" data-ot="pdf" onclick="switchOTab(this)">📄 PDF Planner</button>
+        <button class="otab active" data-ot="freebies" onclick="switchTab(this)">➕ Freebies</button>
+        <button class="otab" data-ot="contact" onclick="switchTab(this)">📞 Contact</button>
+        <button class="otab" data-ot="ads" onclick="switchTab(this)">💰 Ads</button>
+        <button class="otab" data-ot="fotw" onclick="switchTab(this)">⭐ FOTW</button>
+        <button class="otab" data-ot="blog" onclick="switchTab(this)">📰 Blog</button>
+        <button class="otab" data-ot="affiliate" onclick="switchTab(this)">🔗 Affiliates</button>
+        <button class="otab" data-ot="analytics" onclick="switchTab(this)">📊 Analytics</button>
+        <button class="otab" data-ot="pdf" onclick="switchTab(this)">📄 PDF</button>
       </div>
 
       <!-- TAB: FREEBIES -->
-      <div class="o-section vis" id="ot-freebies">
-        <div class="oform">
+      <div class="os vis" id="ot-freebies">
+        <div class="of">
           <h3>➕ Add New Freebie</h3>
-          <div class="ok-msg" id="addOk">✅ Freebie added successfully!</div>
-          <div class="frow"><label class="flbl">Business / Brand Name *</label><input type="text" class="finput" id="f_name" placeholder="e.g. The Hussar Grill"/></div>
-          <div class="frow"><label class="flbl">Freebie *</label><input type="text" class="finput" id="f_freebie" placeholder="e.g. Free dessert on your birthday"/></div>
-          <div class="frow2">
-            <div><label class="flbl">Category *</label>
-              <select class="fselect" id="f_cat">
-                <option>🏔️ Attractions</option><option>🍽️ Food &amp; Drink</option>
-                <option>🍷 Wine Farms</option><option>🎬 Cinema</option>
-                <option>💄 Beauty &amp; Retail</option><option>💆 Wellness</option>
-              </select></div>
-            <div><label class="flbl">Area</label>
-              <select class="fselect" id="f_area">
-                <option>All Areas</option><option>City Bowl</option>
-                <option>Southern Suburbs</option><option>Tygervalley</option>
-                <option>Stellenbosch</option><option>Franschhoek</option><option>Durbanville</option>
-              </select></div>
+          <div class="ok" id="addOk">✅ Freebie added!</div>
+          <div class="fr"><label class="fl">Business / Brand Name *</label><input type="text" class="fi" id="f_name" placeholder="e.g. The Hussar Grill"/></div>
+          <div class="fr"><label class="fl">Freebie *</label><input type="text" class="fi" id="f_freebie" placeholder="e.g. Free dessert on your birthday"/></div>
+          <div class="fr2">
+            <div><label class="fl">Category *</label><select class="fsl" id="f_cat"><option>🏔️ Attractions</option><option>🍽️ Food &amp; Drink</option><option>🍷 Wine Farms</option><option>🎬 Cinema</option><option>💄 Beauty &amp; Retail</option><option>💆 Wellness</option></select></div>
+            <div><label class="fl">Area</label><select class="fsl" id="f_area"><option>All Areas</option><option>City Bowl</option><option>Southern Suburbs</option><option>Tygervalley</option><option>Stellenbosch</option><option>Franschhoek</option><option>Durbanville</option></select></div>
           </div>
-          <div class="frow"><label class="flbl">Validity *</label><input type="text" class="finput" id="f_validity" placeholder="e.g. Birthday day only / Entire birthday month"/></div>
-          <div class="frow"><label class="flbl">How to Claim *</label><textarea class="ftarea" id="f_how" placeholder="e.g. Eat-in only. Show SA ID. No booking needed…"></textarea></div>
-          <div class="frow"><label class="flbl">Business Address (optional)</label><input type="text" class="finput" id="f_addr" placeholder="e.g. Shop 5, Canal Walk, Century City"/></div>
-          <div class="frow"><label class="flbl">Business Phone (optional)</label><input type="tel" class="finput" id="f_phone" placeholder="e.g. 021 555 1234"/></div>
-          <div class="frow"><label class="flbl">App / Website Link (optional)</label><input type="url" class="finput" id="f_link" placeholder="https://…"/></div>
-          <div class="frow2">
-            <div><label class="flbl">Priority</label>
-              <select class="fselect" id="f_priority">
-                <option value="high">⭐ Must-Do</option>
-                <option value="medium" selected>Normal</option>
-                <option value="low">Low</option>
-              </select></div>
-            <div><label class="flbl">Dietary</label>
-              <select class="fselect" id="f_dietary">
-                <option value="">None</option><option value="Halaal">Halaal</option>
-                <option value="Vegan">Vegan</option><option value="Kosher">Kosher</option>
-              </select></div>
+          <div class="fr"><label class="fl">Validity *</label><input type="text" class="fi" id="f_validity" placeholder="e.g. Birthday day only / Entire birthday month"/></div>
+          <div class="fr"><label class="fl">How to Claim *</label><textarea class="fta" id="f_how" placeholder="Full instructions for claiming…"></textarea></div>
+          <div class="fr"><label class="fl">Business Address (optional)</label><input type="text" class="fi" id="f_addr" placeholder="e.g. Shop 5, Canal Walk"/></div>
+          <div class="fr"><label class="fl">Business Phone (optional)</label><input type="tel" class="fi" id="f_bphone" placeholder="e.g. 021 555 1234"/></div>
+          <div class="fr"><label class="fl">App / Website Link (optional)</label><input type="url" class="fi" id="f_link" placeholder="https://…"/></div>
+          <div class="fr2">
+            <div><label class="fl">Priority</label><select class="fsl" id="f_pri"><option value="high">⭐ Must-Do</option><option value="medium" selected>Normal</option><option value="low">Low</option></select></div>
+            <div><label class="fl">Dietary</label><select class="fsl" id="f_diet"><option value="">None</option><option value="Halaal">Halaal</option><option value="Vegan">Vegan</option><option value="Kosher">Kosher</option></select></div>
           </div>
-          <div class="frow2">
-            <div><label class="flbl">Kids Friendly?</label>
-              <select class="fselect" id="f_kids"><option value="false">No</option><option value="true">Yes</option></select></div>
-            <div><label class="flbl">Takeaway?</label>
-              <select class="fselect" id="f_takeway"><option value="false">No</option><option value="true">Yes</option></select></div>
+          <div class="fr2">
+            <div><label class="fl">Kids Friendly?</label><select class="fsl" id="f_kids"><option value="false">No</option><option value="true">Yes</option></select></div>
+            <div><label class="fl">Takeaway?</label><select class="fsl" id="f_take"><option value="false">No</option><option value="true">Yes</option></select></div>
           </div>
-          <div class="frow"><label class="flbl">Sponsored / Featured Listing?</label>
-            <select class="fselect" id="f_sponsored"><option value="false">No</option><option value="true">Yes — show gold border + sponsored badge</option></select></div>
-          <button class="fadd" onclick="addFreebie()">➕ Add Freebie</button>
+          <div class="fr2">
+            <div><label class="fl">Verified by Candice?</label><select class="fsl" id="f_ver"><option value="false">No</option><option value="true">Yes ✅</option></select></div>
+            <div><label class="fl">Sponsored / Featured?</label><select class="fsl" id="f_spon"><option value="false">No</option><option value="true">Yes ✨</option></select></div>
+          </div>
+          <button class="fa2" onclick="addFreebie()">➕ Add Freebie</button>
         </div>
         <div>
-          <h3 style="font-family:'Playfair Display',serif;font-size:16px;color:var(--rose-d);margin-bottom:11px">📋 Your Added Freebies</h3>
-          <div id="oList"><p style="color:var(--muted);font-size:13px">No custom freebies added yet.</p></div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:15px;color:var(--rose-d);margin-bottom:10px">📋 Your Added Freebies</h3>
+          <div id="oList"></div>
         </div>
       </div>
 
       <!-- TAB: CONTACT -->
-      <div class="o-section" id="ot-contact">
-        <div class="oform">
+      <div class="os" id="ot-contact">
+        <div class="of">
           <h3>📞 Contact Details</h3>
-          <p style="font-size:12px;color:var(--muted);margin-bottom:13px">These appear on your public Contact page. Leave blank to hide.</p>
-          <div class="ok-msg" id="contactOk">✅ Contact details saved!</div>
-          <div class="frow"><label class="flbl">WhatsApp Number</label><input type="tel" class="finput" id="c_wa" placeholder="e.g. 0735754642"/></div>
-          <div class="frow"><label class="flbl">Email Address</label><input type="email" class="finput" id="c_email" placeholder="e.g. candice@example.com"/></div>
-          <div class="frow"><label class="flbl">Phone Number (call)</label><input type="tel" class="finput" id="c_phone" placeholder="e.g. 0735754642"/></div>
-          <div class="frow"><label class="flbl">Instagram URL</label><input type="url" class="finput" id="c_ig" placeholder="https://instagram.com/yourhandle"/></div>
-          <div class="frow"><label class="flbl">Facebook URL</label><input type="url" class="finput" id="c_fb" placeholder="https://facebook.com/yourpage"/></div>
-          <div class="frow"><label class="flbl">TikTok URL</label><input type="url" class="finput" id="c_tt" placeholder="https://tiktok.com/@yourhandle"/></div>
-          <div class="frow"><label class="flbl">Other Link (e.g. LinkedIn or website)</label><input type="url" class="finput" id="c_other" placeholder="https://…"/></div>
-          <button class="fadd" onclick="saveContact()">💾 Save Contact Details</button>
+          <p style="font-size:12px;color:var(--muted);margin-bottom:11px">These appear on your public Contact page. Leave blank to hide.</p>
+          <div class="ok" id="cOk">✅ Contact details saved!</div>
+          <div class="fr"><label class="fl">WhatsApp Number</label><input type="tel" class="fi" id="c_wa" placeholder="e.g. 0735754642"/></div>
+          <div class="fr"><label class="fl">Email Address</label><input type="email" class="fi" id="c_em" placeholder="e.g. candice@example.com"/></div>
+          <div class="fr"><label class="fl">Phone (call)</label><input type="tel" class="fi" id="c_ph" placeholder="e.g. 0735754642"/></div>
+          <div class="fr"><label class="fl">PayFast / Tip Link</label><input type="url" class="fi" id="c_pay" placeholder="https://payfast.io/…"/></div>
+          <div class="fr"><label class="fl">Instagram URL</label><input type="url" class="fi" id="c_ig" placeholder="https://instagram.com/…"/></div>
+          <div class="fr"><label class="fl">Facebook URL</label><input type="url" class="fi" id="c_fb" placeholder="https://facebook.com/…"/></div>
+          <div class="fr"><label class="fl">TikTok URL</label><input type="url" class="fi" id="c_tt" placeholder="https://tiktok.com/@…"/></div>
+          <div class="fr"><label class="fl">Other Link (LinkedIn etc.)</label><input type="url" class="fi" id="c_ot" placeholder="https://…"/></div>
+          <div class="fr"><label class="fl">Newsletter Link (Mailchimp etc.)</label><input type="url" class="fi" id="c_nl" placeholder="https://mailchimp.com/…"/></div>
+          <button class="fa2" onclick="saveContact()">💾 Save Contact Details</button>
         </div>
       </div>
 
-      <!-- TAB: ADSENSE -->
-      <div class="o-section" id="ot-ads">
-        <div class="oform">
-          <h3>💰 AdSense &amp; Sponsored Ads</h3>
-          <p style="font-size:12px;color:var(--muted);margin-bottom:13px">Enter your AdSense publisher ID once approved by Google. Ads will appear automatically at the top of the freebies page.</p>
-          <div class="ok-msg" id="adsOk">✅ AdSense settings saved!</div>
-          <div class="frow"><label class="flbl">AdSense Publisher ID</label><input type="text" class="finput" id="a_pub" placeholder="ca-pub-XXXXXXXXXXXXXXXX"/></div>
-          <div class="frow"><label class="flbl">Ad Slot ID</label><input type="text" class="finput" id="a_slot" placeholder="XXXXXXXXXX"/></div>
-          <p style="font-size:11px;color:var(--muted);margin-bottom:13px">💡 How to get an AdSense ID: go to adsense.google.com → Sign in → Get Started → enter birthdayfreebiessa.netlify.app → wait 2–7 days for approval.</p>
-          <button class="fadd" onclick="saveAds()">💾 Save AdSense Settings</button>
+      <!-- TAB: ADS -->
+      <div class="os" id="ot-ads">
+        <div class="of">
+          <h3>💰 Google AdSense</h3>
+          <p style="font-size:12px;color:var(--muted);margin-bottom:11px">Once approved by Google, enter your IDs here. Ads go live automatically.</p>
+          <div class="ok" id="aOk">✅ AdSense settings saved!</div>
+          <div class="fr"><label class="fl">Publisher ID</label><input type="text" class="fi" id="a_pub" placeholder="ca-pub-XXXXXXXXXXXXXXXX"/></div>
+          <div class="fr"><label class="fl">Ad Slot ID</label><input type="text" class="fi" id="a_slot" placeholder="XXXXXXXXXX"/></div>
+          <button class="fa2" onclick="saveAds()">💾 Save AdSense</button>
         </div>
-        <div class="oform">
-          <h3>✨ Sponsored Listings</h3>
-          <p style="font-size:12px;color:var(--muted)">To mark a freebie as sponsored, go to the Freebies tab when adding a new one and select "Yes" under Sponsored. Sponsored listings get a gold border and a ✨ Sponsored badge.</p>
+        <div class="of">
+          <h3>📊 Google Analytics</h3>
+          <p style="font-size:12px;color:var(--muted);margin-bottom:11px">Get your free tracking ID from analytics.google.com — looks like G-XXXXXXXXXX.</p>
+          <div class="ok" id="gaOk">✅ Analytics ID saved!</div>
+          <div class="fr"><label class="fl">Google Analytics ID</label><input type="text" class="fi" id="ga_id" placeholder="G-XXXXXXXXXX"/></div>
+          <button class="fa2" onclick="saveGA()">💾 Save Analytics ID</button>
+        </div>
+      </div>
+
+      <!-- TAB: FOTW -->
+      <div class="os" id="ot-fotw">
+        <div class="of">
+          <h3>⭐ Freebie of the Week</h3>
+          <p style="font-size:12px;color:var(--muted);margin-bottom:11px">Highlight one freebie at the top of the page. Leave blank to hide.</p>
+          <div class="ok" id="fOk">✅ Freebie of the Week saved!</div>
+          <div class="fr"><label class="fl">Freebie Name</label><input type="text" class="fi" id="fw_name" placeholder="e.g. Krispy Kreme"/></div>
+          <div class="fr"><label class="fl">What's the freebie?</label><input type="text" class="fi" id="fw_free" placeholder="e.g. Free dozen glazed donuts"/></div>
+          <div class="fr"><label class="fl">Short note (optional)</label><input type="text" class="fi" id="fw_note" placeholder="e.g. Valid this week only — sign up on KK app!"/></div>
+          <button class="fa2" onclick="saveFOTW()">💾 Save Freebie of the Week</button>
+          <button style="width:100%;margin-top:8px;padding:9px;border-radius:9px;border:1.5px solid var(--border);background:none;color:var(--muted);font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;" onclick="clearFOTW()">✕ Clear (hide section)</button>
+        </div>
+      </div>
+
+      <!-- TAB: BLOG -->
+      <div class="os" id="ot-blog">
+        <div class="of">
+          <h3>📰 Add News Post</h3>
+          <div class="ok" id="bOk">✅ Post added!</div>
+          <div class="fr"><label class="fl">Post Title</label><input type="text" class="fi" id="b_title" placeholder="e.g. New Freebie: Bootlegger Coffee"/></div>
+          <div class="fr"><label class="fl">Post Body</label><textarea class="fta" id="b_body" placeholder="Write your post here…" style="min-height:80px"></textarea></div>
+          <button class="fa2" onclick="addPost()">➕ Add Post</button>
+        </div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:15px;color:var(--rose-d);margin-bottom:10px">📋 Existing Posts</h3>
+          <div id="bList"></div>
+        </div>
+      </div>
+
+      <!-- TAB: AFFILIATES -->
+      <div class="os" id="ot-affiliate">
+        <div class="of">
+          <h3>🔗 Affiliate Banners</h3>
+          <p style="font-size:12px;color:var(--muted);margin-bottom:11px">Add up to 4 affiliate banners. These rotate at the top of the freebies page.</p>
+          <div class="ok" id="afOk">✅ Affiliates saved!</div>
+          <div id="affFields"></div>
+          <button class="fa2" onclick="saveAff()">💾 Save Affiliate Banners</button>
+        </div>
+      </div>
+
+      <!-- TAB: ANALYTICS -->
+      <div class="os" id="ot-analytics">
+        <div class="of">
+          <h3>📊 App Stats</h3>
+          <p style="font-size:12px;color:var(--muted);margin-bottom:11px">Local stats tracked on this device. For full visitor analytics, set up Google Analytics in the Ads tab.</p>
+          <div id="statsPanel"></div>
         </div>
       </div>
 
       <!-- TAB: PDF -->
-      <div class="o-section" id="ot-pdf">
-        <div class="oform">
+      <div class="os" id="ot-pdf">
+        <div class="of">
           <h3>📄 Birthday Planner PDF</h3>
-          <p style="font-size:12px;color:var(--muted);margin-bottom:13px">Once you have your PDF on Gumroad or a download link, paste it here and a download button will appear on your Contact page.</p>
-          <div class="ok-msg" id="pdfOk">✅ PDF link saved!</div>
-          <div class="frow"><label class="flbl">PDF Download Link</label><input type="url" class="finput" id="p_link" placeholder="https://gumroad.com/l/your-planner"/></div>
-          <div class="frow"><label class="flbl">Button Label</label><input type="text" class="finput" id="p_label" placeholder="e.g. Download Birthday Planner (R49)"/></div>
-          <button class="fadd" onclick="savePdf()">💾 Save PDF Link</button>
+          <p style="font-size:12px;color:var(--muted);margin-bottom:11px">Paste your Gumroad or download link here. A button will appear on the Contact page.</p>
+          <div class="ok" id="pOk">✅ PDF link saved!</div>
+          <div class="fr"><label class="fl">PDF Download Link</label><input type="url" class="fi" id="p_link" placeholder="https://gumroad.com/l/…"/></div>
+          <div class="fr"><label class="fl">Button Label</label><input type="text" class="fi" id="p_lbl" placeholder="e.g. Download Birthday Planner (R49)"/></div>
+          <div class="fr"><label class="fl">Last Updated Date</label><input type="text" class="fi" id="p_upd" placeholder="e.g. May 2026"/></div>
+          <button class="fa2" onclick="savePDF()">💾 Save PDF Link</button>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE: T&Cs ═══ -->
+<div class="page" id="pg-tc">
+  <div class="legal">
+    <button onclick="navBack()" style="background:none;border:none;color:var(--rose-d);font-size:13px;font-weight:700;cursor:pointer;margin-bottom:12px;font-family:'DM Sans',sans-serif;">← Back</button>
+    <h2>Terms &amp; Conditions</h2>
+    <div class="legal-date">Last updated: May 2026</div>
+    <p>Welcome to Birthday Freebies SA ("the App"), created and maintained by Candice Klein ("we", "us", "our"). By using this App, you agree to these Terms &amp; Conditions.</p>
+    <h3>1. Information Accuracy</h3>
+    <p>The information provided in this App is for general guidance only. Birthday freebies, offers and promotions are provided by third-party businesses and are subject to change without notice. We do not guarantee the accuracy, completeness or availability of any offer listed.</p>
+    <h3>2. No Liability</h3>
+    <p>We accept no responsibility or liability for any loss, inconvenience or disappointment arising from reliance on information in this App, including offers that are unavailable, have changed or have been withdrawn. Always call ahead to confirm before visiting.</p>
+    <h3>3. Third-Party Services</h3>
+    <p>This App may contain links to third-party websites and services. We are not responsible for the content, privacy practices or availability of these external sites.</p>
+    <h3>4. Intellectual Property</h3>
+    <p>All content, design and code in this App is the intellectual property of Candice Klein and is protected by copyright. Unauthorised copying, reproduction or redistribution is strictly prohibited.</p>
+    <h3>5. Changes</h3>
+    <p>We reserve the right to update these Terms at any time. Continued use of the App constitutes acceptance of any changes.</p>
+    <h3>6. Governing Law</h3>
+    <p>These Terms are governed by the laws of the Republic of South Africa.</p>
+    <div class="copy">🎂 © 2026 Candice Klein · All rights reserved</div>
+  </div>
+</div>
+
+<!-- ═══ PAGE: PRIVACY POLICY ═══ -->
+<div class="page" id="pg-pp">
+  <div class="legal">
+    <button onclick="navBack()" style="background:none;border:none;color:var(--rose-d);font-size:13px;font-weight:700;cursor:pointer;margin-bottom:12px;font-family:'DM Sans',sans-serif;">← Back</button>
+    <h2>Privacy Policy</h2>
+    <div class="legal-date">Last updated: May 2026</div>
+    <p>Birthday Freebies SA ("the App") is committed to protecting your privacy. This policy explains what data we collect and how we use it.</p>
+    <h3>1. Data We Collect</h3>
+    <ul>
+      <li><strong>Local device data:</strong> Your birthday date, claimed freebies, signed-up status and personal notes are stored locally on your device using localStorage. This data never leaves your device.</li>
+      <li><strong>Analytics:</strong> If Google Analytics is enabled, we collect anonymised data including page views, device type, location (country/city level) and time spent on the App. No personally identifiable information is collected.</li>
+      <li><strong>Newsletter:</strong> If you subscribe to our newsletter, your email address is shared with our email service provider (Mailchimp) for the purpose of sending birthday reminder emails.</li>
+    </ul>
+    <h3>2. How We Use Data</h3>
+    <ul>
+      <li>To provide and improve the App experience</li>
+      <li>To send birthday reminder emails (newsletter subscribers only)</li>
+      <li>To understand how the App is used via analytics</li>
+    </ul>
+    <h3>3. Advertising</h3>
+    <p>This App uses Google AdSense to display advertisements. Google may use cookies to show relevant ads based on your browsing history. You can opt out at <a href="https://adssettings.google.com" target="_blank" style="color:var(--rose-d)">adssettings.google.com</a>.</p>
+    <h3>4. Your Rights</h3>
+    <p>You can clear all locally stored data at any time by clearing your browser's local storage. To unsubscribe from our newsletter, click the unsubscribe link in any email we send.</p>
+    <h3>5. Contact</h3>
+    <p>For any privacy queries, please contact us via the Contact page in the App.</p>
+    <h3>6. Governing Law</h3>
+    <p>This policy is governed by the laws of the Republic of South Africa and complies with the Protection of Personal Information Act (POPIA).</p>
+    <div class="copy">🎂 © 2026 Candice Klein · All rights reserved</div>
+  </div>
+</div>
+
+<!-- Plan My Day Modal -->
+<div class="modal-bg" id="planModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closePlan()">✕</button>
+    <h3>🗓️ Your Birthday Day Plan</h3>
+    <p style="font-size:12px;color:var(--muted);margin:4px 0 14px">Based on your area — here's your ideal birthday day!</p>
+    <div id="planItems"></div>
+    <button style="width:100%;margin-top:10px;padding:10px;border-radius:10px;border:none;cursor:pointer;background:var(--rose-d);color:#fff;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;" onclick="closePlan()">Let's Go! 🎂</button>
   </div>
 </div>
 
@@ -790,19 +965,6 @@ main{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:14px 14px
 </nav>
 
 <script>
-const CAT_META = {
-  "🏔️ Attractions":    {color:"#3D9494",bg:"rgba(106,173,173,0.12)",border:"rgba(106,173,173,0.28)"},
-  "🍽️ Food & Drink":  {color:"#A04A5A",bg:"rgba(193,124,138,0.12)",border:"rgba(193,124,138,0.28)"},
-  "🍷 Wine Farms":     {color:"#7A3A5A",bg:"rgba(155,80,112,0.12)", border:"rgba(155,80,112,0.28)"},
-  "🎬 Cinema":         {color:"#3A5A9A",bg:"rgba(122,142,196,0.12)",border:"rgba(122,142,196,0.28)"},
-  "💄 Beauty & Retail":{color:"#8A4A5A",bg:"rgba(196,132,154,0.12)",border:"rgba(196,132,154,0.28)"},
-  "💆 Wellness":       {color:"#3A6A48",bg:"rgba(122,158,130,0.12)",border:"rgba(122,158,130,0.28)"},
-};
-const CATS = ["🏔️ Attractions","🍽️ Food & Drink","🍷 Wine Farms","🎬 Cinema","💄 Beauty & Retail","💆 Wellness"];
-const CONF = ["#C17C8A","#7A9E82","#E8C99A","#9B8EC4","#6AADAD","#D4A0B0","#A8C8A0","#C4B8E8"];
-const NEW_IDS = ["robben","total_ninja","skyhi","upcycles"];
-const PWD = "Pcm1985#";
-
 const FREEBIES = [
   {id:"tm_cableway",    cat:"🏔️ Attractions",   name:"Table Mountain Cableway",       freebie:"Free return trip",                              validity:"Entire birthday month",                    how:"Present SA ID at ticket office – no booking needed. Weather dependent.",                                                                                                                takeaway:false,priority:"high",  kids:false,dietary:[],              appLink:"",                                          area:"City Bowl",       verified:"May 2026",sponsored:false,featured:false},
   {id:"two_oceans",     cat:"🏔️ Attractions",   name:"Two Oceans Aquarium",            freebie:"Free entry",                                    validity:"Birthday month + 6 days after",            how:"Show SA ID at ticket office on the day. No advance booking needed.",                                                                                                                   takeaway:false,priority:"high",  kids:true, dietary:[],              appLink:"",                                          area:"City Bowl",       verified:"May 2026",sponsored:false,featured:false},
@@ -864,207 +1026,353 @@ const FREEBIES = [
   {id:"mangwanani",     cat:"💆 Wellness",        name:"Mangwanani Spa",               freebie:"Birthday specials / discount coupons",          validity:"Varies",                                   how:"Check via email or WhatsApp for current offers.",                                                                                                                                     takeaway:false,priority:"medium",kids:false,dietary:[],              appLink:"https://mangwanani.co.za",                  area:"All Areas",       verified:"May 2026",sponsored:false,featured:false},
 ];
 
+const CAT_META={
+  "🏔️ Attractions":    {color:"#2A7A7A",bg:"rgba(74,152,152,.1)", border:"rgba(74,152,152,.25)"},
+  "🍽️ Food & Drink":  {color:"#8A3A52",bg:"rgba(181,99,122,.1)", border:"rgba(181,99,122,.25)"},
+  "🍷 Wine Farms":     {color:"#7A3A5A",bg:"rgba(122,58,90,.1)",  border:"rgba(122,58,90,.25)"},
+  "🎬 Cinema":         {color:"#3A4A8A",bg:"rgba(74,90,154,.1)",  border:"rgba(74,90,154,.25)"},
+  "💄 Beauty & Retail":{color:"#8A3A5A",bg:"rgba(181,99,122,.1)", border:"rgba(181,99,122,.25)"},
+  "💆 Wellness":       {color:"#3A6A48",bg:"rgba(92,138,106,.1)", border:"rgba(92,138,106,.25)"},
+};
+const CATS=["🏔️ Attractions","🍽️ Food & Drink","🍷 Wine Farms","🎬 Cinema","💄 Beauty & Retail","💆 Wellness"];
+const CONF=["#B5637A","#5C8A6A","#C9A84C","#8B7FB8","#4A9898","#D4A0B0","#A8C8A0","#C4B8E8"];
+const NEW_IDS=["robben","total_ninja","skyhi","upcycles"];
+const PWD="Pcm1985#";
+const MOOD_MAP={food:"🍽️ Food & Drink",activity:"🏔️ Attractions",treat:"💆 Wellness",drink:"🍷 Wine Farms",movie:"🎬 Cinema",shop:"💄 Beauty & Retail"};
 
-let claimed  = JSON.parse(localStorage.getItem("bf_claimed")||"{}");
-let signed   = JSON.parse(localStorage.getItem("bf_signed") ||"{}");
-let notes    = JSON.parse(localStorage.getItem("bf_notes")  ||"{}");
-let customs  = JSON.parse(localStorage.getItem("bf_custom") ||"[]");
-let contact  = JSON.parse(localStorage.getItem("bf_contact")||"{}");
-let adset    = JSON.parse(localStorage.getItem("bf_ads")    ||"{}");
-let pdfset   = JSON.parse(localStorage.getItem("bf_pdf")    ||"{}");
-let bdayDate = localStorage.getItem("bf_bday")||"";
-let filter="all", activeCat="all", activeArea="all", search="", openCard=null;
+// STATE
+let claimed=JSON.parse(localStorage.getItem("bf_claimed")||"{}");
+let signed=JSON.parse(localStorage.getItem("bf_signed")||"{}");
+let notes=JSON.parse(localStorage.getItem("bf_notes")||"{}");
+let reviews=JSON.parse(localStorage.getItem("bf_reviews")||"{}");
+let customs=JSON.parse(localStorage.getItem("bf_custom")||"[]");
+let contact=JSON.parse(localStorage.getItem("bf_contact")||"{}");
+let adset=JSON.parse(localStorage.getItem("bf_ads")||"{}");
+let gaset=JSON.parse(localStorage.getItem("bf_ga")||"{}");
+let pdfset=JSON.parse(localStorage.getItem("bf_pdf")||"{}");
+let fotw=JSON.parse(localStorage.getItem("bf_fotw")||"{}");
+let blog=JSON.parse(localStorage.getItem("bf_blog")||"[]");
+let aff=JSON.parse(localStorage.getItem("bf_aff")||"[]");
+let bdayDate=localStorage.getItem("bf_bday")||"";
+let darkMode=localStorage.getItem("bf_dark")==="1";
+let filter="all",activeCat="all",activeArea="all",activeMood="all",search="",openCard=null;
+let prevPage="pg-freebies";
 
-function saveAll(){ localStorage.setItem("bf_claimed",JSON.stringify(claimed)); localStorage.setItem("bf_signed",JSON.stringify(signed)); localStorage.setItem("bf_notes",JSON.stringify(notes)); localStorage.setItem("bf_custom",JSON.stringify(customs)); }
+// TRACK local stats
+let stats=JSON.parse(localStorage.getItem("bf_stats")||'{"views":0,"days":{}}');
+stats.views++;
+const today=new Date().toISOString().slice(0,10);
+stats.days[today]=(stats.days[today]||0)+1;
+localStorage.setItem("bf_stats",JSON.stringify(stats));
 
-// COUNTDOWN
-function updateCD(){
-  const disp=document.getElementById("cdTxt");
-  if(!bdayDate){disp.style.display="none";return;}
-  document.getElementById("bdayInput").value=bdayDate;
-  const now=new Date(), p=bdayDate.split("-");
-  let next=new Date(now.getFullYear(),+p[1]-1,+p[2]);
-  if(next<now) next.setFullYear(now.getFullYear()+1);
-  const d=Math.ceil((next-now)/86400000);
-  disp.textContent = d===0?"🎉 Happy Birthday! Go claim your freebies!"
-    :d<=30?`🎂 ${d} day${d===1?"":"s"} to go — start signing up for apps!`
-    :`🎂 ${d} days until your birthday`;
-  disp.style.display="block";
+function saveAll(){
+  localStorage.setItem("bf_claimed",JSON.stringify(claimed));
+  localStorage.setItem("bf_signed",JSON.stringify(signed));
+  localStorage.setItem("bf_notes",JSON.stringify(notes));
+  localStorage.setItem("bf_reviews",JSON.stringify(reviews));
+  localStorage.setItem("bf_custom",JSON.stringify(customs));
 }
-document.getElementById("bdayInput").addEventListener("change",e=>{ bdayDate=e.target.value; localStorage.setItem("bf_bday",bdayDate); updateCD(); });
+
+// DARK MODE
+if(darkMode) document.body.classList.add("dark");
+function toggleDark(){
+  darkMode=!darkMode;
+  document.body.classList.toggle("dark",darkMode);
+  localStorage.setItem("bf_dark",darkMode?"1":"0");
+  document.getElementById("dmBtn").textContent=darkMode?"☀️":"🌙";
+}
+if(darkMode) document.getElementById("dmBtn").textContent="☀️";
+
+// COUNTDOWN & NOTIFICATION
+function updateCD(){
+  const d=document.getElementById("cdTxt");
+  if(!bdayDate){d.style.display="none";return;}
+  document.getElementById("bdayInput").value=bdayDate;
+  const now=new Date(),p=bdayDate.split("-");
+  let nxt=new Date(now.getFullYear(),+p[1]-1,+p[2]);
+  if(nxt<now) nxt.setFullYear(now.getFullYear()+1);
+  const diff=Math.ceil((nxt-now)/86400000);
+  d.textContent=diff===0?"🎉 Happy Birthday! Go claim your freebies!":diff<=30?`🎂 ${diff} day${diff===1?"":"s"} to go — sign up for apps now!`:`🎂 ${diff} days until your birthday`;
+  d.style.display="block";
+  // Schedule notification at 28 days
+  if("Notification" in window && diff===28){
+    Notification.requestPermission().then(p=>{
+      if(p==="granted") new Notification("🎂 Birthday Freebies SA",{body:"Your birthday is in 4 weeks! Time to sign up for loyalty apps.",icon:"🎂"});
+    });
+  }
+}
+document.getElementById("bdayInput").addEventListener("change",e=>{bdayDate=e.target.value;localStorage.setItem("bf_bday",bdayDate);updateCD();});
 updateCD();
 
 // NAV
 function navTo(btn){
+  prevPage=document.querySelector(".page.active")?.id||"pg-freebies";
   document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
   document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
   document.getElementById(btn.dataset.pg).classList.add("active");
-  btn.classList.add("active"); window.scrollTo(0,0);
+  btn.classList.add("active");window.scrollTo(0,0);
+}
+function navToLegal(pg){
+  prevPage=document.querySelector(".page.active")?.id||"pg-contact";
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById(pg).classList.add("active");window.scrollTo(0,0);
+}
+function navBack(){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById(prevPage).classList.add("active");
 }
 
 // OWNER
 function doLogin(){
-  const v=document.getElementById("oPwd").value;
-  if(v===PWD){
-    document.getElementById("oLogin").style.display="none";
-    document.getElementById("oPanel").classList.add("vis");
+  if(document.getElementById("oPwd").value===PWD){
+    document.getElementById("oLgn").style.display="none";
+    document.getElementById("oPan").classList.add("vis");
     loadOwnerFields();
   } else {
     document.getElementById("pwErr").style.display="block";
     document.getElementById("oPwd").value="";
   }
 }
-document.getElementById("oPwd").addEventListener("keyup",e=>{ if(e.key==="Enter") doLogin(); });
-
-function switchOTab(btn){
+document.getElementById("oPwd").addEventListener("keyup",e=>{if(e.key==="Enter")doLogin();});
+function switchTab(btn){
   document.querySelectorAll(".otab").forEach(t=>t.classList.remove("active"));
-  document.querySelectorAll(".o-section").forEach(s=>s.classList.remove("vis"));
+  document.querySelectorAll(".os").forEach(s=>s.classList.remove("vis"));
   btn.classList.add("active");
   document.getElementById("ot-"+btn.dataset.ot).classList.add("vis");
 }
 
 function loadOwnerFields(){
-  if(contact.wa)    document.getElementById("c_wa").value=contact.wa;
-  if(contact.email) document.getElementById("c_email").value=contact.email;
-  if(contact.phone) document.getElementById("c_phone").value=contact.phone;
-  if(contact.ig)    document.getElementById("c_ig").value=contact.ig;
-  if(contact.fb)    document.getElementById("c_fb").value=contact.fb;
-  if(contact.tt)    document.getElementById("c_tt").value=contact.tt;
-  if(contact.other) document.getElementById("c_other").value=contact.other;
-  if(adset.pub)     document.getElementById("a_pub").value=adset.pub;
-  if(adset.slot)    document.getElementById("a_slot").value=adset.slot;
-  if(pdfset.link)   document.getElementById("p_link").value=pdfset.link;
-  if(pdfset.label)  document.getElementById("p_label").value=pdfset.label;
-  renderOList();
+  if(contact.wa) document.getElementById("c_wa").value=contact.wa;
+  if(contact.em) document.getElementById("c_em").value=contact.em;
+  if(contact.ph) document.getElementById("c_ph").value=contact.ph;
+  if(contact.pay) document.getElementById("c_pay").value=contact.pay;
+  if(contact.ig) document.getElementById("c_ig").value=contact.ig;
+  if(contact.fb) document.getElementById("c_fb").value=contact.fb;
+  if(contact.tt) document.getElementById("c_tt").value=contact.tt;
+  if(contact.ot) document.getElementById("c_ot").value=contact.ot;
+  if(contact.nl) document.getElementById("c_nl").value=contact.nl;
+  if(adset.pub) document.getElementById("a_pub").value=adset.pub;
+  if(adset.slot) document.getElementById("a_slot").value=adset.slot;
+  if(gaset.id) document.getElementById("ga_id").value=gaset.id;
+  if(pdfset.link) document.getElementById("p_link").value=pdfset.link;
+  if(pdfset.lbl) document.getElementById("p_lbl").value=pdfset.lbl;
+  if(pdfset.upd) document.getElementById("p_upd").value=pdfset.upd;
+  if(fotw.name) document.getElementById("fw_name").value=fotw.name;
+  if(fotw.free) document.getElementById("fw_free").value=fotw.free;
+  if(fotw.note) document.getElementById("fw_note").value=fotw.note;
+  renderAffFields(); renderOList(); renderBlog(); renderStatsPanel();
 }
 
+function ok(id){document.getElementById(id).style.display="block";setTimeout(()=>document.getElementById(id).style.display="none",2500);}
+
 function saveContact(){
-  contact={
-    wa:document.getElementById("c_wa").value.trim(),
-    email:document.getElementById("c_email").value.trim(),
-    phone:document.getElementById("c_phone").value.trim(),
-    ig:document.getElementById("c_ig").value.trim(),
-    fb:document.getElementById("c_fb").value.trim(),
-    tt:document.getElementById("c_tt").value.trim(),
-    other:document.getElementById("c_other").value.trim(),
-  };
-  localStorage.setItem("bf_contact",JSON.stringify(contact));
-  document.getElementById("contactOk").style.display="block";
-  setTimeout(()=>document.getElementById("contactOk").style.display="none",2500);
-  renderContactPage();
+  contact={wa:v("c_wa"),em:v("c_em"),ph:v("c_ph"),pay:v("c_pay"),ig:v("c_ig"),fb:v("c_fb"),tt:v("c_tt"),ot:v("c_ot"),nl:v("c_nl")};
+  localStorage.setItem("bf_contact",JSON.stringify(contact));ok("cOk");renderContactPage();
 }
 function saveAds(){
-  adset={pub:document.getElementById("a_pub").value.trim(),slot:document.getElementById("a_slot").value.trim()};
-  localStorage.setItem("bf_ads",JSON.stringify(adset));
-  document.getElementById("adsOk").style.display="block";
-  setTimeout(()=>document.getElementById("adsOk").style.display="none",2500);
-  renderAdSlot();
+  adset={pub:v("a_pub"),slot:v("a_slot")};localStorage.setItem("bf_ads",JSON.stringify(adset));ok("aOk");renderAdSlot();
 }
-function savePdf(){
-  pdfset={link:document.getElementById("p_link").value.trim(),label:document.getElementById("p_label").value.trim()||"📄 Download Birthday Planner"};
-  localStorage.setItem("bf_pdf",JSON.stringify(pdfset));
-  document.getElementById("pdfOk").style.display="block";
-  setTimeout(()=>document.getElementById("pdfOk").style.display="none",2500);
+function saveGA(){
+  gaset={id:v("ga_id")};localStorage.setItem("bf_ga",JSON.stringify(gaset));
+  if(gaset.id){
+    const s=document.getElementById("ga-script");
+    s.setAttribute("async","");s.src=`https://www.googletagmanager.com/gtag/js?id=${gaset.id}`;
+    const s2=document.createElement("script");
+    s2.textContent=`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaset.id}');`;
+    document.head.appendChild(s2);
+  }
+  ok("gaOk");
+}
+function savePDF(){
+  pdfset={link:v("p_link"),lbl:v("p_lbl")||"📄 Download Birthday Planner",upd:v("p_upd")};
+  localStorage.setItem("bf_pdf",JSON.stringify(pdfset));ok("pOk");
+  if(pdfset.upd) document.getElementById("lastUpdated").textContent=pdfset.upd;
   renderContactPage();
 }
+function saveFOTW(){
+  fotw={name:v("fw_name"),free:v("fw_free"),note:v("fw_note")};
+  localStorage.setItem("bf_fotw",JSON.stringify(fotw));ok("fOk");renderFOTW();
+}
+function clearFOTW(){fotw={};localStorage.setItem("bf_fotw","{}");document.getElementById("fotwWrap").style.display="none";document.getElementById("fw_name").value="";document.getElementById("fw_free").value="";document.getElementById("fw_note").value="";}
+function saveAff(){
+  const rows=document.querySelectorAll(".aff-row");
+  aff=[];
+  rows.forEach(r=>{
+    const label=r.querySelector(".aff-label")?.value.trim();
+    const url=r.querySelector(".aff-url")?.value.trim();
+    if(label&&url) aff.push({label,url});
+  });
+  localStorage.setItem("bf_aff",JSON.stringify(aff));ok("afOk");renderAffBanner();
+}
+function addPost(){
+  const t=v("b_title"),b=v("b_body");
+  if(!t||!b){alert("Please fill in title and body.");return;}
+  blog.unshift({id:"p"+Date.now(),date:new Date().toLocaleDateString("en-ZA",{day:"numeric",month:"long",year:"numeric"}),title:t,body:b});
+  localStorage.setItem("bf_blog",JSON.stringify(blog));
+  document.getElementById("b_title").value="";document.getElementById("b_body").value="";
+  ok("bOk");renderBlog();renderBlogPage();
+}
+function delPost(id){if(!confirm("Delete this post?"))return;blog=blog.filter(p=>p.id!==id);localStorage.setItem("bf_blog",JSON.stringify(blog));renderBlog();renderBlogPage();}
+
+function v(id){return document.getElementById(id)?.value.trim()||"";}
 
 // CONTACT PAGE RENDER
 function renderContactPage(){
-  const btns=document.getElementById("contactBtns");
-  let html="";
-  if(contact.wa) html+=`<a class="cta-btn cta-wa" href="https://wa.me/27${contact.wa.replace(/^0/,'').replace(/\s/g,'')}?text=Hi%20Candice!%20I%20found%20a%20new%20birthday%20freebie%20%F0%9F%8E%82" target="_blank">💬 WhatsApp Candice</a>`;
-  if(contact.email) html+=`<a class="cta-btn cta-em" href="mailto:${contact.email}?subject=New Birthday Freebie" target="_blank">📧 Email Candice</a>`;
-  if(pdfset.link) html+=`<a class="cta-btn" style="background:var(--lilac-d);color:#fff;box-shadow:0 4px 16px rgba(94,78,138,.3)" href="${pdfset.link}" target="_blank">📄 ${pdfset.label}</a>`;
-  btns.innerHTML=html||"<p style='color:var(--muted);font-size:13px'>Contact details not set yet — add them in the Owner Dashboard.</p>";
-
-  const soc=document.getElementById("socialRow");
+  const el=document.getElementById("cBtns");
+  let h="";
+  if(contact.wa) h+=`<a class="cta cta-wa" href="https://wa.me/27${contact.wa.replace(/^0/,"").replace(/\s/g,"")}?text=Hi%20Candice!%20I%20found%20a%20birthday%20freebie%20%F0%9F%8E%82" target="_blank">💬 WhatsApp Candice</a>`;
+  if(contact.em) h+=`<a class="cta cta-em" href="mailto:${contact.em}?subject=Birthday Freebie Suggestion" target="_blank">📧 Email Candice</a>`;
+  if(contact.pay) h+=`<a class="cta cta-pay" href="${contact.pay}" target="_blank">☕ Support the App</a>`;
+  if(pdfset.link) h+=`<a class="cta cta-pdf" href="${pdfset.link}" target="_blank">${pdfset.lbl||"📄 Download Birthday Planner"}</a>`;
+  el.innerHTML=h||"<p style='color:var(--muted);font-size:13px'>Contact details not set yet — add them in the Owner Dashboard.</p>";
+  const sr=document.getElementById("socRow");
   let sh="";
-  if(contact.ig) sh+=`<a class="soc-btn" href="${contact.ig}" target="_blank"><span>📸</span>Instagram</a>`;
-  if(contact.fb) sh+=`<a class="soc-btn" href="${contact.fb}" target="_blank"><span>📘</span>Facebook</a>`;
-  if(contact.tt) sh+=`<a class="soc-btn" href="${contact.tt}" target="_blank"><span>🎵</span>TikTok</a>`;
-  if(contact.other) sh+=`<a class="soc-btn" href="${contact.other}" target="_blank"><span>🔗</span>More</a>`;
-  soc.innerHTML=sh;
+  if(contact.ig) sh+=`<a class="sc2" href="${contact.ig}" target="_blank"><span>📸</span>Instagram</a>`;
+  if(contact.fb) sh+=`<a class="sc2" href="${contact.fb}" target="_blank"><span>📘</span>Facebook</a>`;
+  if(contact.tt) sh+=`<a class="sc2" href="${contact.tt}" target="_blank"><span>🎵</span>TikTok</a>`;
+  if(contact.ot) sh+=`<a class="sc2" href="${contact.ot}" target="_blank"><span>🔗</span>More</a>`;
+  sr.innerHTML=sh;
 }
 
-// AD SLOT RENDER
+// AD SLOT
 function renderAdSlot(){
-  const slot=document.getElementById("adSlot");
-  if(adset.pub && adset.slot){
-    slot.innerHTML=`<ins class="adsbygoogle" style="display:block;width:100%;min-height:80px" data-ad-client="${adset.pub}" data-ad-slot="${adset.slot}" data-ad-format="auto" data-full-width-responsive="true"></ins>`;
-    if(window.adsbygoogle) (window.adsbygoogle=window.adsbygoogle||[]).push({});
+  const el=document.getElementById("adSlot");
+  if(adset.pub&&adset.slot){
+    el.innerHTML=`<ins class="adsbygoogle" style="display:block;width:100%;min-height:70px" data-ad-client="${adset.pub}" data-ad-slot="${adset.slot}" data-ad-format="auto" data-full-width-responsive="true"></ins>`;
+    if(window.adsbygoogle)(window.adsbygoogle=window.adsbygoogle||[]).push({});
   } else {
-    slot.innerHTML=`<div class="ad-placeholder">Advertisement space — add your AdSense ID in the Owner Dashboard</div>`;
+    el.innerHTML=`<div class="ad-ph">Ad space — add your AdSense ID in the Owner Dashboard</div>`;
   }
+}
+
+// AFFILIATE BANNER
+function renderAffBanner(){
+  const el=document.getElementById("affBanner");
+  if(!aff.length){el.innerHTML="";return;}
+  el.innerHTML=aff.map(a=>`<a class="aff-card" href="${a.url}" target="_blank">🛍️ ${a.label}</a>`).join("");
+}
+function renderAffFields(){
+  const el=document.getElementById("affFields");
+  const slots=Math.max(aff.length+1,3);
+  let h="";
+  for(let i=0;i<Math.min(slots,4);i++){
+    const a=aff[i]||{label:"",url:""};
+    h+=`<div class="aff-row" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:9px">
+      <input type="text" class="fi aff-label" placeholder="Label e.g. Takealot" value="${a.label}"/>
+      <input type="url" class="fi aff-url" placeholder="https://affiliate-link" value="${a.url}"/>
+    </div>`;
+  }
+  el.innerHTML=h;
+}
+
+// FOTW
+function renderFOTW(){
+  const el=document.getElementById("fotwWrap");
+  if(!fotw.name){el.style.display="none";return;}
+  el.style.display="block";
+  el.innerHTML=`<div class="fotw"><div class="fotw-lbl">⭐ Freebie of the Week</div><div class="fotw-name">${fotw.name}</div><div class="fotw-freebie">🎁 ${fotw.free}</div>${fotw.note?`<div class="fotw-note">${fotw.note}</div>`:""}</div>`;
+}
+
+// RECENTLY ADDED
+function renderRecent(){
+  const el=document.getElementById("recentWrap");
+  const recents=allF().filter(f=>NEW_IDS.includes(f.id)||f.isCustom).slice(0,4);
+  if(!recents.length){el.style.display="none";return;}
+  el.style.display="block";
+  el.innerHTML=`<div style="margin-bottom:14px"><div style="font-size:11px;font-weight:700;color:var(--rose-d);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">🆕 Recently Added</div><div class="grid">${recents.map((f,i)=>buildCard(f,i)).join("")}</div></div>`;
+}
+
+// BLOG
+function renderBlogPage(){
+  const el=document.getElementById("blogList");
+  if(!blog.length){el.innerHTML=`<div class="ic"><p style="color:var(--muted)">No posts yet.</p></div>`;return;}
+  el.innerHTML=blog.map(p=>`<div class="blog-card"><div class="blog-date">${p.date}</div><div class="blog-title">${p.title}</div><div class="blog-body">${p.body}</div></div>`).join("");
+}
+function renderBlog(){
+  const el=document.getElementById("bList");
+  if(!blog.length){el.innerHTML=`<p style="color:var(--muted);font-size:13px">No posts yet.</p>`;return;}
+  el.innerHTML=blog.map(p=>`<div class="o-item"><div><div class="nm">${p.title}</div><div class="mt">${p.date}</div></div><button class="del" onclick="delPost('${p.id}')">Delete</button></div>`).join("");
+}
+
+// STATS PANEL
+function renderStatsPanel(){
+  const el=document.getElementById("statsPanel");
+  const days=Object.keys(stats.days).sort().reverse();
+  const today2=new Date().toISOString().slice(0,10);
+  const weekAgo=new Date(Date.now()-7*86400000).toISOString().slice(0,10);
+  const monthAgo=new Date(Date.now()-30*86400000).toISOString().slice(0,10);
+  const todayV=stats.days[today2]||0;
+  const weekV=days.filter(d=>d>=weekAgo).reduce((s,d)=>s+(stats.days[d]||0),0);
+  const monthV=days.filter(d=>d>=monthAgo).reduce((s,d)=>s+(stats.days[d]||0),0);
+  el.innerHTML=`
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+      <div class="stat"><span style="font-size:18px">📅</span><div><div class="sv" style="color:var(--rose-d)">${todayV}</div><div class="sl">Today's views</div></div></div>
+      <div class="stat"><span style="font-size:18px">📆</span><div><div class="sv" style="color:var(--sage-d)">${weekV}</div><div class="sl">This week</div></div></div>
+      <div class="stat"><span style="font-size:18px">📊</span><div><div class="sv" style="color:var(--gold-d)">${monthV}</div><div class="sl">This month</div></div></div>
+      <div class="stat"><span style="font-size:18px">🔢</span><div><div class="sv" style="color:var(--lilac-d)">${stats.views}</div><div class="sl">Total views</div></div></div>
+    </div>
+    <p style="font-size:12px;color:var(--muted)">💡 These are local views on this device only. For full multi-device analytics, set up Google Analytics (G-XXXXXXXXXX) in the Ads tab above.</p>`;
 }
 
 // OWNER LIST
 function renderOList(){
   const el=document.getElementById("oList");
-  if(!customs.length){el.innerHTML="<p style='color:var(--muted);font-size:13px'>No custom freebies added yet.</p>";return;}
-  el.innerHTML=customs.map(f=>`<div class="o-list-item"><div><div class="nm">${f.name}</div><div class="mt">${f.cat} · ${f.area}</div><div class="mt">${f.freebie}</div></div><button class="delbtn" onclick="delFreebie('${f.id}')">Delete</button></div>`).join("");
+  if(!customs.length){el.innerHTML=`<p style="color:var(--muted);font-size:13px">No custom freebies added yet.</p>`;return;}
+  el.innerHTML=customs.map(f=>`<div class="o-item"><div><div class="nm">${f.name}</div><div class="mt">${f.cat} · ${f.area}</div><div class="mt" style="color:var(--muted)">${f.freebie}</div></div><button class="del" onclick="delFreebie('${f.id}')">Delete</button></div>`).join("");
 }
-
-// ADD / DELETE FREEBIE
 function addFreebie(){
-  const name=document.getElementById("f_name").value.trim();
-  const freebie=document.getElementById("f_freebie").value.trim();
-  const validity=document.getElementById("f_validity").value.trim();
-  const how=document.getElementById("f_how").value.trim();
+  const name=v("f_name"),freebie=v("f_freebie"),validity=v("f_validity"),how=v("f_how");
   if(!name||!freebie||!validity||!how){alert("Please fill in all required fields (*)");return;}
-  const dietary=document.getElementById("f_dietary").value;
+  const diet=v("f_diet");
   customs.unshift({
-    id:"c"+Date.now(), isCustom:true,
+    id:"c"+Date.now(),isCustom:true,
     cat:document.getElementById("f_cat").value,
     name,freebie,validity,how,
     area:document.getElementById("f_area").value,
-    addr:document.getElementById("f_addr").value.trim(),
-    bizPhone:document.getElementById("f_phone").value.trim(),
-    appLink:document.getElementById("f_link").value.trim(),
-    priority:document.getElementById("f_priority").value,
-    dietary:dietary?[dietary]:[],
+    addr:v("f_addr"),bizPhone:v("f_bphone"),appLink:v("f_link"),
+    priority:document.getElementById("f_pri").value,
+    dietary:diet?[diet]:[],
     kids:document.getElementById("f_kids").value==="true",
-    takeaway:document.getElementById("f_takeway").value==="true",
-    sponsored:document.getElementById("f_sponsored").value==="true",
-    featured:document.getElementById("f_sponsored").value==="true",
-    verified:new Date().toLocaleDateString("en-ZA",{month:"short",year:"numeric"}),
+    takeaway:document.getElementById("f_take").value==="true",
+    verified:document.getElementById("f_ver").value==="true",
+    sponsored:document.getElementById("f_spon").value==="true",
+    featured:document.getElementById("f_spon").value==="true",
+    verified_label:document.getElementById("f_ver").value==="true",
+    verifiedDate:new Date().toLocaleDateString("en-ZA",{month:"short",year:"numeric"}),
   });
-  saveAll(); render(); renderOList();
-  document.getElementById("addOk").style.display="block";
-  setTimeout(()=>document.getElementById("addOk").style.display="none",2500);
-  ["f_name","f_freebie","f_validity","f_how","f_addr","f_phone","f_link"].forEach(id=>document.getElementById(id).value="");
+  saveAll();render();renderOList();ok("addOk");
+  ["f_name","f_freebie","f_validity","f_how","f_addr","f_bphone","f_link"].forEach(id=>{const e=document.getElementById(id);if(e)e.value="";});
 }
-function delFreebie(id){
-  if(!confirm("Delete this freebie?")) return;
-  customs=customs.filter(f=>f.id!==id);
-  saveAll(); render(); renderOList();
-}
+function delFreebie(id){if(!confirm("Delete this freebie?"))return;customs=customs.filter(f=>f.id!==id);saveAll();render();renderOList();}
 
 // ALL FREEBIES
-function all(){ return [...FREEBIES,...customs]; }
+function allF(){return[...FREEBIES,...customs];}
 
 // STATS
 function renderStats(){
-  const a=all(), n=a.filter(f=>claimed[f.id]).length, s=a.filter(f=>signed[f.id]).length;
+  const a=allF(),n=a.filter(f=>claimed[f.id]).length,s=a.filter(f=>signed[f.id]).length;
   const pct=a.length?Math.round(n/a.length*100):0;
-  document.getElementById("totCount").textContent=a.length;
-  document.getElementById("stTotal").textContent=a.length;
-  document.getElementById("stClaimed").textContent=n;
-  document.getElementById("stSigned").textContent=s;
-  document.getElementById("stLeft").textContent=a.length-n;
-  document.getElementById("pctLbl").textContent=pct+"%";
-  document.getElementById("progBar").style.width=pct+"%";
+  document.getElementById("totC").textContent=a.length;
+  document.getElementById("stT").textContent=a.length;
+  document.getElementById("stC").textContent=n;
+  document.getElementById("stS").textContent=s;
+  document.getElementById("stL").textContent=a.length-n;
+  document.getElementById("pctL").textContent=pct+"%";
+  document.getElementById("progB").style.width=pct+"%";
 }
 
 // VISIBLE
 function getVis(){
-  return all().filter(f=>{
+  return allF().filter(f=>{
+    if(activeMood!=="all"&&f.cat!==MOOD_MAP[activeMood]) return false;
     if(activeCat!=="all"&&f.cat!==activeCat) return false;
     if(activeArea!=="all"&&f.area!==activeArea&&f.area!=="All Areas") return false;
-    if(filter==="claimed"  &&!claimed[f.id]) return false;
-    if(filter==="unclaimed"&& claimed[f.id]) return false;
-    if(filter==="mustdo"   &&f.priority!=="high") return false;
-    if(filter==="kids"     &&!f.kids) return false;
-    if(filter==="takeaway" &&!f.takeaway) return false;
+    if(filter==="claimed"&&!claimed[f.id]) return false;
+    if(filter==="unclaimed"&&claimed[f.id]) return false;
+    if(filter==="mustdo"&&f.priority!=="high") return false;
+    if(filter==="kids"&&!f.kids) return false;
+    if(filter==="takeaway"&&!f.takeaway) return false;
+    if(filter==="verified"&&!f.verified) return false;
     if(filter==="sponsored"&&!f.featured) return false;
     const s=search.toLowerCase();
     if(s&&!f.name.toLowerCase().includes(s)&&!f.freebie.toLowerCase().includes(s)) return false;
@@ -1074,87 +1382,171 @@ function getVis(){
 
 // BUILD CARD
 function buildCard(f,i){
-  const m=CAT_META[f.cat]||{color:"#A04A5A",bg:"rgba(193,124,138,0.12)",border:"rgba(193,124,138,0.28)"};
-  const done=!!claimed[f.id], up=!!signed[f.id], isOpen=openCard===f.id;
-  const isNew=NEW_IDS.includes(f.id), note=notes[f.id]||"";
-  const cls=["card",done?"claimed":"",f.featured?"featured":"",isNew&&!f.featured?"":"",isOpen?"open":""].filter(Boolean).join(" ");
-  const diet=f.dietary&&f.dietary.length?`<div class="dtags">${f.dietary.map(d=>`<span class="dtag dtag-${d[0].toLowerCase()}">${d==="Halaal"?"🌙 ":"🌿 "}${d}</span>`).join("")}</div>`:"";
-  const bizInfo=(isOpen&&(f.addr||f.bizPhone))?`<div class="biz-info">📍 ${f.addr||""}${f.addr&&f.bizPhone?" &nbsp;·&nbsp; ":""}${f.bizPhone?`<a href="tel:${f.bizPhone}">📞 ${f.bizPhone}</a>`:""}</div>`:"";
-  const appL=isOpen&&f.appLink?`<a class="app-link-btn" href="${f.appLink}" target="_blank">📲 Sign up / App →</a>`:"";
-  const noteHtml=isOpen?`<div class="note-lbl">📝 Notes</div><textarea class="card-note" placeholder="Add a note… e.g. Booked for 14 March" onclick="event.stopPropagation()" onchange="notes['${f.id}']=this.value;saveAll()">${note}</textarea>`:"";
+  const m=CAT_META[f.cat]||{color:"#8A3A52",bg:"rgba(181,99,122,.1)",border:"rgba(181,99,122,.25)"};
+  const done=!!claimed[f.id],up=!!signed[f.id],isOpen=openCard===f.id;
+  const isNew=NEW_IDS.includes(f.id),note=notes[f.id]||"";
+  const rev=reviews[f.id]||{up:0,dn:0,comments:[],myVote:null};
+  const cls=["card",done?"claimed":"",f.featured?"featured":"",isOpen?"open":""].filter(Boolean).join(" ");
+  const diet=f.dietary&&f.dietary.length?`<div class="dtags">${f.dietary.map(d=>`<span class="dtag d${d[0].toLowerCase()}">${d==="Halaal"?"🌙 ":"🌿 "}${d}</span>`).join("")}</div>`:"";
+  const biz=isOpen&&(f.addr||f.bizPhone)?`<div class="biz-info">📍 ${f.addr||""}${f.addr&&f.bizPhone?" · ":""}${f.bizPhone?`<a href="tel:${f.bizPhone}">📞 ${f.bizPhone}</a>`:""}</div>`:"";
+  const appL=isOpen&&f.appLink?`<a class="app-lnk" href="${f.appLink}" target="_blank">📲 Sign up / App →</a>`:"";
+  const noteHtml=isOpen?`<div class="nlbl">📝 Notes</div><textarea class="cnote" placeholder="e.g. Booked for 14 March" onclick="event.stopPropagation()" onchange="notes['${f.id}']=this.value;saveAll()">${note}</textarea>`:"";
+  const revHtml=isOpen?`<div class="rev-wrap"><div class="rev-lbl">Was this freebie accurate?</div><div class="rev-btns"><button class="rev-btn up${rev.myVote==='up'?' voted':''}" onclick="event.stopPropagation();voteRev('${f.id}','up')">👍 ${rev.up}</button><button class="rev-btn dn${rev.myVote==='dn'?' voted':''}" onclick="event.stopPropagation();voteRev('${f.id}','dn')">👎 ${rev.dn}</button><span class="rev-score">${rev.up+rev.dn} votes</span></div>${rev.comments.length?`<div class="rev-list">${rev.comments.slice(-3).map(c=>`<div class="rev-item">"${c}"</div>`).join("")}</div>`:""}${!rev.myComment?`<input class="rev-comment" placeholder="Leave a short comment…" onclick="event.stopPropagation()" id="rc_${f.id}"/><button class="rev-submit" onclick="event.stopPropagation();submitComment('${f.id}')">Post</button>`:`<div style="font-size:11px;color:var(--sage-d);margin-top:4px">✅ Comment submitted. Thank you!</div>`}</div>`:"";
+  const waNum=(contact.wa||"0735754642").replace(/^0/,"27").replace(/\s/g,"");
+  const shareWa=`https://wa.me/?text=${encodeURIComponent(`🎂 Check out this birthday freebie: ${f.name} — ${f.freebie}! Claim it at birthdayfreebiessa.netlify.app`)}`;
+  const reportWa=`https://wa.me/${waNum}?text=${encodeURIComponent(`Hi Candice! I want to report a problem with this freebie on your app:\n\nBusiness: ${f.name}\nIssue: [describe the issue here]`)}`;
 
   return `<div class="${cls}" data-id="${f.id}" style="animation-delay:${i*.04}s" onclick="toggleOpen('${f.id}',event)">
     <div class="card-stripe"></div>
-    <div class="card-top">
+    <div class="ct">
       <span class="cbadge" style="background:${m.bg};color:${m.color};border:1px solid ${m.border}">${f.cat}</span>
-      <div class="badges">
-        ${f.featured?'<span class="b-feat">✨ Sponsored</span>':""}
-        ${isNew&&!f.featured?'<span class="b-new">🆕 New</span>':""}
-        ${f.priority==="high"&&!f.featured?'<span class="b-must">⭐ Must</span>':""}
-        ${f.kids?'<span class="b-kids">👶 Kids</span>':""}
-        ${f.takeaway?'<span title="Takeaway" style="font-size:13px">🥡</span>':""}
+      <div class="bgs">
+        ${f.featured?'<span class="bm bm-feat">✨ Sponsored</span>':""}
+        ${isNew&&!f.featured?'<span class="bm bm-new">🆕 New</span>':""}
+        ${f.priority==="high"&&!f.featured?'<span class="bm bm-must">⭐ Must</span>':""}
+        ${f.kids?'<span class="bm bm-kids">👶 Kids</span>':""}
+        ${f.verified?'<span class="bm bm-ver">✅ Verified</span>':""}
+        ${f.takeaway?'<span title="Takeaway" style="font-size:12px">🥡</span>':""}
       </div>
     </div>
     ${diet}
-    <div class="card-name">${f.name}</div>
-    <div class="card-freebie" style="color:${m.color}">🎁 ${f.freebie}</div>
-    <div class="card-validity">⏳ ${f.validity}</div>
-    <div class="card-meta"><span>📍 ${f.area}</span><span>✓ ${f.verified}</span></div>
-    <div class="card-detail">
+    <div class="cn">${f.name}</div>
+    <div class="cf" style="color:${m.color}">🎁 ${f.freebie}</div>
+    <div class="cv">⏳ ${f.validity}</div>
+    <div class="cm"><span>📍 ${f.area}</span><span>✓ ${f.verified&&f.verifiedDate?f.verifiedDate:f.verified||"May 2026"}</span></div>
+    <div class="cd">
       <strong>📋 How to claim:</strong><br>${f.how}
-      ${bizInfo}${appL}${noteHtml}
+      ${biz}${appL}${noteHtml}${revHtml}
     </div>
-    <div class="toggle-hint">${isOpen?"▲ collapse":"▼ tap for details & how to claim"}</div>
-    <div class="card-actions" onclick="event.stopPropagation()">
-      <button class="abtn sbtn ${up?"on":""}" onclick="toggleSign('${f.id}')">${up?"📱 Signed Up":"📱 Sign Up"}</button>
-      <button class="abtn cbtn ${done?"on":""}" onclick="toggleClaim('${f.id}')">${done?"✅ Claimed!":"☑️ Claim"}</button>
+    <div class="th">${isOpen?"▲ collapse":"▼ tap for details"}</div>
+    <div class="ca" onclick="event.stopPropagation()">
+      <button class="ab sb${up?" on":""}" onclick="toggleSign('${f.id}')">${up?"📱 Signed Up":"📱 Sign Up"}</button>
+      <button class="ab cb${done?" on":""}" onclick="toggleClaim('${f.id}')">${done?"✅ Claimed!":"☑️ Claim"}</button>
+    </div>
+    <div class="card-bottom" onclick="event.stopPropagation()">
+      <a class="sm-btn share-btn" href="${shareWa}" target="_blank">💬 Share</a>
+      <a class="sm-btn report-btn" href="${reportWa}" target="_blank">⚠️ Report</a>
     </div>
   </div>`;
+}
+
+// REVIEWS
+function voteRev(id,vote){
+  if(!reviews[id]) reviews[id]={up:0,dn:0,comments:[],myVote:null,myComment:false};
+  const r=reviews[id];
+  if(r.myVote===vote){r[vote]--;r.myVote=null;}
+  else{if(r.myVote){r[r.myVote]--;}r[vote]++;r.myVote=vote;}
+  saveAll();render();
+}
+function submitComment(id){
+  const inp=document.getElementById("rc_"+id);
+  if(!inp||!inp.value.trim()) return;
+  if(!reviews[id]) reviews[id]={up:0,dn:0,comments:[],myVote:null,myComment:false};
+  reviews[id].comments.push(inp.value.trim());
+  reviews[id].myComment=true;
+  saveAll();render();
 }
 
 // RENDER
 function render(){
   renderStats();
   const vis=getVis();
-  document.getElementById("countLn").textContent=`Showing ${vis.length} of ${all().length} freebies`;
+  document.getElementById("cln").textContent=`Showing ${vis.length} of ${allF().length} freebies`;
   const area=document.getElementById("cardArea");
-  if(!vis.length){area.innerHTML='<div class="empty"><span style="font-size:44px">🎈</span><p>No freebies match — try different filters!</p></div>';return;}
-  if(activeCat!=="all"){
+  if(!vis.length){area.innerHTML='<div class="empty"><span style="font-size:42px">🎈</span><p>No freebies match — try different filters!</p></div>';return;}
+  if(activeCat!=="all"||activeMood!=="all"){
     area.innerHTML=`<div class="grid">${vis.map((f,i)=>buildCard(f,i)).join("")}</div>`;
   } else {
-    let html="";
+    let h="";
     CATS.forEach(cat=>{
-      const items=vis.filter(f=>f.cat===cat); if(!items.length) return;
+      const items=vis.filter(f=>f.cat===cat);if(!items.length)return;
       const m=CAT_META[cat];
-      html+=`<div class="sec-wrap"><div class="sec-head" style="border-bottom-color:${m.border}"><h2 style="color:${m.color}">${cat}</h2><span class="sec-count" style="background:${m.bg};color:${m.color}">${items.length}</span></div><div class="grid">${items.map((f,i)=>buildCard(f,i)).join("")}</div></div>`;
+      h+=`<div class="sw2"><div class="sh" style="border-bottom-color:${m.border}"><h2 style="color:${m.color}">${cat}</h2><span class="sc" style="background:${m.bg};color:${m.color}">${items.length}</span></div><div class="grid">${items.map((f,i)=>buildCard(f,i)).join("")}</div></div>`;
     });
     const cc=vis.filter(f=>f.isCustom);
-    if(cc.length) html+=`<div class="sec-wrap"><div class="sec-head" style="border-bottom-color:rgba(193,124,138,.25)"><h2 style="color:var(--rose-d)">✨ Added by Candice</h2><span class="sec-count" style="background:var(--rose-l);color:var(--rose-d)">${cc.length}</span></div><div class="grid">${cc.map((f,i)=>buildCard(f,i)).join("")}</div></div>`;
-    area.innerHTML=html;
+    if(cc.length) h+=`<div class="sw2"><div class="sh" style="border-bottom-color:rgba(181,99,122,.25)"><h2 style="color:var(--rose-d)">✨ Added by Candice</h2><span class="sc" style="background:var(--rose-xl);color:var(--rose-d)">${cc.length}</span></div><div class="grid">${cc.map((f,i)=>buildCard(f,i)).join("")}</div></div>`;
+    area.innerHTML=h;
   }
 }
 
 // ACTIONS
 function toggleOpen(id,e){
-  openCard=openCard===id?null:id; render();
-  setTimeout(()=>{ const el=document.querySelector('[data-id="'+id+'"]'); if(el) el.scrollIntoView({behavior:"smooth",block:"nearest"}); },50);
+  openCard=openCard===id?null:id;render();
+  setTimeout(()=>{const el=document.querySelector(`[data-id="${id}"]`);if(el)el.scrollIntoView({behavior:"smooth",block:"nearest"});},50);
 }
-function toggleClaim(id){ claimed[id]=!claimed[id]; saveAll(); if(claimed[id]) confetti(); render(); }
-function toggleSign(id){ signed[id]=!signed[id]; saveAll(); render(); }
+function toggleClaim(id){claimed[id]=!claimed[id];saveAll();if(claimed[id])confetti();render();}
+function toggleSign(id){signed[id]=!signed[id];saveAll();render();}
+
+// NEAR ME
+function findNearMe(){
+  if(!navigator.geolocation){alert("Location not available on this device.");return;}
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const ct={lat:-33.9249,lng:18.4241};
+    const dist=(a,b)=>Math.sqrt(Math.pow(a.lat-b.lat,2)+Math.pow(a.lng-b.lng,2));
+    // Cape Town areas approx coords
+    const areaCoords={"City Bowl":{lat:-33.92,lng:18.42},"Southern Suburbs":{lat:-33.97,lng:18.47},"Tygervalley":{lat:-33.86,lng:18.63},"Stellenbosch":{lat:-33.93,lng:18.86},"Franschhoek":{lat:-33.91,lng:19.12},"Durbanville":{lat:-33.83,lng:18.65},"All Areas":{lat:-33.92,lng:18.42}};
+    const userPos={lat:pos.coords.latitude,lng:pos.coords.longitude};
+    const closest=Object.entries(areaCoords).sort((a,b)=>dist(userPos,a[1])-dist(userPos,b[1]))[0][0];
+    activeArea=closest;
+    document.querySelectorAll("[data-area]").forEach(b=>{
+      b.classList.toggle("active",b.dataset.area===closest);
+      b.style.background=b.dataset.area===closest?"var(--rose-l)":"";
+      b.style.color=b.dataset.area===closest?"var(--rose-d)":"";
+    });
+    render();
+    alert(`📍 Showing freebies near ${closest}`);
+  },()=>alert("Could not get your location. Please enable location access."));
+}
+
+// PLAN MY DAY
+function openPlan(){
+  const area=activeArea==="all"?"City Bowl":activeArea;
+  const items=allF().filter(f=>(f.area===area||f.area==="All Areas")&&f.priority==="high").slice(0,6);
+  const times=["9:00 AM","10:30 AM","12:00 PM","1:30 PM","3:00 PM","5:00 PM","7:00 PM"];
+  document.getElementById("planItems").innerHTML=items.length?items.map((f,i)=>`<div class="plan-item"><div class="plan-time">${times[i]||""}</div><div class="plan-info"><div class="pn">${f.name}</div><div class="pf">🎁 ${f.freebie} · ⏳ ${f.validity}</div></div></div>`).join(""):`<p style="color:var(--muted);font-size:13px">No must-do freebies found for ${area}. Try a different area filter!</p>`;
+  document.getElementById("planModal").classList.add("vis");
+}
+function closePlan(){document.getElementById("planModal").classList.remove("vis");}
+
+// NEWSLETTER
+function nlSignup(){
+  const em=document.getElementById("nlEmail").value.trim();
+  if(!em||!em.includes("@")){alert("Please enter a valid email address.");return;}
+  const link=contact.nl||"https://mailchimp.com";
+  window.open(`${link}?email=${encodeURIComponent(em)}`,"_blank");
+  document.getElementById("nlEmail").value="";
+  alert("✅ Redirecting you to sign up — thank you!");
+}
 
 // CONFETTI
-function confetti(){ for(let i=0;i<28;i++){ const el=document.createElement("div"); el.className="cp"; const sz=7+Math.random()*9; el.style.cssText=`left:${4+Math.random()*92}%;width:${sz}px;height:${sz}px;background:${CONF[i%CONF.length]};border-radius:${Math.random()>.5?"50%":"3px"};animation-duration:${1.3+Math.random()*.9}s;animation-delay:${Math.random()*.6}s;transform:rotate(${Math.random()*360}deg);`; document.body.appendChild(el); el.addEventListener("animationend",()=>el.remove()); } }
+function confetti(){for(let i=0;i<26;i++){const el=document.createElement("div");el.className="cfp";const sz=7+Math.random()*9;el.style.cssText=`left:${4+Math.random()*92}%;width:${sz}px;height:${sz}px;background:${CONF[i%CONF.length]};border-radius:${Math.random()>.5?"50%":"3px"};animation-duration:${1.2+Math.random()*.9}s;animation-delay:${Math.random()*.6}s;transform:rotate(${Math.random()*360}deg);`;document.body.appendChild(el);el.addEventListener("animationend",()=>el.remove());}}
+
+// ADD PLAN MY DAY BUTTON to hero
+document.querySelector(".hero").insertAdjacentHTML("beforeend",`<button onclick="openPlan()" style="width:100%;margin-top:10px;padding:10px;border-radius:10px;border:none;cursor:pointer;background:linear-gradient(135deg,var(--rose-d),var(--lilac-d));color:#fff;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;box-shadow:0 3px 12px rgba(138,58,82,.25);">🗓️ Plan My Birthday Day →</button>`);
 
 // FILTER EVENTS
-document.getElementById("filterRow").addEventListener("click",e=>{ const b=e.target.closest("[data-f]"); if(!b) return; filter=b.dataset.f; document.querySelectorAll("[data-f]").forEach(x=>x.classList.toggle("active",x===b)); openCard=null; render(); });
-document.getElementById("catRow").addEventListener("click",e=>{ const b=e.target.closest("[data-cat]"); if(!b) return; activeCat=b.dataset.cat; document.querySelectorAll("[data-cat]").forEach(x=>{ const m=CAT_META[x.dataset.cat]; x.classList.toggle("active",x===b); x.style.background=x===b&&m?m.bg:""; x.style.color=x===b&&m?m.color:""; x.style.borderColor=x===b&&m?m.border:""; }); openCard=null; render(); });
-document.getElementById("areaRow").addEventListener("click",e=>{ const b=e.target.closest("[data-area]"); if(!b) return; activeArea=b.dataset.area; document.querySelectorAll("[data-area]").forEach(x=>{ x.classList.toggle("active",x===b); x.style.background=x===b?"var(--rose-l)":""; x.style.color=x===b?"var(--rose-d)":""; x.style.borderColor=x===b?"rgba(193,124,138,.4)":""; }); openCard=null; render(); });
-document.getElementById("searchInput").addEventListener("input",e=>{ search=e.target.value; openCard=null; render(); });
+document.getElementById("moodRow").addEventListener("click",e=>{
+  const b=e.target.closest("[data-mood]");if(!b)return;
+  activeMood=b.dataset.mood;
+  document.querySelectorAll("[data-mood]").forEach(x=>x.classList.toggle("active",x===b));
+  activeCat="all";openCard=null;render();
+});
+document.getElementById("filterRow").addEventListener("click",e=>{const b=e.target.closest("[data-f]");if(!b)return;filter=b.dataset.f;document.querySelectorAll("[data-f]").forEach(x=>x.classList.toggle("active",x===b));openCard=null;render();});
+document.getElementById("catRow").addEventListener("click",e=>{
+  const b=e.target.closest("[data-cat]");if(!b)return;activeCat=b.dataset.cat;
+  document.querySelectorAll("[data-cat]").forEach(x=>{const m=CAT_META[x.dataset.cat];x.classList.toggle("active",x===b);x.style.background=x===b&&m?m.bg:"";x.style.color=x===b&&m?m.color:"";x.style.borderColor=x===b&&m?m.border:"";});
+  activeMood="all";document.querySelectorAll("[data-mood]").forEach(x=>x.classList.toggle("active",x.dataset.mood==="all"));
+  openCard=null;render();
+});
+document.getElementById("areaRow").addEventListener("click",e=>{
+  const b=e.target.closest("[data-area]");if(!b)return;activeArea=b.dataset.area;
+  document.querySelectorAll("[data-area]").forEach(x=>{x.classList.toggle("active",x===b);x.style.background=x===b?"var(--rose-l)":"";x.style.color=x===b?"var(--rose-d)":"";x.style.borderColor=x===b?"rgba(181,99,122,.4)":"";});
+  openCard=null;render();
+});
+document.getElementById("searchInput").addEventListener("input",e=>{search=e.target.value;openCard=null;render();});
 
 // INIT
-renderContactPage();
-renderAdSlot();
-render();
+renderContactPage();renderAdSlot();renderAffBanner();renderFOTW();renderBlogPage();render();renderRecent();
 </script>
 </body>
 </html>
